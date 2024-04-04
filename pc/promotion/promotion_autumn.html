@@ -1,0 +1,569 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2023.10 어텀위크</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css"/>
+    <link rel="preload" type="text/css" href='https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css'>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css"/>
+
+
+    <link type="text/css" rel="stylesheet" href="../css/style.css">
+    <link type="text/css" rel="stylesheet" href="../css/promotion.css">
+
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js" async></script>
+    <script type="text/javascript" src="../js/promotion.js"></script>
+
+    <style>
+        /* 231024 어텀위크 기획전 css */
+        @keyframes bounce-effect {
+            0%{top:25px;}
+            50%{top: 15px;}
+            100%{top: 25px;}
+        }
+        #event_wrap{width: 1080px;}
+        #event_wrap .promotion_top .prd_noti {padding-bottom: 100px;}
+        #tab-1, #tab-2{padding-bottom: 130px;}
+        .tab-header{margin: 0;padding: 0;display: flex;flex-wrap: wrap;gap: 1px;list-style: none;}
+        .tab-link{padding: 45px 0;display: flex;align-items: center;flex-direction: column;justify-content: center;flex: 1 1 49.9%;background: #000;
+            color: #fff;font-family: "pretendard",Sans-serif;font-size: 38px;font-weight: 500;font-style: normal;line-height: 1.57;text-align: center;cursor: pointer;}
+        .tab-link.on{color: #000;background-color: #e3dfda;}
+        .tab-content{display: none;width: 100%;background-color: #e3dfda;}
+        .tab-content.current{display: inherit;}
+    
+        .benefit{padding: 205px 0 0;}
+        .benefit-wrap__title{margin: 0 460px;padding: 12px;width: auto;background-color: #000;color: #fff;font-family: Pretendard;font-size: 42px;font-weight: 500;text-align: center;line-height: normal;}
+        .benefit-wrap__cont{padding: 90px 0 70px}
+        .benefit-wrap__txt{font-size: 58px;font-weight: 500;font-family: "pretendard",Sans-serif;text-align: center;}
+        .benefit-wrap__txt--bold{font-size: 75px;font-weight: bold;line-height: 1.15;}
+        .benefit-wrap__coupon, .benefit-wrap__point{margin: 0 auto;text-align: center;}
+        .benefit-wrap__coupon--img{width: 715px;}
+        .benefit-wrap__point--img{width: 932px;}
+        .benefit-wrap__product{display: flex;justify-content: center;text-align: center;}
+        .benefit-wrap__product + .benefit-wrap__product{padding-top: 20px;}
+        .benefit-wrap__bestseller + .benefit-wrap__bestseller{padding-left: 20px;}
+        .benefit-wrap__link{width: auto !important;}
+        .benefit-wrap__link + .benefit-wrap__link{padding-left: 20px;}
+        .bestseller-img{line-height: 0;}
+        .bestseller-img > img{width: 456px;display: block;}
+        .bestseller-box{padding: 45px 0;color: #fff;background-color: #000;}
+        .bestseller-box__txt{font-family: "pretendard",Sans-serif;font-size: 42px;font-weight: bold;line-height: 1.07;letter-spacing: -0.84px;}
+        .bestseller-box .promotion-autumn__list{padding: 36px 0 0;}
+        .bestseller-box .promotion-autumn__item{padding: 0 50px;}
+        .bestseller-box .promotion-autumn__item .price__coupon{font-size: 38px;}
+        .bestseller-box.winter{width: 456px;}
+        .bestseller-box.winter .bestseller-box__txt{font-size: 38px;}
+        .benefit-wrap__new{width: 625px;}
+        .newseller-img{line-height: 0;}
+        .newseller-img > img{width: 625px;display: block;}
+        .newseller-box{padding: 30px 0;color: #fff;background-color: #000;}
+        .newseller-box__title{font-family: "pretendard",Sans-serif;font-size: 38px;font-weight: bold;}
+        .newseller-box__txt{padding-top: 24px;color: #bbbbbb;font-family: Pretendard;font-size: 25px;font-weight: normal;line-height: 1.52;letter-spacing: -0.5px;}
+        .newseller-box__txt--bg{padding: 0 4px;color:#000;background-color: #ecd8d8;}
+        .benefit__notice{padding-top: 52px; color: #474747;font-size: 29px;font-weight: normal;text-align: center;}
+    
+        .autumn-swiper .promotion-autumn__source{width: 100%;}
+        .autumn-swiper .promotion-autumn__list{width: 100%;}
+        .autumn-swiper .promotion-autumn__box{margin: 0 auto;width: 626px;}
+    
+        .price__common{color: #a98b8b;font-size: 30px;font-weight: normal;font-family: Pretendard,sans-serif;}
+        .price__common.bold{font-weight: bold;}
+        .price__common.strikethrough{text-decoration: line-through;}
+        .price__common + .price__common{margin-left: auto;}
+        .price__customer{color:#bbbbbb;font-size: 30px;font-weight: normal;font-family: Pretendard,sans-serif;}
+        .price__customer.strikethrough{text-decoration: line-through;}
+        .price__customer.bold{font-weight: bold;}
+        .price__customer + .price__customer{margin-left: auto;}
+    
+        .price__coupon{color:#fff;font-size: 48px;font-weight: 600;font-family: Pretendard,sans-serif;}
+        .price__coupon + .price__coupon{margin-left: auto;}
+    
+        .cloud-box{margin: 0 auto; text-align: center;position: absolute;width: 100%;animation: bounce-effect 1s ease 0s infinite normal;}
+        .cloud-box__img{width: 509px;}
+        .autumn-slide__link{padding-top: 130px; display: block;}
+        .promotion-autumn__product{background-color: #a98b8b;}
+        .promotion-autumn__product--name{padding: 25px 0;color: #fff;font-size: 42px;font-weight: 600;font-stretch: normal;text-align: center;}
+        .promotion-autumn__price{background-color: #000;}
+        .promotion-autumn__list{margin: 0 auto;padding: 52px 0 62px;}
+        .promotion-autumn__item{display: flex;padding: 0 48px;}
+        .promotion-autumn__item + .promotion-autumn__item{padding-top: 24px;}
+        .promotion-autumn__img{line-height: 0;}
+        .autumn-swiper .swiper-button-next{right: 120px;width:54px;height:54px;background: url('https://cdn.slim9.biz/2023_renew/promotion/autumn-week/arrow-right@3x.webp');
+        background-size: contain; background-repeat: no-repeat; opacity: 1;}
+        .autumn-swiper .swiper-button-next:after{display: none;}
+        .autumn-swiper .swiper-button-prev{left: 120px;width:54px;height:54px;background: url('https://cdn.slim9.biz/2023_renew/promotion/autumn-week/arrow-left@3x.webp');
+            background-size: contain; background-repeat: no-repeat; opacity: 1;}
+        .autumn-swiper .swiper-button-prev:after{display: none;}
+    
+        @media all and (max-width:1020px) {
+            #event_wrap {width: 100%;margin: 0;}
+            #event_wrap .promotion_top .prd_noti{padding-bottom: 0;}
+            .tab-link{height: auto;flex: 1 1 49.8%;padding: 22px 0;font-size: 18px;line-height: 1;}
+            .tab-content{padding-top: 30px;}
+            .benefit{padding: 80px 0 0;}
+            .benefit-wrap__txt{font-size: 28px;}
+            .benefit-wrap__txt--bold{font-size: 36px;}
+            .benefit-wrap__cont{padding: 45px 0 25px;}
+            .benefit-wrap__title{margin: 0 auto;width: 70px; padding: 6px; font-size: 22px;}
+            .benefit-wrap__coupon--img{width: 100%;}
+            .benefit-wrap__product{margin: 0 35px;}
+            .benefit-wrap__bestseller + .benefit-wrap__bestseller{padding-left: 5px;}
+            .benefit-wrap__link + .benefit-wrap__link{padding-left: 10px;}
+            .bestseller-img > img,.newseller-img > img,.benefit-wrap__point--img{width: 100%;}
+            .bestseller-box{padding: 22px 0; width: 100% !important;}
+            .bestseller-box__txt{font-size: 15px !important;}
+            .bestseller-box .promotion-autumn__list{padding: 26px 0 0 !important;}
+            .bestseller-box .promotion-autumn__item{padding: 0 8px !important;}
+            .bestseller-box .promotion-autumn__item .price__coupon{font-size: 16px !important;}
+            .newseller-box__title{font-size: 20px;}
+            .newseller-box__txt{font-size: 14px;}
+            .benefit__notice{padding-top: 16px; font-size: 15px;}
+            .cloud-box__img{width: 60%;}
+            .promotion-autumn__product--name{font-size: 20px;}
+            .promotion-autumn__list{padding: 26px 0 30px;}
+            .promotion-autumn__item{padding: 0 24px;}
+            .promotion-autumn__item + .promotion-autumn__item{padding-top: 12px !important;}
+            .autumn-swiper .promotion-autumn__box{width: 75%;}
+            .autumn-slide__link{padding-top: 120px;}
+            .price__customer,.price__common{font-size: 15px;}
+            .price__coupon{font-size: 20px !important;}
+            .autumn-swiper .swiper-button-next{right: 40px; width: 40px; height: 40px;}
+            .autumn-swiper .swiper-button-prev{left: 40px; width: 40px; height: 40px;}
+        }
+        @media all and (max-width:480px) {
+            .cloud-box__img{width: 70%;}
+            .autumn-slide__link{padding-top: 80px;}
+            .benefit-wrap__product{margin: 0 18px;}
+            .autumn-swiper .swiper-button-next{right: 6px; width: 27px; height: 27px;}
+            .autumn-swiper .swiper-button-prev{left: 6px; width: 27px; height: 27px;}
+        }
+    </style>
+</head>
+
+<body>
+    <div class="2023.08 - 2025.08 2년"></div>
+    <!--프로모션 배너-->
+    <div id="event_wrap">
+        <div class="promotion_top">
+
+            <div class="img_box">
+                <img src="https://cdn.slim9.biz/2023_renew/promotion/autumn-week/main@3x.webp" alt="">
+            </div>
+            <!--프로모션 탭-->
+            <div class="tab-wrap">
+                <ul class="tab-header">
+                    <li class="tab-link on">스페셜 혜택</li>
+                    <li class="tab-link">어텀위크 특가</li>
+                </ul>
+                <div id="tab-1" class="tab-content current">
+                    <div class="tab-content__wrap">
+                        <!-- 혜택01 -->
+                        <div class="benefit">
+                            <div class="benefit-wrap">
+                                <div class="benefit-wrap__title">혜택01</div>
+                                <div class="benefit-wrap__cont">
+                                    <p class="benefit-wrap__txt">오직 어텀위크에서만<br/>
+                                        <span class="benefit-wrap__txt--bold">무조건 무료 배송</span>
+                                    </p>
+                                </div>
+                                <div class="benefit-wrap__coupon">
+                                    <img src="https://cdn.slim9.biz/2023_renew/promotion/autumn-week/coupon@3x.webp" class="benefit-wrap__coupon--img" alt="">
+                                </div>
+                            </div>
+                        </div>
+                        <!-- // 혜택01 -->
+
+                        <!-- 혜택02 -->
+                        <div class="benefit">
+                            <div class="benefit-wrap">
+                                <div class="benefit-wrap__title">혜택02</div>
+                                <div class="benefit-wrap__cont">
+                                    <p class="benefit-wrap__txt">베스트셀러만 쏙쏙<br/>
+                                        <span class="benefit-wrap__txt--bold">최대 60% OFF</span>
+                                    </p>
+                                </div>
+                                <div class="benefit-wrap__product">
+                                    <div class="benefit-wrap__bestseller">
+                                        <a href="/product/detail.html?product_no=1897">
+                                            <div class="bestseller-img">
+                                                <img src="https://cdn.slim9.biz/2023_renew/promotion/autumn-week/best-pack@3x.webp" alt="베스트 TOP3 패키지">
+                                            </div>
+                                            <div class="bestseller-box">
+                                                <p class="bestseller-box__txt">베스트<br/>TOP3 패키지</p>
+                                            </div>
+                                        </a>
+                                    </div>
+                                    <div class="benefit-wrap__bestseller">
+                                        <a href="/product/detail.html?product_no=1898">
+                                            <div class="bestseller-img">
+                                                <img src="https://cdn.slim9.biz/2023_renew/promotion/autumn-week/winter-pack@3x.webp" alt="미리 만나는 겨울 패키지">
+                                            </div>
+                                            <div class="bestseller-box">
+                                                <p class="bestseller-box__txt">미리 만나는<br/>겨울 패키지</p>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- // 혜택02 -->
+
+                        <!-- 혜택03 -->
+                        <div class="benefit">
+                            <div class="benefit-wrap">
+                                <div class="benefit-wrap__title">혜택03</div>
+                                <div class="benefit-wrap__cont">
+                                    <p class="benefit-wrap__txt">단 10일만 만나는<br/>
+                                        <span class="benefit-wrap__txt--bold">신상 5% 할인</span>
+                                    </p>
+                                </div>
+                                <div class="benefit-wrap__product">
+                                    <div class="benefit-wrap__new">
+                                        <a href="/product/detail.html?product_no=1900">
+                                            <div class="newseller-img">
+                                                <img src="https://cdn.slim9.biz/2023_renew/promotion/autumn-week/new-setup@3x.webp" alt="포근하게 완성한 슬림한 라인">
+                                            </div>
+                                            <div class="newseller-box">
+                                                <p class="newseller-box__title">포근하게 완성한 슬림한 라인</p>
+                                                <p class="newseller-box__txt">
+                                                    Slim9만의 특수 기술로 원사 사이사이<br />
+                                                    <span class="newseller-box__txt--bg">공기층을 형성해 여러 겹을 입은 듯 따뜻</span>해요.<br />
+                                                    <span class="newseller-box__txt--bg">미운 군살까지 싹- 정리해 라인을 완성</span>하죠.
+                                                </p>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- // 혜택03 -->
+
+                        <!-- 혜택04 -->
+                        <div class="benefit">
+                            <div class="benefit-wrap">
+                                <div class="benefit-wrap__title">혜택04</div>
+                                <div class="benefit-wrap__cont">
+                                    <p class="benefit-wrap__txt">10만원 이상 구매 시<br/>
+                                        <span class="benefit-wrap__txt--bold">100% 쇼핑지원금 지급</span>
+                                    </p>
+                                </div>
+                                <div class="benefit-wrap__point">
+                                    <img src="https://cdn.slim9.biz/2023_renew/promotion/autumn-week/point-coupon@3x.webp" class="benefit-wrap__point--img" alt="">
+                                </div>
+                            </div>
+                            <p class="benefit__notice">* 슬림9 회원만 추첨 진행 예정입니다</p>
+                        </div>
+                        <!-- // 혜택04 -->
+                    </div>
+                </div>
+
+                <div id="tab-2" class="tab-content">
+                    <div class="tab-content__wrap">
+                        <!-- 패키지 -->
+                        <div class="benefit">
+                            <div class="benefit-wrap">
+                                <div class="benefit-wrap__title">패키지</div>
+                                <div class="benefit-wrap__cont">
+                                    <p class="benefit-wrap__txt">살까말까 고민이라면?<br/>
+                                        <span class="benefit-wrap__txt--bold">베스트셀러 모음</span>
+                                    </p>
+                                </div>
+
+                                <div class="slide">
+                                    <div class="swiper autumn-swiper">
+                                        <div class="swiper-wrapper autumn-wrapper">
+                                            <div class="swiper-slide autumn-slide">
+                                                <div class="cloud-box">
+                                                    <img src="https://cdn.slim9.biz/2023_renew/promotion/autumn-week/cloud-box-01@3x.webp" class="cloud-box__img" alt="단 10일만 12,900원 절약">
+                                                </div>
+                                                <div class="promotion-autumn__box">
+                                                    <a href="/product/detail.html?product_no=1897" class="autumn-slide__link">
+                                                        <div class="promotion-autumn__product">
+                                                            <p class="promotion-autumn__product--name">뉴베이직 & 숏 & 라이닝</p>
+                                                        </div>
+                                                        <div class="promotion-autumn__img">
+                                                            <img src="https://cdn.slim9.biz/2023_renew/promotion/autumn-week/pack-01@3x.webp" class="promotion-autumn__source" alt="">
+                                                        </div>
+                                                        <div class="promotion-autumn__price">
+                                                            <ul class="promotion-autumn__list">
+                                                                <li class="promotion-autumn__item">
+                                                                    <p class="price__customer bold">소비자가</p>
+                                                                    <p class="price__customer strikethrough">99,000원</p>
+                                                                </li>
+                                                                <li class="promotion-autumn__item">
+                                                                    <p class="price__common">일반가격</p>
+                                                                    <p class="price__common strikethrough">61,700원</p>
+                                                                </li>
+                                                                <li class="promotion-autumn__item">
+                                                                    <p class="price__coupon">프로모션가</p>
+                                                                    <p class="price__coupon">49,000원</p>
+                                                                </li>
+                                                            </ul>
+                                                        </div>
+                                                    </a>
+                                                </div>
+
+                                            </div>
+                                            <div class="swiper-slide autumn-slide">
+                                                <div class="cloud-box">
+                                                    <img src="https://cdn.slim9.biz/2023_renew/promotion/autumn-week/cloud-box-02@3x.webp" class="cloud-box__img" alt="단 10일만 23,900원 절약">
+                                                </div>
+                                                <div class="promotion-autumn__box">
+                                                    <a href="/product/detail.html?product_no=1898" class="autumn-slide__link">
+                                                        <div class="promotion-autumn__product">
+                                                            <p class="promotion-autumn__product--name">HEAT & 핏 하이웜</p>
+                                                        </div>
+                                                        <div class="promotion-autumn__img">
+                                                            <img src="https://cdn.slim9.biz/2023_renew/promotion/autumn-week/pack-02@3x.webp" class="promotion-autumn__source" alt="">
+                                                        </div>
+                                                        <div class="promotion-autumn__price">
+                                                            <ul class="promotion-autumn__list">
+                                                                <li class="promotion-autumn__item">
+                                                                    <p class="price__customer bold">소비자가</p>
+                                                                    <p class="price__customer strikethrough">75,000원</p>
+                                                                </li>
+                                                                <li class="promotion-autumn__item">
+                                                                    <p class="price__common">일반가격</p>
+                                                                    <p class="price__common strikethrough">53,800원</p>
+                                                                </li>
+                                                                <li class="promotion-autumn__item">
+                                                                    <p class="price__coupon">프로모션가</p>
+                                                                    <p class="price__coupon">29,900원</p>
+                                                                </li>
+                                                            </ul>
+                                                        </div>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="btn-next swiper-button-next"></div>
+                                        <div class="btn-prev swiper-button-prev"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- // 패키지 -->
+
+                        <!-- 1&1 -->
+                        <div class="benefit">
+                            <div class="benefit-wrap">
+                                <div class="benefit-wrap__title">1&1</div>
+                                <div class="benefit-wrap__cont">
+                                    <p class="benefit-wrap__txt">지금부터 겨울까지<br/>
+                                        <span class="benefit-wrap__txt--bold">포근한 언더웨어</span>
+                                    </p>
+                                </div>
+                                <div class="benefit-wrap__product">
+                                    <a href="/product/detail.html?product_no=1899" class="benefit-wrap__link">
+                                        <div class="benefit-wrap__bestseller">
+                                            <div class="bestseller-img">
+                                                <img src="https://cdn.slim9.biz/2023_renew/promotion/autumn-week/01-heat@3x.webp" alt="[1&1] 네모팬티 HEAT">
+                                            </div>
+                                            <div class="bestseller-box winter">
+                                                <p class="bestseller-box__txt">[1&1] 네모팬티 HEAT</p>
+                                                <ul class="promotion-autumn__list">
+                                                    <li class="promotion-autumn__item">
+                                                        <p class="price__customer bold">일반가격</p>
+                                                        <p class="price__customer strikethrough">75,000원</p>
+                                                    </li>
+                                                    <li class="promotion-autumn__item">
+                                                        <p class="price__coupon">프로모션가</p>
+                                                        <p class="price__coupon">29,900원</p>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </a>
+                                    <a href="/product/detail.html?product_no=1902" class="benefit-wrap__link">
+                                        <div class="benefit-wrap__bestseller">
+                                        <div class="bestseller-img">
+                                            <img src="https://cdn.slim9.biz/2023_renew/promotion/autumn-week/02-scompact_2@3x.webp" alt="[1&1] S라벨 듀얼 컴팩트 셋업">
+                                        </div>
+                                        <div class="bestseller-box winter">
+                                            <p class="bestseller-box__txt">[1&1] S라벨 듀얼 컴팩트 셋업</p>
+                                            <ul class="promotion-autumn__list">
+                                                <li class="promotion-autumn__item">
+                                                    <p class="price__customer bold">일반가격</p>
+                                                    <p class="price__customer strikethrough">168,000원</p>
+                                                </li>
+                                                <li class="promotion-autumn__item">
+                                                    <p class="price__coupon">프로모션가</p>
+                                                    <p class="price__coupon">79,000원</p>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    </a>
+                                </div>
+                                <div class="benefit-wrap__product">
+                                    <a href="/product/detail.html?product_no=1550" class="benefit-wrap__link">
+                                        <div class="benefit-wrap__bestseller">
+                                        <div class="bestseller-img">
+                                            <img src="https://cdn.slim9.biz/2023_renew/promotion/autumn-week/03-s-nemo@3x.webp" alt="[1&1] S라벨 네모팬티 듀얼">
+                                        </div>
+                                        <div class="bestseller-box winter">
+                                            <p class="bestseller-box__txt">[1&1] S라벨 네모팬티 듀얼</p>
+                                            <ul class="promotion-autumn__list">
+                                                <li class="promotion-autumn__item">
+                                                    <p class="price__customer bold">소비자가</p>
+                                                    <p class="price__customer strikethrough">144,000원</p>
+                                                </li>
+                                                <li class="promotion-autumn__item">
+                                                    <p class="price__coupon">프로모션가</p>
+                                                    <p class="price__coupon">36,000원</p>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    </a>
+                                    <a href="/product/detail.html?product_no=1602" class="benefit-wrap__link">
+                                        <div class="benefit-wrap__bestseller">
+                                        <div class="bestseller-img">
+                                            <img src="https://cdn.slim9.biz/2023_renew/promotion/autumn-week/04-s-bra@3x.webp" alt="[1&1] S라벨 편해브라 듀얼">
+                                        </div>
+                                        <div class="bestseller-box winter">
+                                            <p class="bestseller-box__txt">[1&1] S라벨 편해브라 듀얼</p>
+                                            <ul class="promotion-autumn__list">
+                                                <li class="promotion-autumn__item">
+                                                    <p class="price__customer bold">일반가격</p>
+                                                    <p class="price__customer strikethrough">96,000원</p>
+                                                </li>
+                                                <li class="promotion-autumn__item">
+                                                    <p class="price__coupon">프로모션가</p>
+                                                    <p class="price__coupon">49,000원</p>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- // 1&1 -->
+
+                        <!-- new -->
+                        <div class="benefit">
+                            <div class="benefit-wrap">
+                                <div class="benefit-wrap__title">NEW</div>
+                                <div class="benefit-wrap__cont">
+                                    <p class="benefit-wrap__txt">단 하나만 입으면 끝<br/>
+                                        <span class="benefit-wrap__txt--bold">2IN1 나시탑 & 네모 롱</span>
+                                    </p>
+                                </div>
+
+                                <div class="slide">
+                                    <div class="swiper autumn-swiper">
+                                        <div class="swiper-wrapper autumn-wrapper">
+                                            <div class="swiper-slide autumn-slide">
+                                                <div class="cloud-box">
+                                                    <img src="https://cdn.slim9.biz/2023_renew/promotion/autumn-week/cloud-box-03@3x.webp" class="cloud-box__img" alt="단 한 장만 입어도 포근하게">
+                                                </div>
+                                                <div class="promotion-autumn__box">
+                                                    <a href="/product/detail.html?product_no=1826" class="autumn-slide__link">
+                                                        <div class="promotion-autumn__product">
+                                                            <p class="promotion-autumn__product--name">편해나시탑 네이처모달</p>
+                                                        </div>
+                                                        <div class="promotion-autumn__img">
+                                                            <img src="https://cdn.slim9.biz/2023_renew/promotion/autumn-week/modal-top@3x.webp" class="promotion-autumn__source" alt="">
+                                                        </div>
+                                                        <div class="promotion-autumn__price">
+                                                            <ul class="promotion-autumn__list">
+                                                                <li class="promotion-autumn__item">
+                                                                    <p class="price__customer bold">소비자가</p>
+                                                                    <p class="price__customer strikethrough">50,000원</p>
+                                                                </li>
+                                                                <li class="promotion-autumn__item">
+                                                                    <p class="price__common">일반가격</p>
+                                                                    <p class="price__common strikethrough">34,000원</p>
+                                                                </li>
+                                                                <li class="promotion-autumn__item">
+                                                                    <p class="price__coupon">프로모션가</p>
+                                                                    <p class="price__coupon">33,155원</p>
+                                                                </li>
+                                                            </ul>
+                                                        </div>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                            <div class="swiper-slide autumn-slide">
+                                                <div class="cloud-box">
+                                                    <img src="https://cdn.slim9.biz/2023_renew/promotion/autumn-week/cloud-box-04@3x.webp" class="cloud-box__img" alt="단 10일만 23,900원 절약">
+                                                </div>
+                                                <div class="promotion-autumn__box">
+                                                    <a href="/product/detail.html?product_no=1827" class="autumn-slide__link">
+                                                        <div class="promotion-autumn__product">
+                                                            <p class="promotion-autumn__product--name">네모팬티 네이처모달 롱</p>
+                                                        </div>
+                                                        <div class="promotion-autumn__img">
+                                                            <img src="https://cdn.slim9.biz/2023_renew/promotion/autumn-week/modal-panty-long@3x.webp" class="promotion-autumn__source" alt="">
+                                                        </div>
+                                                        <div class="promotion-autumn__price">
+                                                            <ul class="promotion-autumn__list">
+                                                                <li class="promotion-autumn__item">
+                                                                    <p class="price__customer bold">소비자가</p>
+                                                                    <p class="price__customer strikethrough">37,000원</p>
+                                                                </li>
+                                                                <li class="promotion-autumn__item">
+                                                                    <p class="price__common">일반가격</p>
+                                                                    <p class="price__common strikethrough">24,000원</p>
+                                                                </li>
+                                                                <li class="promotion-autumn__item">
+                                                                    <p class="price__coupon">프로모션가</p>
+                                                                    <p class="price__coupon">23,655원</p>
+                                                                </li>
+                                                            </ul>
+                                                        </div>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                            <div class="swiper-slide autumn-slide">
+                                                <div class="cloud-box">
+                                                    <img src="https://cdn.slim9.biz/2023_renew/promotion/autumn-week/cloud-box-05@3x.webp" class="cloud-box__img" alt="보온력 & 보정력 2배 UP!">
+                                                </div>
+                                                <div class="promotion-autumn__box">
+                                                    <a href="/product/detail.html?product_no=1900" class="autumn-slide__link">
+                                                        <div class="promotion-autumn__product">
+                                                            <p class="promotion-autumn__product--name">[SET] 네이처모달 롱 셋업</p>
+                                                        </div>
+                                                        <div class="promotion-autumn__img">
+                                                            <img src="https://cdn.slim9.biz/2023_renew/promotion/autumn-week/modal-setup@3x.webp" class="promotion-autumn__source" alt="">
+                                                        </div>
+                                                        <div class="promotion-autumn__price">
+                                                            <ul class="promotion-autumn__list">
+                                                                <li class="promotion-autumn__item">
+                                                                    <p class="price__customer bold">소비자가</p>
+                                                                    <p class="price__customer strikethrough">87,000원</p>
+                                                                </li>
+                                                                <li class="promotion-autumn__item">
+                                                                    <p class="price__common">일반가격</p>
+                                                                    <p class="price__common strikethrough">55,000원</p>
+                                                                </li>
+                                                                <li class="promotion-autumn__item">
+                                                                    <p class="price__coupon">프로모션가</p>
+                                                                    <p class="price__coupon">52,250원</p>
+                                                                </li>
+                                                            </ul>
+                                                        </div>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="btn-next swiper-button-next"></div>
+                                        <div class="btn-prev swiper-button-prev"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- // new -->
+                    </div>
+                </div>
+            </div>
+            <!--//프로모션 탭-->
+
+        </div>
+    </div>
+
+
+    </body>
+    </html>

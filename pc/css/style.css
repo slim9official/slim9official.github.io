@@ -1,0 +1,82 @@
+@charset "utf-8";
+
+/* **************************** //필수 CSS 수정 및 삭제 불가 **************************** */
+@import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css');
+/* tag reset */
+html,body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,code,form,fieldset,legend,input,textarea,p,blockquote,th,td,img { margin:0; padding:0; }
+html { width:100%; height:100%; scroll-behavior:smooth;}
+body,code { font-size:13px; font-family: "Pretendard",sans-serif; color:#202020; color:var(--font-color-base); background:#fff; }
+body { min-width:360px; max-width:1920px; }
+body#popup { min-width:0; }
+li { list-style:none; margin:0;padding: 0; }
+img,fieldset { border:none; vertical-align:top; }
+table { width:100%; border:0; border-spacing:0; border-collapse:collapse; }
+caption { display:none; }
+th,td { border:0; vertical-align:top; }
+input,select,textarea { font-size:100%; font-family: Pretendard,sans-serif; color:#202020; color:var(--font-color-base); vertical-align:middle; border-radius:0; box-sizing:border-box; }
+button { font-family: Pretendard,sans-serif; overflow:visible; padding:0; margin:0; border:0; cursor:pointer; background:none; color: #202020;}
+hr.layout { display:none; }
+a { text-decoration:none; color:#202020; color:var(--font-color-base); }
+a:hover { text-decoration:none; }
+a:active { text-decoration:none; }
+.objHidden { visibility:hidden; position:absolute; left:-1000px; top:-1000px; height:0; width:0; }
+#content_CONTAINER table, #bi_inquire_content_CONTAINER table { border:0; margin:0 0 -1px; }
+#content_CONTAINER table:before, #bi_inquire_content_CONTAINER table:before { display:none; }
+#content_CONTAINER td, #bi_inquire_content_CONTAINER td { width:auto !important; padding:0; }
+
+#progressPaybarBackground { position:absolute; z-index:99; left:0; top:0; width:100%; height:100%; filter:alpha(opacity=40); opacity:0.3; background-color:#000; }
+#progressPaybarView { position:fixed; z-index:100; top:50%; left:0; right:0; transform:translateY(-50%); }
+#progressPaybarView h3 { font-size:32px; color:#444b59; }
+#progressPaybarView .box { width:586px; margin:0 auto; padding:67px 0; text-align:center; background:#fff; }
+#progressPaybarView .box .txt { margin:8px 0 36px; font-size:15px; line-height:26px; color:#667084; }
+
+/* contents */
+/*#wrap {width: 100vw; overflow: hidden scroll;}*/
+#skipNavigation {position:absolute; top:0; left:0; z-index:100; width:100%; height:0;}
+#skipNavigation p, #skipNavigation ul, #skipNavigation ul li {height:0;}
+#skipNavigation p a {position:absolute; left:0; top:0; display:block; overflow:hidden; width:1px; height:1px; margin-left:-1px; margin-bottom:-1px; text-align:center; color:#202020; white-space:nowrap;}
+#skipNavigation p a:focus, #skipNavigation p a:hover, #skipNavigation p a:active {width:100%; height:auto; padding:10px 0; background:#c4122f; color:#fff; z-index:100;}
+
+.displaynone { display:none; }
+/*.dimmed { position:fixed; top:0; left:0; z-index:99; width:100%; height:100%; background:#fff; opacity:0.8; filter:alpha(opacity=80); }*/
+.blind { display: block; overflow: hidden; position: absolute; font-size: 1px; line-height: 0; color: transparent; text-indent: -150%; white-space: nowrap;}
+
+
+.review_like_action_v2__like_link {
+  padding: 20px 10px 12px!important;
+  border-radius: 50px!important;
+  border: 1px solid #f00!important;
+}
+
+html{width:100%;min-height:100%;padding:0px;margin:0px;}
+body{color: #363636;min-height:100%;font-size:12px;font-family:'Nanum Gothic',arial,Dotum,AppleGothic,sans-serif;line-height:1.2;padding:0;margin:0;-webkit-text-size-adjust:none;background:#f5f5f5;word-wrap:break-word;word-break: keep-all;}
+div, p, ol, ul, li, img, a, h1, h2, h3, h4, h5, h6 form, span, iframe, dl, dt, dd, button, span{margin:0px;padding:0px;border:0;}
+ul, ol, li{list-style:none;}
+button, span, label{display:inline-block;background:none;border:0;}
+table, th, td{border-collapse:collapse;margin:0;padding:0;}
+table caption{display:none;}
+select, input, textarea{font-family:dotum,AppleGothic,sans-serif;color:#363636;padding:0;margin:0;}
+textarea, iframe{font-size:12px;font-family:dotum,AppleGothic,sans-serif;color:#363636;outline-style:none;}
+input, select{outline-style:none;outline:none;background:#fff;color:#363636;}
+fieldset{border:0;margin:0;padding:0;}
+legend{display:none;}
+a:link, a:visited, a:active{color:#6c6c6c;text-decoration:none;padding:0;/*outline-style:none;*/}
+a:hover{color:#6c6c6c;text-decoration:none;}
+img{border:0;margin:0;}
+
+
+/* IE Not Supoorted */
+:root {
+  --font-color-base:#202020;
+  --font-color-heading:#202020;
+  --font-color-primary:#202020;
+  --font-color-secondary:#ef441f;
+  --font-color-warn:#ec2a1d;
+  --font-color-success:#0985df;
+}
+
+/* **************************** 필수 CSS 수정 및 삭제 불가 **************************** */
+/**swiper 초기화**/
+/*.swiper-horizontal>.swiper-pagination-bullets .swiper-pagination-bullet, .swiper-pagination-horizontal.swiper-pagination-bullets .swiper-pagination-bullet {*/
+/*  margin: 0 4px;*/
+/*}*/

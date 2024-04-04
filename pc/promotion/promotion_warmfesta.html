@@ -1,0 +1,389 @@
+<!--@layout(/layout/basic/main.html)-->
+<!--@css(/customized/css/list.css)-->
+<!--@css(/promotion/css/promotion.css)-->
+<!--@js(/promotion/js/promotion.js)-->
+
+<style>
+    /* 231204 웜페스타 기획전 관련 css */
+    #event_wrap{width: 1080px; font-family: 'Pretendard'}
+    #event_wrap .promotion_top .prd_noti{padding-bottom: 100px;}
+    .promotion-benefit{padding: 100px 0;background: url('https://cdn.slim9.biz/2023_renew/promotion/warm-festa/ver_2/bg-01.webp') no-repeat; background-size: cover; background-position: center;}
+    .promotion-benefit__wrap{display: flex; justify-content: center;}
+    .promotion-benefit__box{width: 50%;}
+    .promotion-benefit__title{color: #fff; font-size: 45px; text-align: center;}
+    .promotion-benefit__txt{padding-top: 50px; color: #fff; font-size: 44px; font-weight: 300; text-align: center;line-height: 1.33;}
+    .promotion-benefit__txt b{color: #fff; font-size: 50px; font-weight: bold;}
+    .warmfesta-wrap{padding-bottom: 215px;background: url('https://cdn.slim9.biz/2023_renew/promotion/warm-festa/ver_2/bg-02.webp') no-repeat; background-size: cover; background-position: center;}
+    .warmfesta-wrap__title{padding: 180px 0 80px; color: #fff;}
+    .warmfesta-wrap__txt{font-size: 58px; text-align: center;line-height: 1.37;}
+    .warmfesta-wrap__txt b{font-size: 75px; font-weight: bold;letter-spacing: -1.49px;}
+    .promotion-bottom{display: flex;padding: 0 94px;}
+    .promotion-bottom + .promotion-bottom{padding-top: 30px;}
+    .promotion-bottom__img{width: 100%;}
+    .promotion-bottom__product{background-color: #934110;}
+    .promotion-bottom__price{padding: 44px 0 40px;}
+    .promotion-bottom__wrap + .promotion-bottom__wrap{margin-left: 30px;}
+    .promotion-bottom__model{line-height: 0;}
+    .price-list{padding: 0 40px;}
+    .price-list__item{display: flex; white-space: nowrap;}
+    .price-list__item + .price-list__item{margin-top: 20px;}
+    .price__period{color: #d3d1d1;font-size: 30px; font-weight: normal;}
+    .price__period + .price__period{margin-left: auto;}
+    .price__period.strikethrough{text-decoration: line-through;}
+    .price__coupon{color: #ffbe32;font-size: 30px;font-weight: normal;}
+    .price__coupon + .price__coupon{margin-left: auto;}
+    .price__point{color: #fff;font-size: 38px;font-weight: bold;}
+    .price__point + .price__point{margin-left: auto;}
+
+
+    @media all and (max-width:1020px) {
+        #event_wrap {width: 100%; margin: 0;}
+        #event_wrap .promotion_top .prd_noti{padding-bottom: 0;}
+        .promotion-bottom{padding: 0 47px;}
+        .promotion-bottom__wrap + .promotion-bottom__wrap{margin-left: 10px;}
+        .promotion-bottom__price{padding: 27px 0;}
+        .promotion-benefit__title{font-size: 30px;}
+        .promotion-benefit__txt{padding-top: 25px;font-size: 30px;}
+        .promotion-benefit__txt b{font-size: 36px;}
+        .warmfesta-wrap__title{padding: 90px 0 40px;}
+        .warmfesta-wrap__txt{font-size: 38px;}
+        .warmfesta-wrap__txt b{font-size: 55px;}
+        .price__period,.price__coupon{font-size: 20px;}
+        .price__point{font-size: 25px;}
+    }
+
+    @media all and (max-width:767px) {
+        .promotion-benefit{padding: 50px 0 80px; margin-bottom: -40px;}
+        .promotion-benefit__title{font-size: 20px;}
+        .promotion-benefit__txt{font-size: 20px;}
+        .promotion-benefit__txt b{font-size: 26px;}
+        .warmfesta-wrap{padding-bottom: 106px;}
+        .warmfesta-wrap__title{padding: 50px 0 20px;}
+        .warmfesta-wrap__txt{font-size: 26px;}
+        .warmfesta-wrap__txt b{font-size: 32px;}
+        .promotion-bottom{padding: 0 20px;}
+        .price__period{font-size: 12px;}
+        .price__coupon{font-size: 15px;}
+        .price__point{font-size: 15px;}
+        .price-list{padding: 0 12px;}
+        .price-list__item + .price-list__item{margin-top: 10px;}
+    }
+</style>
+
+<div id="event_wrap">
+    <!--프로모션 배너-->
+    <div class="promotion_top">
+        <div class="img_box">
+            <img src="https://cdn.slim9.biz/2023_renew/promotion/warm-festa/ver_2/main@3x.webp" alt="">
+        </div>
+
+        <!-- 프로모션 상품영역 -->
+        <div class="promotion-warmfesta">
+            <div class="promotion-benefit">
+                <div class="promotion-benefit__wrap">
+                    <div class="promotion-benefit__box">
+                        <h3 class="promotion-benefit__title">BENEFIT 01</h3>
+                        <p class="promotion-benefit__txt">
+                            겨울 베스트셀러<br>
+                            <b>최대 63% 할인</b>
+                        </p>
+                    </div>
+                    <div class="promotion-benefit__box">
+                        <h3 class="promotion-benefit__title">BENEFIT 02</h3>
+                        <p class="promotion-benefit__txt">
+                            오직 신규 회원만<br>
+                            <b>10% 쿠폰 3장</b>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="warmfesta-wrap">
+                <!-- 상품영역 01 -->
+                <div class="warmfesta-wrap__title">
+                    <p class="warmfesta-wrap__txt">
+                        아랫배부터 따뜻하게<br>
+                        <b>겨울 네모팬티</b>
+                    </p>
+                </div>
+                <div class="promotion-bottom">
+                    <div class="promotion-bottom__wrap">
+                        <a href="/product/detail.html?product_no=1967" class="promotion-bottom__link">
+                            <div class="promotion-bottom__model">
+                                <img src="https://cdn.slim9.biz/2023_renew/promotion/warm-festa/ver_2/01-heat@3x.webp" alt="" class="promotion-bottom__img">
+                            </div>
+                            <div class="promotion-bottom__product">
+                                <div class="promotion-bottom__price">
+                                    <ul class="price-list">
+                                        <li class="price-list__item">
+                                            <p class="price__period">소비자가</p>
+                                            <p class="price__period strikethrough">105,000원</p>
+                                        </li>
+                                        <li class="price-list__item">
+                                            <p class="price__coupon">프로모션가</p>
+                                            <p class="price__coupon">37,900원</p>
+                                        </li>
+                                        <li class="price-list__item">
+                                            <p class="price__point">1장당 가격</p>
+                                            <p class="price__point">12,633원</p>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="promotion-bottom__wrap">
+                        <a href="/product/detail.html?product_no=1969" class="promotion-bottom__link">
+                            <div class="promotion-bottom__model">
+                                <img src="https://cdn.slim9.biz/2023_renew/promotion/warm-festa/ver_2/02-fit-high@3x.webp" alt="" class="promotion-bottom__img">
+                            </div>
+                            <div class="promotion-bottom__product">
+                                <div class="promotion-bottom__price">
+                                    <ul class="price-list">
+                                        <li class="price-list__item">
+                                            <p class="price__period">소비자가</p>
+                                            <p class="price__period strikethrough">80,000원</p>
+                                        </li>
+                                        <li class="price-list__item">
+                                            <p class="price__coupon">프로모션가</p>
+                                            <p class="price__coupon">32,900원</p>
+                                        </li>
+                                        <li class="price-list__item">
+                                            <p class="price__point">1장당 가격</p>
+                                            <p class="price__point">16,450원</p>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="promotion-bottom">
+                    <div class="promotion-bottom__wrap">
+                        <a href="/product/detail.html?product_no=1550" class="promotion-bottom__link">
+                            <div class="promotion-bottom__model">
+                                <img src="https://cdn.slim9.biz/2023_renew/promotion/warm-festa/ver_2/03-s-nemo@3x.webp" alt="" class="promotion-bottom__img">
+                            </div>
+                            <div class="promotion-bottom__product">
+                                <div class="promotion-bottom__price">
+                                    <ul class="price-list">
+                                        <li class="price-list__item">
+                                            <p class="price__period">소비자가</p>
+                                            <p class="price__period strikethrough">72,000원</p>
+                                        </li>
+                                        <li class="price-list__item">
+                                            <p class="price__coupon">프로모션가</p>
+                                            <p class="price__coupon">29,900원</p>
+                                        </li>
+                                        <li class="price-list__item">
+                                            <p class="price__point">1장당 가격</p>
+                                            <p class="price__point">14,950원</p>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="promotion-bottom__wrap">
+                        <a href="/product/detail.html?product_no=1975" class="promotion-bottom__link">
+                            <div class="promotion-bottom__model">
+                                <img src="https://cdn.slim9.biz/2023_renew/promotion/warm-festa/ver_2/04-nemo-long@3x.webp" alt="" class="promotion-bottom__img">
+                            </div>
+                            <div class="promotion-bottom__product">
+                                <div class="promotion-bottom__price">
+                                    <ul class="price-list">
+                                        <li class="price-list__item">
+                                            <p class="price__period">소비자가</p>
+                                            <p class="price__period strikethrough">101,000원</p>
+                                        </li>
+                                        <li class="price-list__item">
+                                            <p class="price__coupon">프로모션가</p>
+                                            <p class="price__coupon">59,900원</p>
+                                        </li>
+                                        <li class="price-list__item">
+                                            <p class="price__point">1장당 가격</p>
+                                            <p class="price__point">19,966원</p>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <!--// 상품영역 01-->
+
+                <!-- 상품영역 02 -->
+                <div class="warmfesta-wrap__title">
+                    <p class="warmfesta-wrap__txt">
+                        단 한 장으로 포근하게<br>
+                        <b>보온 나시탑</b>
+                    </p>
+                </div>
+                <div class="promotion-bottom">
+                    <div class="promotion-bottom__wrap">
+                        <a href="/product/detail.html?product_no=1914" class="promotion-bottom__link">
+                            <div class="promotion-bottom__model">
+                                <img src="https://cdn.slim9.biz/2023_renew/promotion/warm-festa/ver_2/05-air-top@3x.webp" alt="" class="promotion-bottom__img">
+                            </div>
+                            <div class="promotion-bottom__product">
+                                <div class="promotion-bottom__price">
+                                    <ul class="price-list">
+                                        <li class="price-list__item">
+                                            <p class="price__period">소비자가</p>
+                                            <p class="price__period strikethrough">96,000원</p>
+                                        </li>
+                                        <li class="price-list__item">
+                                            <p class="price__point">프로모션가</p>
+                                            <p class="price__point">53,900원</p>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="promotion-bottom__wrap">
+                        <a href="/product/detail.html?product_no=1968" class="promotion-bottom__link">
+                            <div class="promotion-bottom__model">
+                                <img src="https://cdn.slim9.biz/2023_renew/promotion/warm-festa/ver_2/06-nature-top@3x.webp" alt="" class="promotion-bottom__img">
+                            </div>
+                            <div class="promotion-bottom__product">
+                                <div class="promotion-bottom__price">
+                                    <ul class="price-list">
+                                        <li class="price-list__item">
+                                            <p class="price__period">소비자가</p>
+                                            <p class="price__period strikethrough">100,000원</p>
+                                        </li>
+                                        <li class="price-list__item">
+                                            <p class="price__point">프로모션가</p>
+                                            <p class="price__point">59,900원</p>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="promotion-bottom">
+                    <div class="promotion-bottom__wrap">
+                        <a href="/product/detail.html?product_no=1971" class="promotion-bottom__link">
+                            <div class="promotion-bottom__model">
+                                <img src="https://cdn.slim9.biz/2023_renew/promotion/warm-festa/ver_2/07-comfort-set@3x.webp" alt="" class="promotion-bottom__img">
+                            </div>
+                            <div class="promotion-bottom__product">
+                                <div class="promotion-bottom__price">
+                                    <ul class="price-list">
+                                        <li class="price-list__item">
+                                            <p class="price__period">소비자가</p>
+                                            <p class="price__period strikethrough">80,000원</p>
+                                        </li>
+                                        <li class="price-list__item">
+                                            <p class="price__point">프로모션가</p>
+                                            <p class="price__point">48,900원</p>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="promotion-bottom__wrap">
+                        <a href="/product/detail.html?product_no=1900" class="promotion-bottom__link">
+                            <div class="promotion-bottom__model">
+                                <img src="https://cdn.slim9.biz/2023_renew/promotion/warm-festa/ver_2/08-long-set@3x.webp" alt="" class="promotion-bottom__img">
+                            </div>
+                            <div class="promotion-bottom__product">
+                                <div class="promotion-bottom__price">
+                                    <ul class="price-list">
+                                        <li class="price-list__item">
+                                            <p class="price__period">소비자가</p>
+                                            <p class="price__period strikethrough">87,000원</p>
+                                        </li>
+                                        <li class="price-list__item">
+                                            <p class="price__point">프로모션가</p>
+                                            <p class="price__point">54,900원</p>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <!--// 상품영역 02 -->
+
+                <!-- 상품영역 03 -->
+                <div class="warmfesta-wrap__title">
+                    <p class="warmfesta-wrap__txt">
+                        다시는 돌아오지 않을<br>
+                        <b>스페셜 혜택가</b>
+                    </p>
+                </div>
+                <div class="promotion-bottom">
+                    <div class="promotion-bottom__wrap">
+                        <a href="/product/detail.html?product_no=764" class="promotion-bottom__link">
+                            <div class="promotion-bottom__model">
+                                <img src="https://cdn.slim9.biz/2023_renew/promotion/warm-festa/ver_2/09-s-compact@3x.webp" alt="" class="promotion-bottom__img">
+                            </div>
+                            <div class="promotion-bottom__product">
+                                <div class="promotion-bottom__price">
+                                    <ul class="price-list">
+                                        <li class="price-list__item">
+                                            <p class="price__period">소비자가</p>
+                                            <p class="price__period strikethrough">84,000원</p>
+                                        </li>
+                                        <li class="price-list__item">
+                                            <p class="price__point">프로모션가</p>
+                                            <p class="price__point">32,900원</p>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="promotion-bottom__wrap">
+                        <a href="/product/detail.html?product_no=1973" class="promotion-bottom__link">
+                            <div class="promotion-bottom__model">
+                                <img src="https://cdn.slim9.biz/2023_renew/promotion/warm-festa/ver_2/10-3-1@3x.webp" alt="" class="promotion-bottom__img">
+                            </div>
+                            <div class="promotion-bottom__product">
+                                <div class="promotion-bottom__price">
+                                    <ul class="price-list">
+                                        <li class="price-list__item">
+                                            <p class="price__period">소비자가</p>
+                                            <p class="price__period strikethrough">131,000원</p>
+                                        </li>
+                                        <li class="price-list__item">
+                                            <p class="price__point">프로모션가</p>
+                                            <p class="price__point">59,900원</p>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <!--// 상품영역 03 -->
+            </div>
+
+
+        </div>
+        <!-- //프로모션 상품영역 -->
+
+        <!--프로모션 안내사항-->
+        <div class="prd_noti">
+            <label for="menuBtn" class="top_txt" onclick="">
+                <p>유의사항</p>
+                <input type="checkbox" id="menuBtn">
+                <span class="icon">
+                    <img src="/web/upload/promotion/23_early_summer/arrow-1.svg">
+                </span>
+            </label>
+            <div class="txt_box">
+                <ul>
+                    <li><span>·</span>해당 이벤트는 23년 12월 04일부터 23년 12월 15일까지 진행 됩니다.</li>
+                    <li><span>·</span>해당 이벤트 상품은 수량 소진 또는 당사의 사정에 따라 별도의 고지 없이 종료될 수 있습니다.</li>
+                    <li><span>·</span>이벤트의 특성상 사전 고지 없이 일부 내용이 변경될 수 있으며 상품 품절 시 타제품으로 대체 또는 환불 조치 해드립니다.</li>
+                    <li><span>·</span>본 이벤트의 혜택은 이벤트 기간에만 적용되며 이벤트 이후에는 상시 가격으로 적용됩니다.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+</div>

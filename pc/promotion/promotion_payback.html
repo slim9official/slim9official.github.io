@@ -1,0 +1,252 @@
+<!--@layout(/layout/basic/main.html)-->
+<!--@css(/customized/css/list.css)-->
+<!--@css(/promotion/css/promotion.css)-->
+<!--@js(/promotion/js/promotion.js)-->
+
+<style>
+    /* 231019 슈퍼페이백 기획전 관련 css */
+    #event_wrap{width: 1080px; font-family: 'Pretendard'}
+    #event_wrap .promotion_top .promotion_prd{margin: 0;padding: 0;}
+    #event_wrap .promotion_top .prd_noti{padding-bottom: 100px;}
+
+    .promotion-top{padding-bottom: 30px;display: flex;justify-content: center;}
+    .promotion-top__link{display: flex;}
+    .promotion-payback{padding: 10px 0 90px; background-color: #fcd6de;}
+    .promotion-top__model{width: 396px; line-height: 0;}
+    .promotion-top__img{width: 100%;}
+    .promotion-top__product{position: relative;width: 494px; background-color: #fff;}
+    .promotion-top__title{padding: 74px 30px 132px; font-size: 36px; font-weight: normal; line-height: normal;}
+    .promotion-top__title.bottom{padding: 60px 30px 0;}
+    .promotion-top__title--bold{display: block;padding-bottom: 20px;font-size: 40px; font-weight: 600;}
+    .promotion-top__price{bottom: 80px;position: absolute; width: 100%;}
+    .price-list{padding: 0 30px;}
+    .promotion-bottom{display: flex;padding: 0 94px;}
+    .promotion-bottom + .promotion-bottom{padding-top: 30px;}
+    .promotion-bottom__img{width: 100%;}
+    .promotion-bottom__product{background-color: #fff;}
+    .promotion-bottom__price{padding: 54px 0;}
+    .promotion-bottom__wrap + .promotion-bottom__wrap{margin-left: 30px;}
+    .promotion-bottom__model{line-height: 0;}
+
+    .price-list__item{display: flex;}
+    .price-list__item + .price-list__item{margin-top: 20px;}
+    .price__period{color: #747474;font-size: 30px; font-weight: normal;}
+    .price__period + .price__period{margin-left: auto;}
+    .price__period.strikethrough{text-decoration: line-through;}
+    .price__coupon{color: #ef5b7d;font-size: 36px;font-weight: bold;}
+    .price__coupon + .price__coupon{margin-left: auto;}
+    .price__point{color: #181617;font-size: 36px;font-weight: bold;}
+    .price__point + .price__point{margin-left: auto;}
+
+
+    @media all and (max-width:1020px) {
+        #event_wrap {width: 100%;margin: 0;}
+        #event_wrap .promotion_top .prd_noti{padding-bottom: 0;}
+        .promotion-payback{padding: 5px 0 45px;}
+        .promotion-top{padding-bottom: 15px;}
+        .promotion-top__model{width: 40%;}
+        .promotion-top__title--bold{padding-bottom: 10px;}
+        .promotion-top__product{width: 60%;}
+        .promotion-bottom{padding: 0;}
+        .promotion-bottom__wrap + .promotion-bottom__wrap{margin-left: 10px;}
+        .promotion-bottom__price{padding: 27px 0;}
+    }
+
+    @media all and (max-width:767px) {
+        .promotion-top__title{padding: 15px;font-size: 15px;}
+        .promotion-top__title--bold{font-size: 15px;}
+        .promotion-top__title.bottom{padding: 28px 15px 0;}
+        .promotion-top__price{bottom: 20px;}
+        .price__period{font-size: 12px;}
+        .price__coupon{font-size: 15px;}
+        .price__point{font-size: 15px;}
+        .price-list{padding: 0 15px;}
+        .price-list__item + .price-list__item{margin-top: 10px;}
+    }
+</style>
+
+<div id="event_wrap">
+    <!--프로모션 배너-->
+    <div class="promotion_top">
+        <div class="img_box">
+            <img src="https://cdn.slim9.biz/2023_renew/promotion/super-payback/main_v2.jpg" alt="">
+        </div>
+        <div class="img_box">
+            <img src="https://cdn.slim9.biz/2023_renew/promotion/super-payback/text.jpg" alt="">
+        </div>
+
+        <!-- 프로모션 상품영역 -->
+        <div class="promotion-payback">
+            <div class="promotion-top">
+                <a href="/product/detail.html?product_no=1565&payback" class="promotion-top__link">
+                    <div class="promotion-top__model">
+                        <img src="https://cdn.slim9.biz/2023_renew/promotion/super-payback/img_setup.jpg" alt="" class="promotion-top__img">
+                    </div>
+                    <div class="promotion-top__product">
+                        <div class="promotion-top__title">
+                            <span class="promotion-top__title--bold">[SET] 가을 베스트 셋업</span>
+                            NEW 컬러로 만나는<br>베스트셀러
+                        </div>
+                        <div class="promotion-top__price">
+                            <ul class="price-list">
+                                <li class="price-list__item">
+                                    <p class="price__period">소비자가</p>
+                                    <p class="price__period strikethrough">70,000원</p>
+                                </li>
+                                <li class="price-list__item">
+                                    <p class="price__coupon">쿠폰가</p>
+                                    <p class="price__coupon">49,320원</p>
+                                </li>
+                                <li class="price-list__item">
+                                    <p class="price__point">적립금</p>
+                                    <p class="price__point">4,932원</p>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="promotion-bottom">
+                <div class="promotion-bottom__wrap">
+                    <a href="/product/detail.html?product_no=1893&payback" class="promotion-bottom__link">
+                        <div class="promotion-bottom__model">
+                            <img src="https://cdn.slim9.biz/2023_renew/promotion/super-payback/img_product01.jpg" alt="" class="promotion-bottom__img">
+                        </div>
+                        <div class="promotion-bottom__product">
+                            <div class="promotion-top__title bottom">
+                                <span class="promotion-top__title--bold">[SET] 가을 운동 셋업</span>
+                            </div>
+                            <div class="promotion-bottom__price">
+                                <ul class="price-list">
+                                    <li class="price-list__item">
+                                        <p class="price__period">소비자가</p>
+                                        <p class="price__period strikethrough">82,000원</p>
+                                    </li>
+                                    <li class="price-list__item">
+                                        <p class="price__coupon">쿠폰가</p>
+                                        <p class="price__coupon">49,320원</p>
+                                    </li>
+                                    <li class="price-list__item">
+                                        <p class="price__point">적립금</p>
+                                        <p class="price__point">4,932원</p>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="promotion-bottom__wrap">
+                    <a href="/product/detail.html?product_no=1210&payback" class="promotion-bottom__link">
+                        <div class="promotion-bottom__model">
+                            <img src="https://cdn.slim9.biz/2023_renew/promotion/super-payback/img_product02.jpg" alt="" class="promotion-bottom__img">
+                        </div>
+                        <div class="promotion-bottom__product">
+                            <div class="promotion-top__title bottom">
+                                <span class="promotion-top__title--bold">[SET] R 컴팩트 셋업</span>
+                            </div>
+                            <div class="promotion-bottom__price">
+                                <ul class="price-list">
+                                    <li class="price-list__item">
+                                        <p class="price__period">소비자가</p>
+                                        <p class="price__period strikethrough">74,000원</p>
+                                    </li>
+                                    <li class="price-list__item">
+                                        <p class="price__coupon">쿠폰가</p>
+                                        <p class="price__coupon">41,310원</p>
+                                    </li>
+                                    <li class="price-list__item">
+                                        <p class="price__point">적립금</p>
+                                        <p class="price__point">4,131원</p>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <div class="promotion-bottom">
+                <div class="promotion-bottom__wrap">
+                    <a href="/product/detail.html?product_no=763&payback" class="promotion-bottom__link">
+                        <div class="promotion-bottom__model">
+                            <img src="https://cdn.slim9.biz/2023_renew/promotion/super-payback/img_product03.jpg" alt="" class="promotion-bottom__img">
+                        </div>
+                        <div class="promotion-bottom__product">
+                            <div class="promotion-top__title bottom">
+                                <span class="promotion-top__title--bold">[SET] 듀얼 컴팩트 셋업</span>
+                            </div>
+                            <div class="promotion-bottom__price">
+                                <ul class="price-list">
+                                    <li class="price-list__item">
+                                        <p class="price__period">소비자가</p>
+                                        <p class="price__period strikethrough">86,000원</p>
+                                    </li>
+                                    <li class="price-list__item">
+                                        <p class="price__coupon">쿠폰가</p>
+                                        <p class="price__coupon">47,610원</p>
+                                    </li>
+                                    <li class="price-list__item">
+                                        <p class="price__point">적립금</p>
+                                        <p class="price__point">4,761원</p>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="promotion-bottom__wrap">
+                    <a href="/product/detail.html?product_no=1252&payback" class="promotion-bottom__link">
+                        <div class="promotion-bottom__model">
+                            <img src="https://cdn.slim9.biz/2023_renew/promotion/super-payback/img_product04.jpg" alt="" class="promotion-bottom__img">
+                        </div>
+                        <div class="promotion-bottom__product">
+                            <div class="promotion-top__title bottom">
+                                <span class="promotion-top__title--bold">[SET]편해브라렛 셋업</span>
+                            </div>
+                            <div class="promotion-bottom__price">
+                                <ul class="price-list">
+                                    <li class="price-list__item">
+                                        <p class="price__period">소비자가</p>
+                                        <p class="price__period strikethrough">68,000원</p>
+                                    </li>
+                                    <li class="price-list__item">
+                                        <p class="price__coupon">쿠폰가</p>
+                                        <p class="price__coupon">34,110원</p>
+                                    </li>
+                                    <li class="price-list__item">
+                                        <p class="price__point">적립금</p>
+                                        <p class="price__point">3,411원</p>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+
+        </div>
+        <!-- //프로모션 상품영역 -->
+
+        <!--프로모션 안내사항-->
+        <div class="prd_noti">
+            <label for="menuBtn" class="top_txt" onclick="">
+                <p>유의사항</p>
+                <input type="checkbox" id="menuBtn">
+                <span class="icon">
+                    <img src="/web/upload/promotion/23_early_summer/arrow-1.svg">
+                </span>
+            </label>
+            <div class="txt_box">
+                <ul>
+                    <li><span>·</span>해당 이벤트는 23년 10월 19일부터 23년 10월 23일까지 진행 됩니다.</li>
+                    <li><span>·</span>해당 이벤트 상품은 다른 쿠폰과 중복 적용이 불가합니다.</li>
+                    <li><span>·</span>해당 이벤트 상품은 수량 소진 또는 당사의 사정에 따라 별도의 고지 없이 종료될 수 있습니다.</li>
+                    <li><span>·</span>이벤트의 특성상 사전 고지 없이 일부 내용이 변경될 수 있으며 상품 품절 시 타제품으로 대체 또는 환불 조치 해드립니다.</li>
+                    <li><span>·</span>본 이벤트의 혜택은 이벤트 기간에만 적용되며 이벤트 이후에는 상시 가격으로 적용됩니다.</li>
+                    <li><span>·</span>회원 등급별로 적립율은 상이합니다.</li>
+                    <li><span>·</span>적립금 기준은 실결제 금액 기준입니다.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+</div>

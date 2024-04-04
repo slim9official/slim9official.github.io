@@ -1,0 +1,446 @@
+<!--@layout(/layout/basic/main.html)-->
+<!--@css(/customized/css/list.css)-->
+<!--@css(/promotion/css/promotion.css)-->
+<!--@js(/promotion/js/promotion.js)-->
+
+<style>
+    /* 231005 임산부의 날 기획전 관련 css */
+    #event_wrap{
+        width: 1080px;
+    }
+    #event_wrap .promotion_top .promotion_prd{
+        margin: 0;
+        padding: 0;
+    }
+    #event_wrap .promotion_top .prd_noti{
+        padding-bottom: 100px;
+    }
+
+    .promotion-momday{
+        background: url("/web/upload/promotion/23_momday/bg@3x.webp") no-repeat;
+        background-size: cover;
+    }
+
+    .promotion-momday__txt{
+        font-size: 52px;
+        text-align: center;
+        color: #c85583;
+    }
+
+    .promotion-momday__title{
+        padding: 150px 0 60px;
+    }
+
+    .promotion-momday__bold{
+        display: inline-block;
+        padding-top: 22px;
+        font-size: 64px;
+        font-weight: 600;
+    }
+
+    .promotion-momday__img{
+        margin: 0 auto;
+        text-align: center;
+        line-height: 0;
+    }
+    .promotion-momday__source{
+        width: 888px;
+    }
+
+    .promotion-momday__list{
+        margin: 0 auto;
+        padding: 52px 0 62px;
+        width: 888px;
+        background-color: #000;
+    }
+
+    .promotion-momday__item{
+        display: flex;
+        padding: 0 48px;
+    }
+
+    .promotion-momday__item.lining{
+        padding-top: 64px !important;
+    }
+
+    .promotion-momday__item + .promotion-momday__item{
+        padding-top: 14px;
+    }
+
+    .price__common{
+        color: rgba(255, 255, 255, 0.7);
+        font-size: 35px;
+        font-weight: 300;
+        font-family: Pretendard,sans-serif;
+    }
+    .price__common.strikethrough{
+        text-decoration: line-through;
+    }
+    .price__common + .price__common{
+        margin-left: auto;
+    }
+
+    .price__period{
+        color:#fff;
+        font-size: 35px;
+        font-weight: 300;
+        font-family: Pretendard,sans-serif;
+    }
+    .price__period.strikethrough{
+        text-decoration: line-through;
+    }
+    .price__period + .price__period{
+        margin-left: auto;
+    }
+
+    .price__coupon{
+        color: #ff6ea8;
+        font-size: 48px;
+        font-weight: 600;
+        font-family: Pretendard,sans-serif;
+    }
+    .price__coupon + .price__coupon{
+        margin-left: auto;
+    }
+    .promotion-momday__btn{
+        margin: 47px auto 0;
+        padding: 25px 0;
+        width: 553px;
+        background-color: #000;
+        border-radius: 47px;
+    }
+    .promotion-momday__link--order{
+        font-size: 47px;
+        font-weight: 300;
+        color: #fff;
+        text-align: center;
+    }
+
+    /*슬라이드*/
+    .momday-swiper .promotion-momday__source,
+    .momday-swiper2 .promotion-momday__source{
+        width: 100%;
+    }
+    .momday-swiper .promotion-momday__list,
+    .momday-swiper2 .promotion-momday__list{
+        width: 100%;
+    }
+    .momday-swiper promotion-momday__box,
+    .momday-swiper2 promotion-momday__box{
+        margin: 0 auto;
+        width: 888px;
+    }
+    .momday-swiper{
+        padding: 0 96px;
+    }
+    .momday-swiper2{
+        padding: 0 96px 70px;
+    }
+    .promotion-bottom{
+        line-height: 0;
+    }
+    .promotion-bottom__img{
+        width: 100%;
+    }
+
+    @media all and (max-width:1020px) {
+        #event_wrap {
+            width: 100%;
+            margin: 0;
+        }
+        #event_wrap .promotion_top .prd_noti{
+            padding-bottom: 0;
+        }
+        .promotion-momday__title{
+            padding: 75px 0 30px;
+        }
+        .promotion-momday__txt{
+            font-size: 26px;
+        }
+        .promotion-momday__bold{
+            padding-top: 12px;
+            font-size: 32px;
+        }
+        .promotion-momday__source{
+            width: 100%;
+        }
+        .promotion-momday__list{
+            width: 100%;
+            padding: 26px 0 31px;
+        }
+        .promotion-momday__item{
+            padding: 0 24px;
+        }
+        .promotion-momday__item + .promotion-momday__item{
+            padding-top: 7px;
+        }
+        .promotion-momday__item.lining{
+            padding-top: 30px !important;
+        }
+        .price__common{
+            font-size: 16px;
+        }
+        .price__period{
+            font-size: 16px;
+        }
+        .price__coupon{
+            font-size: 22px;
+        }
+        .promotion-momday__btn{
+            width: 280px;
+            padding: 15px 0;
+            margin: 25px auto 0;
+        }
+        .promotion-momday__link--order{
+            font-size: 20px;
+        }
+        .momday-swiper{
+            padding: 0 24px;
+        }
+        .momday-swiper2{
+            padding: 0 24px 35px;
+        }
+
+    }
+</style>
+
+<div id="event_wrap">
+    <!--프로모션 배너-->
+    <div class="promotion_top">
+        <div class="img_box">
+            <img src="/web/upload/promotion/23_momday/main@3x.webp" alt="">
+        </div>
+        <div class="img_box">
+            <img src="/web/upload/promotion/23_momday/benefit@3x.webp" alt="">
+        </div>
+
+        <!-- 프로모션 상품영역 -->
+        <div class="promotion-momday">
+            <div class="promotion-momday__title">
+                <p class="promotion-momday__txt">
+                    제왕절개 예정 임부 추천<br>
+                    <span class="promotion-momday__bold">출산 준비 셋업</span>
+                </p>
+            </div>
+            <div class="promotion-momday__box">
+                <div class="promotion-momday__img">
+                    <img src="/web/upload/promotion/23_momday/set-01@3x.webp" class="promotion-momday__source" alt="">
+                </div>
+                <div class="promotion-momday__price">
+                    <ul class="promotion-momday__list">
+                        <li class="promotion-momday__item">
+                            <p class="price__common">소비자가</p>
+                            <p class="price__common strikethrough">160,000원</p>
+                        </li>
+                        <li class="promotion-momday__item">
+                            <p class="price__coupon">쿠폰적용가</p>
+                            <p class="price__coupon">86,000원</p>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="promotion-momday__btn">
+                <a href="/product/detail.html?product_no=1892" class="promotion-momday__link">
+                    <p class="promotion-momday__link--order">제왕절개 셋업 구매하기 ></p>
+                </a>
+            </div>
+
+            <!-- 슬라이드01 -->
+            <div class="promotion-momday__title">
+                <p class="promotion-momday__txt">
+                    0개월 ~ 7개월 추천<br>
+                    <span class="promotion-momday__bold">예비맘을 위한 셋업</span>
+                </p>
+            </div>
+
+            <div class="swiper momday-swiper">
+                <div class="swiper-wrapper momday-wrapper">
+                    <div class="swiper-slide momday-slide">
+                        <a href="/product/detail.html?product_no=1885" class="momday-slide__link">
+                            <div class="promotion-momday__box">
+                                <div class="promotion-momday__img">
+                                    <img src="/web/upload/promotion/23_momday/0-7-month@3x.webp" class="promotion-momday__source" alt="">
+                                </div>
+                                <div class="promotion-momday__price">
+                                    <ul class="promotion-momday__list">
+                                        <li class="promotion-momday__item">
+                                            <p class="price__period">소비자가</p>
+                                            <p class="price__period strikethrough">72,000원</p>
+                                        </li>
+                                        <li class="promotion-momday__item">
+                                            <p class="price__coupon">쿠폰적용가</p>
+                                            <p class="price__coupon">39,000원</p>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="swiper-slide momday-slide">
+                        <a href="/product/detail.html?product_no=1887" class="momday-slide__link">
+                            <div class="promotion-momday__box">
+                            <div class="promotion-momday__img">
+                                <img src="/web/upload/promotion/23_momday/3-6-month@3x.webp" class="promotion-momday__source" alt="">
+                            </div>
+                            <div class="promotion-momday__price">
+                                <ul class="promotion-momday__list">
+                                    <li class="promotion-momday__item">
+                                        <p class="price__period">소비자가</p>
+                                        <p class="price__period strikethrough">86,000원</p>
+                                    </li>
+                                    <li class="promotion-momday__item">
+                                        <p class="price__coupon">쿠폰적용가</p>
+                                        <p class="price__coupon">45,000원</p>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        </a>
+                    </div>
+                    <div class="swiper-slide momday-slide">
+                        <a href="/product/detail.html?product_no=1886" class="momday-slide__link">
+                            <div class="promotion-momday__box">
+                            <div class="promotion-momday__img">
+                                <img src="/web/upload/promotion/23_momday/3-7-month@3x.webp" class="promotion-momday__source" alt="">
+                            </div>
+                            <div class="promotion-momday__price">
+                                <ul class="promotion-momday__list">
+                                    <li class="promotion-momday__item">
+                                        <p class="price__period">소비자가</p>
+                                        <p class="price__period strikethrough">80,000원</p>
+                                    </li>
+                                    <li class="promotion-momday__item">
+                                        <p class="price__coupon">쿠폰적용가</p>
+                                        <p class="price__coupon">42,000원</p>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- //슬라이드01 -->
+
+            <!-- 슬라이드02 -->
+            <div class="promotion-momday__title">
+                <p class="promotion-momday__txt">
+                    세상의 모든 엄마를 위한<br>
+                    <span class="promotion-momday__bold">기간 한정 혜택</span>
+                </p>
+            </div>
+
+            <div class="swiper momday-swiper2">
+                <div class="swiper-wrapper momday-wrapper2">
+                    <div class="swiper-slide momday-slide2">
+                        <a href="/product/detail.html?product_no=1888" class="momday-slide__link">
+                            <div class="promotion-momday__box">
+                                <div class="promotion-momday__img">
+                                    <img src="/web/upload/promotion/23_momday/3-pack@3x.webp" class="promotion-momday__source" alt="">
+                                </div>
+                                <div class="promotion-momday__price">
+                                    <ul class="promotion-momday__list">
+                                        <li class="promotion-momday__item">
+                                            <p class="price__common">소비자가</p>
+                                            <p class="price__common strikethrough">96,000원</p>
+                                        </li>
+                                        <li class="promotion-momday__item">
+                                            <p class="price__period">기간 한정가</p>
+                                            <p class="price__period">47,000원</p>
+                                        </li>
+                                        <li class="promotion-momday__item">
+                                            <p class="price__coupon">1장당 가격</p>
+                                            <p class="price__coupon">15,700원</p>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="swiper-slide momday-slide2">
+                        <a href="/product/detail.html?product_no=1890" class="momday-slide__link">
+                            <div class="promotion-momday__box">
+                                <div class="promotion-momday__img">
+                                    <img src="/web/upload/promotion/23_momday/2-pack@3x.webp" class="promotion-momday__source" alt="">
+                                </div>
+                                <div class="promotion-momday__price">
+                                    <ul class="promotion-momday__list">
+                                        <li class="promotion-momday__item">
+                                            <p class="price__common">소비자가</p>
+                                            <p class="price__common strikethrough">80,000원</p>
+                                        </li>
+                                        <li class="promotion-momday__item">
+                                            <p class="price__period">기간 한정가</p>
+                                            <p class="price__period">41,000원</p>
+                                        </li>
+                                        <li class="promotion-momday__item">
+                                            <p class="price__coupon">1장당 가격</p>
+                                            <p class="price__coupon">20,500원</p>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="swiper-slide momday-slide2">
+                        <a href="/product/detail.html?product_no=1891" class="momday-slide__link">
+                            <div class="promotion-momday__box">
+                            <div class="promotion-momday__img">
+                                <img src="/web/upload/promotion/23_momday/lining-panties@3x.webp" class="promotion-momday__source" alt="">
+                            </div>
+                            <div class="promotion-momday__price">
+                                <ul class="promotion-momday__list">
+                                    <li class="promotion-momday__item">
+                                        <p class="price__common">소비자가</p>
+                                        <p class="price__common strikethrough">35,000원</p>
+                                    </li>
+<!--                                    <li class="promotion-momday__item">-->
+<!--                                        <p class="price__period">기간 한정가</p>-->
+<!--                                        <p class="price__period">96,000원</p>-->
+<!--                                    </li>-->
+                                    <li class="promotion-momday__item lining">
+                                        <p class="price__coupon">기간 한정가</p>
+                                        <p class="price__coupon">15,000원</p>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <!-- //슬라이드02 -->
+
+        </div>
+        <!-- //프로모션 상품영역 -->
+
+        <div class="promotion-bottom">
+            <a href="https://slim9m.co.kr/index.html" class="promotion-bottom__link" target="_blank">
+                <img src="/web/upload/promotion/23_momday/slim-9-m@3x.webp" class="promotion-bottom__img" alt="">
+            </a>
+        </div>
+
+        <!--프로모션 안내사항-->
+        <div class="prd_noti">
+            <label for="menuBtn" class="top_txt" onclick="">
+                <p>유의사항</p>
+                <input type="checkbox" id="menuBtn">
+                <span class="icon">
+                    <img src="/web/upload/promotion/23_early_summer/arrow-1.svg">
+                </span>
+            </label>
+            <div class="txt_box">
+                <ul>
+                    <li><span>·</span>해당 이벤트는 23년 10월 05일부터 23년 10월 10일까지 진행 됩니다.</li>
+                    <li><span>·</span>해당 이벤트 상품은 다른 쿠폰과 중복 적용이 불가합니다.</li>
+                    <li><span>·</span>해당 이벤트 상품은 수량 소진 또는 당사의 사정에 따라 별도의 고지 없이 종료될 수 있습니다.</li>
+                    <li><span>·</span>이벤트의 특성상 사전 고지 없이 일부 내용이 변경될 수 있으며 상품 품절 시 타제품으로 대체 또는 환불 조치 해드립니다.</li>
+                    <li><span>·</span>본 이벤트의 혜택은 이벤트 기간에만 적용되며 이벤트 이후에는 상시 가격으로 적용됩니다.</lI>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+</div>
