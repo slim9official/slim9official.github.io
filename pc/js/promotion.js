@@ -60,62 +60,6 @@ var momday_slide2 = new Swiper(".momday-swiper2", { // 기간 한정 혜택
 });
 
 
-// green festa
-var green_slide = new Swiper(".green-swiper", {   // 텐셀 모달 set
-    slidesPerView: 1.2,
-    spaceBetween: 10,
-    pagination: {
-        clickable: true,
-    },
-    breakpoints: {
-        1020: {
-            slidesPerView: 1.5,
-            spaceBetween: 40,
-        },
-    },
-});
-
-var green_slide2 = new Swiper(".green-swiper2", {   // 모달 홈웨어
-    slidesPerView: 1.2,
-    spaceBetween: 10,
-    pagination: {
-        clickable: true,
-    },
-    breakpoints: {
-        1020: {
-            slidesPerView: 1.5,
-            spaceBetween: 40,
-        },
-    },
-});
-
-var green_slide3 = new Swiper(".green-swiper3", {   // 홀가먼트
-    slidesPerView: 1.2,
-    spaceBetween: 10,
-    pagination: {
-        clickable: true,
-    },
-    breakpoints: {
-        1020: {
-            slidesPerView: 1.5,
-            spaceBetween: 40,
-        },
-    },
-});
-
-var green_slide4 = new Swiper(".green-swiper4", {   // 보정 언더웨어
-    slidesPerView: 1.2,
-    spaceBetween: 10,
-    pagination: {
-        clickable: true,
-    },
-    breakpoints: {
-        1020: {
-            slidesPerView: 1.5,
-            spaceBetween: 40,
-        },
-    },
-});
 
 // autumn week
 var autumn_slide = new Swiper(".autumn-swiper", {   // 어텀위크

@@ -8,12 +8,14 @@
     <link rel="preload" type="text/css" href='https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css'>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css"/>
 
-
     <link type="text/css" rel="stylesheet" href="../css/style.css">
     <link type="text/css" rel="stylesheet" href="../css/promotion.css">
-    
+    <link type="text/css" rel="stylesheet" href="../css/list.css">
 
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js" async></script>
+    <script type="text/javascript" src="../js/swiper-4.5.0.min.js"></script>
+    <script type="text/javascript" src="../js/swiper.js"></script>
+    <script type="text/javascript" src="../js/swiper-bundle.js"></script>
     <script type="text/javascript" src="../js/promotion.js"></script>
 
 <style>
@@ -25,7 +27,7 @@
         margin: 0;
         padding: 0;
     }
-    #event_wrap .promotion_top .prd_noti{
+    #event_wrap .promotion_top .prd_ noti{
         padding-bottom: 100px;
     }
 
@@ -34,7 +36,6 @@
         background: url("https://slim9.cafe24.com/web/upload/promotion/23_greenfesta/bg@2x.webp") no-repeat;
         background-size: cover;
     }
-
     .promotion-green__txt{
         font-size: 52px;
         text-align: center;
@@ -566,5 +567,65 @@
         </div>
     </div>
 </div>
+
+<script>
+    // green festa
+var green_slide = new Swiper(".green-swiper", {   // 텐셀 모달 set
+    slidesPerView: 1.2,
+    spaceBetween: 10,
+    pagination: {
+        clickable: true,
+    },
+    breakpoints: {
+        1020: {
+            slidesPerView: 1.5,
+            spaceBetween: 40,
+        },
+    },
+});
+
+var green_slide2 = new Swiper(".green-swiper2", {   // 모달 홈웨어
+    slidesPerView: 1.2,
+    spaceBetween: 10,
+    pagination: {
+        clickable: true,
+    },
+    breakpoints: {
+        1020: {
+            slidesPerView: 1.5,
+            spaceBetween: 40,
+        },
+    },
+});
+
+var green_slide3 = new Swiper(".green-swiper3", {   // 홀가먼트
+    slidesPerView: 1.2,
+    spaceBetween: 10,
+    pagination: {
+        clickable: true,
+    },
+    breakpoints: {
+        1020: {
+            slidesPerView: 1.5,
+            spaceBetween: 40,
+        },
+    },
+});
+
+var green_slide4 = new Swiper(".green-swiper4", {   // 보정 언더웨어
+    slidesPerView: 1.2,
+    spaceBetween: 10,
+    pagination: {
+        clickable: true,
+    },
+    breakpoints: {
+        1020: {
+            slidesPerView: 1.5,
+            spaceBetween: 40,
+        },
+    },
+});
+
+</script>
 
 </body>
