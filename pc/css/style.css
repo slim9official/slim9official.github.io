@@ -60,7 +60,7 @@ textarea, iframe{font-size:12px;font-family:dotum,AppleGothic,sans-serif;color:#
 input, select{outline-style:none;outline:none;background:#fff;color:#363636;}
 fieldset{border:0;margin:0;padding:0;}
 legend{display:none;}
-a:link, a:visited, a:active{color:#6c6c6c;text-decoration:none;padding:0;/*outline-style:none;*/}
+a:link, a:visited, a:active{text-decoration:none;}
 a:hover{color:#6c6c6c;text-decoration:none;}
 img{border:0;margin:0;}
 
