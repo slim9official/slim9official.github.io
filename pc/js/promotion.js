@@ -1,5 +1,3 @@
-// $('.custom_option5').prepend('<span style="margin-right: 3px;">회원가</span>');
-
 // 프로모션 탭
 $('.tab-link').on('click',function (){
     $('.tab-link').removeClass('on');
@@ -30,49 +28,8 @@ $(window).on('load', function () {
     };
 });
 
-// 임산부의 날 프로모션
-var momday_slide = new Swiper(".momday-swiper", {   // 예비맘을 위한 셋업 슬라이드
-    slidesPerView: 1.2,
-    spaceBetween: 10,
-    pagination: {
-        clickable: true,
-    },
-    breakpoints: {
-        1020: {
-            slidesPerView: 1.5,
-            spaceBetween: 40,
-        },
-    },
-});
-
-var momday_slide2 = new Swiper(".momday-swiper2", { // 기간 한정 혜택
-    slidesPerView: 1.2,
-    spaceBetween: 10,
-    pagination: {
-        clickable: true,
-    },
-    breakpoints: {
-        1020: {
-            slidesPerView: 1.5,
-            spaceBetween: 40,
-        },
-    },
-});
 
 
-
-// autumn week
-var autumn_slide = new Swiper(".autumn-swiper", {   // 어텀위크
-    slidesPerView: 1,
-    spaceBetween: 10,
-    pagination: {
-        clickable: true,
-    },
-    navigation: {
-        nextEl: ".autumn-swiper .swiper-button-next",
-        prevEl: ".autumn-swiper .swiper-button-prev",
-    },
-});
 
 
 // black friday
@@ -164,17 +121,7 @@ var limit_slide3 = new Swiper(".limit-swiper3", {
     },
 });
 
-var awards_slide = new Swiper(".awards-swiper", {
-    slidesPerView: 1,
-    pagination: {
-        clickable: true,
-    },
-    effect: 'fade',
-    autoplay: {
-        delay: 1500,
-        disableOnInteraction: false,
-    },
-});
+
 
 // 2024 새해 프로모션
 $('.js-luckybag-cover').on('click',function (){

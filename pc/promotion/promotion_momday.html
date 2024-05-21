@@ -8,7 +8,6 @@
     <link rel="preload" type="text/css" href='https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css'>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css"/>
 
-
     <link type="text/css" rel="stylesheet" href="../css/style.css">
     <link type="text/css" rel="stylesheet" href="../css/promotion.css">
 
@@ -17,8 +16,7 @@
     <script type="text/javascript" src="../js/promotion.js"></script>
     <script type="text/javascript" src="../js/swiper.js"></script>
     <script type="text/javascript" src="../js/swiper-bundle.js"></script>
-
-        <script src="https://cdn.jsdelivr.net/npm/swiper@8.0.7/swiper-bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@8.0.7/swiper-bundle.min.js"></script>
 
 <style>
     /* 231005 임산부의 날 기획전 관련 css */
@@ -460,6 +458,36 @@
             </div>
         </div>
     </div>
-
 </div>
+<script>
+    // 임산부의 날 프로모션
+    var momday_slide = new Swiper(".momday-swiper", {   // 예비맘을 위한 셋업 슬라이드
+        slidesPerView: 1.2,
+        spaceBetween: 10,
+        pagination: {
+            clickable: true,
+        },
+        breakpoints: {
+            1020: {
+                slidesPerView: 1.5,
+                spaceBetween: 40,
+            },
+        },
+    });
+
+    var momday_slide2 = new Swiper(".momday-swiper2", { // 기간 한정 혜택
+        slidesPerView: 1.2,
+        spaceBetween: 10,
+        pagination: {
+            clickable: true,
+        },
+        breakpoints: {
+            1020: {
+                slidesPerView: 1.5,
+                spaceBetween: 40,
+            },
+        },
+    });
+
+</script>
 </body>

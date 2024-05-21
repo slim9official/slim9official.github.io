@@ -1,7 +1,22 @@
-<!--@layout(/layout/basic/main.html)-->
-<!--@css(/customized/css/list.css)-->
-<!--@css(/promotion/css/promotion.css)-->
-<!--@js(/promotion/js/promotion.js)-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>green festa</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css"/>
+    <link rel="preload" type="text/css" href='https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css'>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css"/>
+
+    <link type="text/css" rel="stylesheet" href="../css/style.css">
+    <link type="text/css" rel="stylesheet" href="../css/promotion.css">
+    <link type="text/css" rel="stylesheet" href="../css/list.css">
+
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js" async></script>
+    <script type="text/javascript" src="../js/swiper-4.5.0.min.js"></script>
+    <script type="text/javascript" src="../js/swiper.js"></script>
+    <script type="text/javascript" src="../js/swiper-bundle.js"></script>
+    <script type="text/javascript" src="../js/promotion.js"></script>
 
 <style>
     /* 231204 웜페스타 기획전 관련 css */
@@ -35,7 +50,7 @@
     .price__point{color: #fff;font-size: 38px;font-weight: bold;}
     .price__point + .price__point{margin-left: auto;}
 
-
+   
     @media all and (max-width:1020px) {
         #event_wrap {width: 100%; margin: 0;}
         #event_wrap .promotion_top .prd_noti{padding-bottom: 0;}
@@ -70,6 +85,7 @@
     }
 </style>
 
+<body>
 <div id="event_wrap">
     <!--프로모션 배너-->
     <div class="promotion_top">
@@ -372,7 +388,7 @@
                 <p>유의사항</p>
                 <input type="checkbox" id="menuBtn">
                 <span class="icon">
-                    <img src="/web/upload/promotion/23_early_summer/arrow-1.svg">
+                    <img src="https://slim9.cafe24.com/web/upload/promotion/23_early_summer/arrow-1.svg">
                 </span>
             </label>
             <div class="txt_box">
@@ -387,3 +403,4 @@
     </div>
 
 </div>
+</body>
