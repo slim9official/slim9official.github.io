@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>happy newyear</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css"/>
+    <link rel="preload" type="text/css" href='https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css'>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css"/>
+
+    <link type="text/css" rel="stylesheet" href="../css/style.css">
+    <link type="text/css" rel="stylesheet" href="../css/promotion.css">
+    <link type="text/css" rel="stylesheet" href="../css/list.css">
+
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js" async></script>
+    <script type="text/javascript" src="../js/swiper-4.5.0.min.js"></script>
+    <script type="text/javascript" src="../js/swiper.js"></script>
+    <script type="text/javascript" src="../js/swiper-bundle.js"></script>
+    <script type="text/javascript" src="../js/promotion.js"></script>
+    
+    <style>
+        #event_wrap{width: 1080px;}
+        .promotion-newyear,.promotion-benefit, .timedeal-wrap{background-color: #f1f1f1;}
+        .promotion-newyear__txt, .promotion-benefit__txt{color: #000;font-size: 58px;text-align: center; letter-spacing: -1.15px;}
+        .promotion-newyear__title, .promotion-benefit__title{padding: 40px 0 60px; line-height: 1.15;}
+        .promotion-benefit__wrap{position: relative;}
+        .promotion-benefit__wrap + .promotion-benefit__wrap{padding-top: 150px;}
+        .promotion-benefit__name{display: flex; justify-content: center; padding-top: 142px;}
+        .promotion-benefit__coupon{text-align: center;}
+        .happy-newyear{position: relative;}
+        .happy-newyear__benefit{position: absolute; bottom: 0; width: 100%;}
+        .happy-newyear__list{display: flex; justify-content: center; padding-bottom: 54px;}
+        .happy-newyear__item{width: 314px; padding: 44px 0; background-color: #fff; border-radius: 10px;}
+        .happy-newyear__item + .happy-newyear__item{margin-left: 20px;}
+        .happy-newyear__item--txt{color: #254249; font-size: 30px; font-weight: 500; text-align: center; line-height: normal;}
+        .happy-newyear__item--txt > b{font-size: 42px;font-weight: bold; line-height: normal;}
+        .happy-newyear__item--title{padding-bottom: 22px; color: #398192; font-size: 37px; font-weight: bold; text-align: center; line-height: normal;}
+    
+        .promotion-newyear__list{padding: 42px 34px; background-color: #000;}
+        .promotion-newyear__item{display: flex;}
+        .promotion-newyear__item + .promotion-newyear__item{padding-top: 30px;}
+        .promotion-newyear__bold,.promotion-benefit__bold{display: inline-block;font-size: 75px;font-weight: bold; letter-spacing: -1.49px;}
+        .promotion-newyear__name{padding-bottom: 40px; padding-top: 160px;display: flex;justify-content: center;}
+        .promotion-newyear__top, .promotion-benefit__top{display: inline-block;padding: 20px 32px;background-color: #398192; border-radius: 34px; }
+        .promotion-newyear__top--txt, .promotion-benefit__top--txt{color: #fff;font-size: 34px;font-weight: 300;}
+        .promotion-benefit__box{line-height: 0;}
+        .promotion-benefit__box--img{width: 675px;}
+        .promotion-benefit__notice{padding: 24px 0 60px; color: #398192; font-size: 16px;font-weight: 400; line-height: 1.52;}
+        .promotion-benefit__btn{margin: 0 auto;width: 393px;background-color: #000;}
+        .promotion-benefit__link--detail{font-size: 36px;font-weight: 500;color: #fff;text-align: center;line-height: 2.1}
+        .price__customer{color : #a9a9a9; font-size: 30px; font-weight: normal; }
+        .price__customer + .price__customer{margin-left: auto;}
+        .price__customer.strikethrough{text-decoration: line-through;}
+        .price__coupon{color: #46abc3;font-size: 38px;font-weight: bold;font-family: Pretendard,sans-serif;}
+        .price__coupon + .price__coupon{margin-left: auto;}
+    
+        .bestseller-box{margin-top: -1px;}
+        .bestseller-img{display: block; line-height: 0; position: relative;}
+        .bestseller-img__sale{top: 0;left: 0;display: flex;justify-content: center;align-items: center;position: absolute;width: 109px;height: 66px;color: #fff;background-color: #398192;font-size: 35px;font-weight: bold;line-height: 0;}
+        .bestseller-img__sale .percentage{font-size: 28px;}
+        .bestseller-img__src{width: 100%;}
+        .benefit-wrap__product{display: flex;padding: 0 100px;}
+        .benefit-wrap__product + .benefit-wrap__product{padding-top: 24px;}
+        .benefit-wrap__link + .benefit-wrap__link{margin-left: 24px;}
+        .timedeal-wrap__img{margin: 0 auto; padding-bottom: 84px; text-align: center; line-height: 0; font-size: 0;}
+        .timedeal-wrap__img--src{width: 626px;}
+    
+        .timedeal-product{margin: 0 auto; width: 626px; padding-bottom: 132px;}
+        .timedeal-product__btn{padding-top: 48px;}
+        .timedeal-product__link{margin: 0 auto;display: flex;justify-content: center;font-size: 42px; font-weight: 600;text-align: center;color: #fff;background-color: #000;width: 482px;border-radius: 20px;padding: 28px 0;font-size: 42px;}
+        .benefit-wrap__title{background-color: #398192; padding: 20px 0; text-align: center;}
+        .benefit-wrap__name{color: #fff; font-size: 42px; font-weight: 600; line-height: 1.07; letter-spacing: -0.84px;}
+    
+        @media all and (max-width:1020px) {
+            #event_wrap {width: 100%;margin: 0;}
+            .happy-newyear__list{padding-bottom: 27px;}
+            .happy-newyear__item{width: 108px; padding:16px 0;}
+            .happy-newyear__item--title{padding-bottom: 10px;font-size: 16px;}
+            .happy-newyear__item--txt{font-size: 12px;}
+            .happy-newyear__item--txt > b{font-size: 18px;}
+            .happy-newyear__item + .happy-newyear__item{margin-left: 10px;}
+            .promotion-newyear__top, .promotion-benefit__top{padding: 10px 16px;}
+            .promotion-newyear__top--txt, .promotion-benefit__top--txt{font-size: 17px;}
+            .promotion-newyear__title, .promotion-benefit__title{padding: 20px 0 30px;}
+            .promotion-newyear__txt, .promotion-benefit__txt{font-size: 26px;}
+            .promotion-newyear__bold, .promotion-benefit__bold{font-size: 32px;}
+            .promotion-benefit__name{padding-top: 70px;}
+            .promotion-benefit__box--img{width: 232px;}
+            .promotion-benefit__notice{padding: 12px 0 30px; font-size: 12px;}
+            .promotion-benefit__btn{width: 195px;}
+            .promotion-benefit__link--detail{font-size: 18px;}
+            .promotion-newyear__name{padding-top: 80px; padding-bottom: 20px;}
+            .benefit-wrap__product{padding: 0 50px;}
+            .benefit-wrap__link{display: block;}
+            .benefit-wrap__name{font-size: 20px; letter-spacing: 0;}
+            .benefit-wrap__bestseller{width:100%;}
+            .benefit-wrap__link + .benefit-wrap__link{margin-left: 12px;}
+            #event_wrap .promotion_top .prd_noti{padding-bottom: 0;}
+            .price__customer{font-size: 15px;}
+            .price__coupon{font-size: 15px;}
+            .promotion-newyear__list{padding: 21px 22px;}
+            .timedeal-wrap__img{padding-bottom: 80px;}
+            .timedeal-wrap__img--src{width: 313px;}
+            .timedeal-product{width: 313px;}
+            .timedeal-product__link{width: 240px;padding: 14px 0;font-size: 20px;border-radius: 10px;}
+            .bestseller-img__sale{width: 54px; height: 33px; font-size: 17px;}
+            .bestseller-img__sale .percentage{font-size: 14px;}
+    
+        }
+    
+        @media all and (max-width:768px) {
+            .benefit-wrap__product{padding: 0 14px;}
+            .promotion-newyear__list{padding: 20px 12px;}
+            .promotion-newyear__item + .promotion-newyear__item{padding-top: 12px;}
+        }
+    </style>
+    
+</head>
+<body>
+
+<!--프로모션 배너-->
+<div id="event_wrap">
+    <div class="promotion_top">
+        <div class="happy-newyear">
+            <div class="img_box">
+                <img src="https://cdn.slim9.biz/2024/promotion/happy-new-year/Img_main_banner.webp" alt="">
+            </div>
+            <div class="happy-newyear__benefit">
+                <div class="happy-newyear__box">
+                    <div class="happy-newyear__list">
+                        <div class="happy-newyear__item">
+                            <p class="happy-newyear__item--title">혜택 01</p>
+                            <p class="happy-newyear__item--txt">
+                                기간한정 최대<br><b>50% 할인</b>
+                            </p>
+                        </div>
+                        <div class="happy-newyear__item">
+                            <p class="happy-newyear__item--title">혜택 02</p>
+                            <p class="happy-newyear__item--txt">
+                                전 제품<br><b>20% 쿠폰</b>
+                            </p>
+                        </div>
+                        <div class="happy-newyear__item">
+                            <p class="happy-newyear__item--title">혜택 03</p>
+                            <p class="happy-newyear__item--txt">
+                                설맞이<br><b>무료배송</b>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 프로모션 혜택영역-->
+        <div class="promotion-benefit">
+            <div class="promotion-benefit__name">
+                <div class="promotion-benefit__top">
+                    <p class="promotion-benefit__top--txt">미리 준비하는 설날 선물을 위해</p>
+                </div>
+            </div>
+            <!-- 혜택1 -->
+            <div class="promotion-benefit__wrap">
+                <div class="promotion-benefit__title">
+                    <p class="promotion-benefit__txt">
+                        슬림9 회원이라면<br><span class="promotion-benefit__bold">20%쿠폰 지급</span>
+                    </p>
+                </div>
+                <div class="promotion-benefit__coupon">
+                    <div class="promotion-benefit__box">
+                        <img src="https://cdn.slim9.biz/2024/promotion/happy-new-year/coupon-01.webp" alt="" class="promotion-benefit__box--img">
+                    </div>
+                    <p class="promotion-benefit__notice">*마이페이지 > 쿠폰함으로 자동 지급되며 프로모션 제품은 제외</p>
+                </div>
+                <!--로그인 전-->
+                <div class="promotion-benefit__btn" module="Layout_statelogoff">
+                    <a href="/member/login.html" class="promotion-benefit__link">
+                        <p class="promotion-benefit__link--detail">로그인하고 쿠폰 받기 ></p>
+                    </a>
+                </div>
+                <!--//로그인 전-->
+                <!--로그인 후-->
+                <div class="promotion-benefit__btn" module="Layout_stateLogon">
+                    <a href="/myshop/coupon/coupon.html" class="promotion-benefit__link">
+                        <p class="promotion-benefit__link--detail">로그인하고 쿠폰 받기 ></p>
+                    </a>
+                </div>
+                <!--//로그인 후-->
+            </div>
+            <!-- //혜택1 -->
+
+            <!-- 혜택2 -->
+            <div class="promotion-benefit__name">
+                <div class="promotion-benefit__top">
+                    <p class="promotion-benefit__top--txt">배송비는 슬림9이 낼게요!</p>
+                </div>
+            </div>
+            <div class="promotion-benefit__wrap">
+                <div class="promotion-benefit__title">
+                    <p class="promotion-benefit__txt">
+                        프로모션 제품 구매 시<br><span class="promotion-benefit__bold">무료배송</span>
+                    </p>
+                </div>
+                <div class="promotion-benefit__coupon">
+                    <div class="promotion-benefit__box">
+                        <img src="https://cdn.slim9.biz/2024/promotion/happy-new-year/free-sp@3x.webp" alt="" class="promotion-benefit__box--img">
+                    </div>
+                    <p class="promotion-benefit__notice">*마이페이지 > 쿠폰함으로 자동 지급</p>
+                </div>
+                <!--로그인 전-->
+                <div class="promotion-benefit__btn" module="Layout_statelogoff">
+                    <a href="/member/login.html" class="promotion-benefit__link">
+                        <p class="promotion-benefit__link--detail">로그인하고 쿠폰 받기 ></p>
+                    </a>
+                </div>
+                <!--//로그인 전-->
+                <!--로그인 후-->
+                <div class="promotion-benefit__btn" module="Layout_stateLogon">
+                    <a href="/myshop/coupon/coupon.html" class="promotion-benefit__link">
+                        <p class="promotion-benefit__link--detail">로그인하고 쿠폰 받기 ></p>
+                    </a>
+                </div>
+                <!--//로그인 후-->
+            </div>
+            <!-- //혜택2 -->
+        </div>
+        <!-- //프로모션 혜택영역 -->
+
+        <!-- 프로모션 상품영역 -->
+        <div class="promotion-newyear">
+            <div class="promotion-newyear__name">
+                <div class="promotion-newyear__top">
+                    <p class="promotion-newyear__top--txt">단 10일, 공식몰 단독 패키지</p>
+                </div>
+            </div>
+            <div class="promotion-newyear__title">
+                <p class="promotion-newyear__txt">
+                    귀경길이 편안한<br><span class="promotion-newyear__bold">베스트셀러 패키지</span>
+                </p>
+            </div>
+            <div class="benefit">
+                <div class="benefit-wrap">
+                    <div class="benefit-wrap__product">
+                        <a href="/product/detail.html?product_no=1920" class="benefit-wrap__link">
+                            <div class="benefit-wrap__bestseller">
+                                <div class="bestseller-img">
+                                    <img src="https://cdn.slim9.biz/2024/promotion/happy-new-year/best-01.webp" alt="[2&1] 네모팬티 뉴베이직" class="bestseller-img__src">
+                                    <p class="bestseller-img__sale">41<span class="percentage">%</span></p>
+                                </div>
+                                <div class="bestseller-box">
+                                    <ul class="promotion-newyear__list">
+                                        <li class="promotion-newyear__item">
+                                            <p class="price__customer">소비자가</p>
+                                            <p class="price__customer strikethrough">96,000원</p>
+                                        </li>
+                                        <li class="promotion-newyear__item">
+                                            <p class="price__coupon">최종혜택가</p>
+                                            <p class="price__coupon">53,900원</p>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </a>
+                        <a href="/product/detail.html?product_no=1547" class="benefit-wrap__link">
+                            <div class="benefit-wrap__bestseller">
+                                <div class="bestseller-img">
+                                    <img src="https://cdn.slim9.biz/2024/promotion/happy-new-year/img_best-02.webp" alt="[1&1] 편해브라 뉴베이직" class="bestseller-img__src">
+                                    <p class="bestseller-img__sale">50<span class="percentage">%</span></p>
+                                </div>
+                                <div class="bestseller-box">
+                                    <ul class="promotion-newyear__list">
+                                        <li class="promotion-newyear__item">
+                                            <p class="price__customer">소비자가</p>
+                                            <p class="price__customer strikethrough">80,000원</p>
+                                        </li>
+                                        <li class="promotion-newyear__item">
+                                            <p class="price__coupon">최종혜택가</p>
+                                            <p class="price__coupon">36,900원</p>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="benefit-wrap__product">
+                        <a href="/product/detail.html?product_no=1942" class="benefit-wrap__link">
+                            <div class="benefit-wrap__bestseller">
+                                <div class="bestseller-img">
+                                    <img src="https://cdn.slim9.biz/2024/promotion/happy-new-year/best-03_v2@3x.webp" alt="[2&1] 네모팬티 숏" class="bestseller-img__src">
+                                    <p class="bestseller-img__sale">45<span class="percentage">%</span></p>
+                                </div>
+                                <div class="bestseller-box">
+                                    <ul class="promotion-newyear__list">
+                                        <li class="promotion-newyear__item">
+                                            <p class="price__customer">소비자가</p>
+                                            <p class="price__customer strikethrough">96,000원</p>
+                                        </li>
+                                        <li class="promotion-newyear__item">
+                                            <p class="price__coupon">최종혜택가</p>
+                                            <p class="price__coupon">49,900원</p>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </a>
+                        <a href="/product/detail.html?product_no=1692" class="benefit-wrap__link">
+                            <div class="benefit-wrap__bestseller">
+                                <div class="bestseller-img">
+                                    <img src="https://cdn.slim9.biz/2024/promotion/happy-new-year/best-04_v2@3x.webp" alt="[1&1] 편해브라 에어" class="bestseller-img__src">
+                                    <p class="bestseller-img__sale">43<span class="percentage">%</span></p>
+                                </div>
+                                <div class="bestseller-box">
+                                    <ul class="promotion-newyear__list">
+                                        <li class="promotion-newyear__item">
+                                            <p class="price__customer">소비자가</p>
+                                            <p class="price__customer strikethrough">80,000원</p>
+                                        </li>
+                                        <li class="promotion-newyear__item">
+                                            <p class="price__coupon">최종혜택가</p>
+                                            <p class="price__coupon">42,900원</p>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="benefit-wrap__product">
+                        <a href="/product/detail.html?product_no=1871" class="benefit-wrap__link">
+                            <div class="benefit-wrap__bestseller">
+                                <div class="bestseller-img">
+                                    <img src="https://cdn.slim9.biz/2024/promotion/happy-new-year/img_best-05.webp" alt="[SET] 컴포트 에어 셋업" class="bestseller-img__src">
+                                    <p class="bestseller-img__sale">40<span class="percentage">%</span></p>
+                                </div>
+                                <div class="bestseller-box">
+                                    <ul class="promotion-newyear__list">
+                                        <li class="promotion-newyear__item">
+                                            <p class="price__customer">소비자가</p>
+                                            <p class="price__customer strikethrough">72,000원</p>
+                                        </li>
+                                        <li class="promotion-newyear__item">
+                                            <p class="price__coupon">최종혜택가</p>
+                                            <p class="price__coupon">39,900원</p>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </a>
+                        <a href="/product/detail.html?product_no=1994" class="benefit-wrap__link">
+                            <div class="benefit-wrap__bestseller">
+                                <div class="bestseller-img">
+                                    <img src="https://cdn.slim9.biz/2024/promotion/happy-new-year/Img_best-06.webp" alt="[SET] 데일리 에어 셋업" class="bestseller-img__src">
+                                    <p class="bestseller-img__sale">39<span class="percentage">%</span></p>
+                                </div>
+                                <div class="bestseller-box">
+                                    <ul class="promotion-newyear__list">
+                                        <li class="promotion-newyear__item">
+                                            <p class="price__customer">소비자가</p>
+                                            <p class="price__customer strikethrough">72,000원</p>
+                                        </li>
+                                        <li class="promotion-newyear__item">
+                                            <p class="price__coupon">최종혜택가</p>
+                                            <p class="price__coupon">40,900원</p>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- //프로모션 상품영역 -->
+
+        <div class="timedeal-wrap">
+            <div class="promotion-newyear__name">
+                <div class="promotion-newyear__top">
+                    <p class="promotion-newyear__top--txt">아쉽지만 타임딜이 끝났어요!!</p>
+                </div>
+            </div>
+            <div class="promotion-newyear__title">
+                <p class="promotion-newyear__txt">
+                    새해 복 많이 받으세요<br><span class="promotion-newyear__bold">타임딜 종료</span>
+                </p>
+            </div>
+            <!-- 타임딜 오픈 전-->
+            <!--<div class="timedeal-wrap__img">
+                <img src="https://cdn.slim9.biz/2024/promotion/happy-new-year/timedeal-before@3x.webp" alt="" class="timedeal-wrap__img--src">
+            </div>-->
+            <!-- 타임딜 오픈 전-->
+
+            <!-- 타임딜 오픈-->
+            <!--<div class="timedeal-product">
+                <a href="/product/detail.html?product_no=1920" class="benefit-wrap__link">
+                    <div class="benefit-wrap__title">
+                        <p class="benefit-wrap__name">[2&1]네모팬티 뉴베이직</p>
+                    </div>
+                    <div class="benefit-wrap__bestseller">
+                        <div class="bestseller-img">
+                            <img src="https://cdn.slim9.biz/2024/promotion/happy-new-year/img-timedeal-p.webp" alt="[2&1]네모팬티 뉴베이직" class="bestseller-img__src">
+                        </div>
+                        <div class="bestseller-box">
+                            <ul class="promotion-newyear__list">
+                                <li class="promotion-newyear__item">
+                                    <p class="price__customer">소비자가</p>
+                                    <p class="price__customer strikethrough">96,000원</p>
+                                </li>
+                                <li class="promotion-newyear__item">
+                                    <p class="price__coupon">최종혜택가</p>
+                                    <p class="price__coupon">53,900원</p>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </a>
+                <div class="timedeal-product__btn">
+                    <a href="/product/list.html?cate_no=470" class="timedeal-product__link">타임딜 제품 모두 보기 ></a>
+                </div>
+            </div>-->
+            <!--// 타임딜 오픈-->
+
+            <!-- 타임딜 종료-->
+            <div class="timedeal-wrap__img">
+                <img src="https://cdn.slim9.biz/2024/promotion/happy-new-year/timedeal-end@3x.webp" alt="" class="timedeal-wrap__img--src">
+            </div>
+            <!-- 타임딜 종료-->
+        </div>
+
+        <!--프로모션 안내사항-->
+        <div class="prd_noti">
+            <label for="menuBtn" class="top_txt" onclick="">
+                <p>유의사항</p>
+                <input type="checkbox" id="menuBtn">
+                <span class="icon">
+                    <img src="https://slim9.cafe24.com/web/upload/promotion/23_early_summer/arrow-1.svg">
+                </span>
+            </label>
+            <div class="txt_box">
+                <ul>
+                    <li><span>·</span>해당 이벤트는 24년 01월 24일 PM 12:00부터 24년 02월 02일까지 PM 12:00까지 진행 됩니다.</li>
+                    <li><span>·</span>20% 할인 쿠폰은 다른 쿠폰과 중복 적용이 불가합니다.</li>
+                    <li><span>·</span>20% 할인 쿠폰은 실결제구매금 6만원 이상일 때 사용 가능합니다.</li>
+                    <li><span>·</span>20% 할인 쿠폰은 슬림9 회원에게만 제공됩니다.</li>
+                    <li><span>·</span>프로모션 종료 후 교환 및 반품 시 결제 금액만큼만 반환됩니다.</li>
+                    <li><span>·</span>프로모션 종료 후 교환 및 반품 후 재결제 시 쿠폰은 사용 불가합니다.</li>
+                </ul>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+</body>

@@ -1,0 +1,854 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>blossom encore</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css"/>
+    <link rel="preload" type="text/css" href='https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css'>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css"/>
+
+    <link type="text/css" rel="stylesheet" href="../css/style.css">
+    <link type="text/css" rel="stylesheet" href="../css/promotion.css">
+
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js" async></script>
+    <script type="text/javascript" src="../js/swiper-4.5.0.min.js"></script>
+    <script type="text/javascript" src="../js/promotion.js"></script>
+    <script type="text/javascript" src="../js/timedeal.js"></script>
+    <script type="text/javascript" src="../js/swiper.js"></script>
+    <script type="text/javascript" src="../js/swiper-bundle.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@8.0.7/swiper-bundle.min.js"></script>
+
+    <style>
+        #event_wrap {width: 1080px; margin: 0 auto; font-family: 'Pretendard'; }
+        #tab01{background-color: #eaeee4;}
+        #tab02{background-color: #667e59;}
+        #tab03{background-color: #eaeee4;}
+        #tab04{padding-bottom: 252px;background-color: #eaeee4;}
+        .txt-white{color: #fff !important;}
+        .blossom-main{width: 100%;}
+        .blossom-main__wrap{display: block;line-height: 0;}
+        .blossom-main__img{width: 100%;}
+        .tab-header{top: 146px; /*position: sticky;*/ margin: 0;padding: 0;display: flex;flex-wrap: wrap;z-index: 9999;}
+        .tab-link{height: 150px;display: flex;align-items: center;justify-content: center;flex: 1 1 25%;color: #6c8350; font-family: "pretendard",Sans-serif;font-size: 34px;font-weight: 500;font-style: normal;line-height: 1.57;background: #393a3a;text-align: center;cursor: pointer;}
+        .tab-link .tab-link__src{color: #96cc52;font-weight: bold;}
+    
+        .promotion-benefit{margin: 0 auto; text-align: center;}
+        .promotion-benefit__wrap{padding-top: 100px;}
+        .common__title{/*padding-top: 120px;*/margin: 0 auto;}
+        .common__title--img{width: 385px;}
+        .benefit__title{padding-top: 50px;}
+        .benefit__txt{color: #50714e; font-size: 40px; font-weight: 300; letter-spacing: -2.4px; line-height: normal;}
+        .benefit__txt--bold{font-size: 60px; font-weight:  bold; letter-spacing: -2.88px;}
+        .benefit__txt.col-white{color: #fff;}
+        .delivery__event{padding: 54px 0 120px}
+        .delivery__wrap--img{width: 537px;}
+        .delivery__wrap--coupon{width: 866px;}
+        .delivery__wrap--notice{padding-top: 40px; color: #50714e; font-size: 25px; font-weight: 300; line-height: 1.47; letter-spacing: -1.02px;}
+        .delivery__wrap--img{width: 537px;}
+        .promotion-benefit__box{padding-top: 100px;}
+        /*.promotion-benefit__box + .promotion-benefit__box{padding-bottom: 106px;}*/
+        .promotion-benefit__txt{padding-top: 46px;}
+        .promotion-spring__img{line-height: 0;margin-bottom: -1px;}
+        .promotion-spring__img--sale{display: flex; justify-content: center; align-items: center; height: 42px;position: absolute; top: 0;padding: 0 14px;font-size:22px; font-weight: bold; color: #6b8669;background: #e9eee3; line-height: normal;}
+        .promotion-spring__img--sale .percentage{font-size: 22px;}
+        .spring__txt{display: none;position: relative; color: transparent;font-size:35px;font-family: "Nanum Pen Script", cursive;font-weight: 400;font-style: normal;line-height: 0.74;letter-spacing: -2.31px;animation: motion 1s ease 0s infinite normal;white-space: nowrap;}
+        .swiper-slide-active .spring__txt{color: #fff;}
+        .new-season{padding-top: 50px;}
+        .new-season .col-white{margin-bottom: 20px;color: #fff;}
+        .new-season__wrap + .new-season__wrap{padding-top: 80px;}
+    
+        /*슬라이드*/
+        .spring-slide__link{padding-top: 30px; width: calc(100%/3);}
+        .spring-slide__link + .spring-slide__link{margin-left: 20px;}
+        .promotion-spring__img{position: relative;}
+        .product__name{position: relative; top: 20px; bottom: 0; width: 100%; height: 50px;color: #000;font-size: 20px; line-height: normal;}
+        /*.product__name{position: absolute; bottom: 24px; width: 100%;color: #fff;font-size: 20px; line-height: normal;}*/
+        .promotion-spring__info{background-color: #e9eee3;}
+        .promotion-spring__info.bg-green{background-color: #607f55;}
+        .product-price{padding: 40px 20px;}
+        .product-price__common, .product-price__sale{display: flex;}
+        .product-price__common--txt{color: #747474;font-size: 26px;font-weight: normal;line-height: 1;letter-spacing: -0.69px;}
+        .product-price__common--txt.col-gray{color:#b8bbb4;}
+        .product-price__sale{padding-top: 28px;}
+        .product-price__sale--txt{color: #6b8669; font-size: 30px; font-weight: bold; line-height: 1.14; letter-spacing: -0.9px;}
+        .product-price__sale--txt.col-white{color: #fff;}
+        .product-price__common--txt.strikethrough{text-decoration: line-through;}
+        .product-price__common--txt:nth-child(2),.product-price__sale--txt:nth-child(2){margin-left: auto;}
+        .new-season__box{display: flex; justify-content: center; padding: 0 45px;}
+        .box__img{font-size: 0;}
+        .box__img + .box__img{margin-left: 40px;}
+        .box__img > img{width: 100%;}
+        .new-season__link + .new-season__link{margin-left: 20px;}
+        .common__txt--cont{display: inline-block; color: #fff; font-size: 30px; font-weight: bold; text-decoration: underline; text-underline-position: under;}
+    
+    
+        /*timer*/
+        .top-timer{background-color: #000;}
+        .top-timer__wrap{display: flex; justify-content: center;}
+        .top-timer__left{display: flex;justify-content: right;align-items: center;}
+        .top-timer__right{display: flex;justify-content: right;align-items: center;padding-left: 16px;}
+        .top-timer__txt{padding-left: 16px;color: #fff; font-size: 30px; font-weight: bold;}
+        .top-timer__icon{width: 38px; margin-top: -7px;}
+        #timer {margin: 0;width: auto;font-size: 30px;font-weight: bold;text-align: center;color: #fff; font-family: "pretendard",Sans-serif;    display: flex;justify-content: left;align-items: center;}
+        #timer div {display: inline-block; min-width: 45px; padding: 20px 0; color: #fff; background: none; margin: 0px;}
+        #timer div span {color: #fff;display: block; margin-top: 15px; font-size: 1em; font-weight: 400;}
+        .timedeal-wrap{margin: 0 auto;width: 1160px;}
+        .time-txt{display:inline-block;color: #fff;}
+        .icon-colon{display: inline-block; color: #fff;}
+        .time-number{width: 70px;}
+        .txt-top{color: #fff; font-weight: 600; font-family: "pretendard",Sans-serif; line-height: 1.11;letter-spacing: -2.52px;text-align: center;}
+        .txt-date{color: #fff;font-weight: 500; line-height: 1.48;letter-spacing: -2.32px;text-align: center;}
+        .txt-time{display: inline-block;padding: 10px 30px;color: #ffa8d7;font-size: 50px;font-weight: 800;line-height: 1.15;letter-spacing: -3px;background-color: #191919;text-align: center;}
+        .notice{background-color: #191919;}
+        .notice__txt{padding: 74px; color: #9b9b9b; font-size: 24px; line-height: 160%;}
+    
+        /*안내사항 관련*/
+        #event_wrap .promotion_top .prd_noti .top_txt{background-color: #eaeee4;}
+        #event_wrap .promotion_top .prd_noti .top_txt p{color: #50714e;}
+        #event_wrap .promotion_top .prd_noti .txt_box{background-color: #eaeee4;}
+        #event_wrap .promotion_top .prd_noti .txt_box ul li{color: #50714e;}
+        #event_wrap .promotion_top .prd_noti .top_txt .icon{color: #50714e; text-align: center;}
+    
+        .promotion-benefit__box.signature{margin-top: -100px;}
+    
+        @media all and (max-width:1020px) {
+            #event_wrap{width: 100%;}
+        }
+    
+        @media all and (max-width:768px) {
+            #tab04{padding-bottom: 100px;}
+            .tab-link{height: 75px; font-size: 24px; flex: 1 1 50%;}
+            .common__title{padding-top : 60px;}
+            .common__txt{padding-top: 50px;}
+            .common__txt--cont{font-size: 20px;}
+            .benefit__title{padding-top: 25px;}
+            .benefit__txt{padding-top: 0; font-size: 30px;}
+            .benefit__txt--bold{font-size: 36px;}
+            .promotion-benefit__box + .promotion-benefit__box{padding-top: 0; padding-bottom: 77px;}
+            .promotion-benefit__txt{padding-top: 23px;}
+            .promotion-benefit__txt.top{padding-bottom: 0;}
+            .promotion-spring__img--sale{padding: 0 10px;height:36px; font-size: 16px;}
+            .promotion-spring__img--sale .percentage{font-size: 17px;}
+            .promotion-benefit__wrap{padding-top: 0;}
+            .promotion-benefit__box{padding-top: 0;}
+            .product-price{padding: 24px 12px;}
+            .product-price__common--txt{font-size: 14px;}
+            .product-price__sale--txt{font-size: 18px;}
+            .product-price__sale{padding-top: 14px;}
+            .spring__txt{font-size: 20px;}
+            .delivery__wrap--notice{padding-top: 20px; font-size: 14px;}
+            .delivery__event{padding: 27px 0 60px;}
+            .delivery__wrap--box{padding: 0 30px;}
+            .delivery__wrap--coupon{width: 100%;}
+            .new-season__box{padding: 0 20px; justify-content: center; flex-wrap: wrap;}
+            .box__img > img{width: 100%;}
+            .box__img.last > img{width: 50%;}
+            .box__img + .box__img{margin-left: 20px;}
+            .new-season__link + .new-season__link{margin-left: 10px;}
+            .new-season{padding-top: 20px;}
+            .common__title--img{width: 192px;}
+            .product__name{bottom: 12px; font-size: 11px;height: 25px;padding-bottom: 20px;}
+            .vegan__link + .vegan__link{margin-left: 10px;}
+            .new-season .col-white{margin-bottom: 0;}
+            .spring-slide__link{padding-top: 30px; width: 48%}
+            .delivery__wrap--img{width: 268px;}
+    
+            /*timer*/
+            #timer{font-size: 14px;}
+            #timer div {display: inline-block; min-width: 50px; padding: 0; margin: 0;}
+            .txt-top{font-size: 16px;}
+            .txt-date{font-size: 16px;}
+            .time-txt{font-size: 16px;}
+            .txt-time{padding: 5px 10px;font-size: 16px;}
+            .icon-colon{font-size: 16px;}
+            .time-number{width: 20px; font-size: 16px; padding: 0; margin: 0;}
+            .notice{padding: 0;}
+            .notice__txt{padding: 30px;font-size: 16px;}
+            .top-timer__txt{display: none;}
+            .top-timer__wrap{padding: 14px 0;}
+            .promotion-benefit__box.signature{margin-top: 0; padding-top: 50px;}
+        }
+    
+    </style>
+    
+    
+    </head>
+
+    <body>
+    
+  <!-- vegan week -->
+<div id="event_wrap" class="early-spring">
+    <div class="promotion_top">
+        <!-- 메인 배너 -->
+        <div class="blossom-main">
+            <div class="blossom-main__wrap">
+                <img src="https://cdn.slim9.biz/2024/promotion/vegan-week/encore/main@3x.webp" alt="" class="blossom-main__img">
+            </div>
+        </div>
+
+        <!--타이머-->
+        <!-- 상단 타이머 -->
+        <div class="top-timer">
+            <div class="top-timer__wrap">
+                <div class="top-timer__left">
+                    <img src="https://slim9.cafe24.com/web/promotion_activewear/clock%403x.webp" alt="" class="top-timer__icon">
+                    <p class="top-timer__txt">프로모션 종료 임박</p>
+                </div>
+                <div id="timer" class="timedeal-wrap"></div>
+                <div class="top-timer__right">
+                    <img src="https://slim9.cafe24.com/web/promotion_activewear/clock%403x.webp" alt="" class="top-timer__icon">
+                </div>
+            </div>
+        </div>
+        <!--//상단 타이머 -->
+        <!--//타이머-->
+
+        <!--//메인 배너 -->
+        <div class="spring-contents">
+            <ul class="tab-header">
+                <li class="tab-link on">
+                    <a href="#tab01" class="tab-link__src">20만원 쿠폰팩</a>
+                </li>
+                <li class="tab-link">
+                    <a href="#tab02" class="tab-link__src" style="color: #e55feb;">앵콜 패키지</a>
+                </li>
+                <li class="tab-link">
+                    <a href="#tab03" class="tab-link__src">S/S 시즌 컬러</a>
+                </li>
+                <li class="tab-link">
+                    <a href="#tab04" class="tab-link__src">액티브웨어 오픈</a>
+                </li>
+            </ul>
+            <div class="tab-wrap">
+                <div id="tab01" class="tab-content current">
+                    <div class="tab-content__wrap">
+                        <!-- 블라썸 할인 쿠폰 -->
+                        <div class="promotion-benefit">
+                            <div class="promotion-benefit__wrap">
+                                <div class="common__txt">
+                                    <p class="common__txt--cont" style="color:#50714e;">BENEFIT</p>
+                                </div>
+                                <div class="benefit__title benefit_02">
+                                    <div class="benefit__txt">
+                                        7일뒤면 사라져요!<br><b class="benefit__txt--bold">총 20만원 쇼핑 지원금</b>
+                                    </div>
+                                </div>
+                                <div class="delivery__event">
+                                    <div class="delivery__wrap">
+                                        <div class="delivery__wrap--box">
+                                            <img src="https://cdn.slim9.biz/2024/promotion/vegan-week/encore/coupon@3x.webp" alt="" class="delivery__wrap--coupon">
+                                        </div>
+                                        <p class="delivery__wrap--notice">* 로그인 시 마이페이지 > 쿠폰함으로 자동 지급<br>*프로모션, 신상 제품 제외</p>
+                                        <div class="delivery__wrap--btn">
+                                            <a href="/member/login.html" class="delivery__wrap--link">
+                                                <img src="https://cdn.slim9.biz/2024/promotion/vegan-week/login@3x.webp" alt="" class="delivery__wrap--img">
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- // 블라썸 할인 쿠폰 -->
+                    </div>
+                </div>
+
+                <div id="tab02" class="tab-content">
+                    <div class="tab-content__wrap">
+                        <!-- vegan week -->
+                        <div class="promotion-benefit">
+                            <div class="promotion-benefit__wrap">
+                                <!--240423 앵콜 프호모션 추가-->
+                                <div class="promotion-benefit__box signature">
+                                    <div class="promotion-benefit__txt">
+                                        <p class="benefit__txt col-white">
+                                            베스트 상품만 PICK!<br><span class="benefit__txt--bold">슬림9 시그니처 특가</span>
+                                        </p>
+                                    </div>
+                                    <div class="new-season encore">
+                                        <div class="new-season__wrap">
+                                            <div class="new-season__box">
+                                                <a href="/product/detail.html?product_no=2098" class="spring-slide__link vegan__link">
+                                                    <p class="spring__txt motion nanum-pen col-white">입은 듯 안 입은 듯 가볍고 쫀쫀해요!</p>
+                                                    <div class="promotion-spring__box">
+                                                        <div class="promotion-spring__img box__img">
+                                                            <img src="https://cdn.slim9.biz/2024/promotion/vegan-week/encore/best_01.webp" class="promotion-spring__source" alt="">
+                                                            <p class="promotion-spring__img--sale">44<span class="percentage">%</span></p>
+                                                        </div>
+                                                        <div class="promotion-spring__info">
+                                                            <p class="product__name">[5SET] 뉴베이직 셋업</p>
+                                                            <ul class="product-price">
+                                                                <li class="product-price__common">
+                                                                    <div class="product-price__common--txt">기본가</div>
+                                                                    <div class="product-price__common--txt strikethrough">360,000원</div>
+                                                                </li>
+                                                                <li class="product-price__sale">
+                                                                    <div class="product-price__sale--txt">할인가</div>
+                                                                    <div class="product-price__sale--txt">199,000원</div>
+                                                                </li>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                </a>
+                                                <a href="/product/detail.html?product_no=2106" class="spring-slide__link vegan__link">
+                                                    <p class="spring__txt motion nanum-pen col-white">움직임이 많은 분들께 추천!</p>
+                                                    <div class="promotion-spring__box">
+                                                        <div class="promotion-spring__img box__img">
+                                                            <img src="https://cdn.slim9.biz/2024/promotion/vegan-week/encore/best_02.webp" class="promotion-spring__source" alt="">
+                                                            <p class="promotion-spring__img--sale">53<span class="percentage">%</span></p>
+                                                        </div>
+                                                        <div class="promotion-spring__info">
+                                                            <p class="product__name">[5SET] 컴팩트 셋업</p>
+                                                            <ul class="product-price">
+                                                                <li class="product-price__common">
+                                                                    <div class="product-price__common--txt">기본가</div>
+                                                                    <div class="product-price__common--txt strikethrough">360,000원</div>
+                                                                </li>
+                                                                <li class="product-price__sale">
+                                                                    <div class="product-price__sale--txt">할인가</div>
+                                                                    <div class="product-price__sale--txt">169,000원</div>
+                                                                </li>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                </a>
+                                            </div>
+                                            <div class="new-season__box">
+                                                <a href="/product/detail.html?product_no=2105" class="spring-slide__link vegan__link">
+                                                    <p class="spring__txt motion nanum-pen col-white">움직임이 많은 분들께 추천!</p>
+                                                    <div class="promotion-spring__box">
+                                                        <div class="promotion-spring__img box__img">
+                                                            <img src="https://cdn.slim9.biz/2024/promotion/vegan-week/encore/best_03.webp" class="promotion-spring__source" alt="">
+                                                            <p class="promotion-spring__img--sale">49<span class="percentage">%</span></p>
+                                                        </div>
+                                                        <div class="promotion-spring__info">
+                                                            <p class="product__name">[3SET] 컴팩트 셋업</p>
+                                                            <ul class="product-price">
+                                                                <li class="product-price__common">
+                                                                    <div class="product-price__common--txt">기본가</div>
+                                                                    <div class="product-price__common--txt strikethrough">216,000원</div>
+                                                                </li>
+                                                                <li class="product-price__sale">
+                                                                    <div class="product-price__sale--txt">할인가</div>
+                                                                    <div class="product-price__sale--txt">109,000원</div>
+                                                                </li>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                </a>
+                                                <a href="/product/detail.html?product_no=2110" class="spring-slide__link vegan__link">
+                                                    <p class="spring__txt motion nanum-pen col-white">상체는 핏하게, 하체는 편하게!</p>
+                                                    <div class="promotion-spring__box">
+                                                        <div class="promotion-spring__img box__img">
+                                                            <img src="https://cdn.slim9.biz/2024/promotion/vegan-week/encore/best_04_2.png" class="promotion-spring__source" alt="">
+                                                            <p class="promotion-spring__img--sale">50<span class="percentage">%</span></p>
+                                                        </div>
+                                                        <div class="promotion-spring__info">
+                                                            <p class="product__name">[5SET] 편해브라 뉴베이직 컴팩트<br>X 네모팬티 뉴베이직</p>
+                                                            <ul class="product-price">
+                                                                <li class="product-price__common">
+                                                                    <div class="product-price__common--txt">기본가</div>
+                                                                    <div class="product-price__common--txt strikethrough">360,000원</div>
+                                                                </li>
+                                                                <li class="product-price__sale">
+                                                                    <div class="product-price__sale--txt">할인가</div>
+                                                                    <div class="product-price__sale--txt">179,000원</div>
+                                                                </li>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                </a>
+                                            </div>
+                                            <div class="new-season__box">
+                                                <a href="/product/detail.html?product_no=2109" class="spring-slide__link vegan__link">
+                                                    <p class="spring__txt motion nanum-pen col-white">상체는 핏하게, 하체는 편하게!</p>
+                                                    <div class="promotion-spring__box">
+                                                        <div class="promotion-spring__img box__img">
+                                                            <img src="https://cdn.slim9.biz/2024/promotion/vegan-week/encore/best_05.webp" class="promotion-spring__source" alt="">
+                                                            <p class="promotion-spring__img--sale">44<span class="percentage">%</span></p>
+                                                        </div>
+                                                        <div class="promotion-spring__info">
+                                                            <p class="product__name">[3SET] 편해브라 뉴베이직 컴팩트<br>X 네모팬티 뉴베이직</p>
+                                                            <ul class="product-price">
+                                                                <li class="product-price__common">
+                                                                    <div class="product-price__common--txt">기본가</div>
+                                                                    <div class="product-price__common--txt strikethrough">216,000원</div>
+                                                                </li>
+                                                                <li class="product-price__sale">
+                                                                    <div class="product-price__sale--txt">할인가</div>
+                                                                    <div class="product-price__sale--txt">119,000원</div>
+                                                                </li>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                </a>
+                                                <a href="/product/detail.html?product_no=2108" class="spring-slide__link vegan__link">
+                                                    <p class="spring__txt motion nanum-pen col-white">엉덩이 군살까지 싹 덮어주는 셋업!</p>
+                                                    <div class="promotion-spring__box">
+                                                        <div class="promotion-spring__img box__img">
+                                                            <img src="https://cdn.slim9.biz/2024/promotion/vegan-week/encore/best_06.webp" class="promotion-spring__source" alt="">
+                                                            <p class="promotion-spring__img--sale">44<span class="percentage">%</span></p>
+                                                        </div>
+                                                        <div class="promotion-spring__info">
+                                                            <p class="product__name">[5SET] 편해브라 뉴베이직<br>X 네모팬티 숏</p>
+                                                            <ul class="product-price">
+                                                                <li class="product-price__common">
+                                                                    <div class="product-price__common--txt">기본가</div>
+                                                                    <div class="product-price__common--txt strikethrough">360,000원</div>
+                                                                </li>
+                                                                <li class="product-price__sale">
+                                                                    <div class="product-price__sale--txt">할인가</div>
+                                                                    <div class="product-price__sale--txt">189,000원</div>
+                                                                </li>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                </a>
+                                                <a href="/product/detail.html?product_no=2107" class="spring-slide__link vegan__link">
+                                                    <p class="spring__txt motion nanum-pen col-white">엉덩이 군살까지 싹 덮어주는 셋업!</p>
+                                                    <div class="promotion-spring__box">
+                                                        <div class="promotion-spring__img box__img">
+                                                            <img src="https://cdn.slim9.biz/2024/promotion/vegan-week/encore/best_06.webp" class="promotion-spring__source" alt="">
+                                                            <p class="promotion-spring__img--sale">40<span class="percentage">%</span></p>
+                                                        </div>
+                                                        <div class="promotion-spring__info">
+                                                            <p class="product__name">[3SET] 편해브라 뉴베이직<br>X 네모팬티 숏</p>
+                                                            <ul class="product-price">
+                                                                <li class="product-price__common">
+                                                                    <div class="product-price__common--txt">기본가</div>
+                                                                    <div class="product-price__common--txt strikethrough">216,000원</div>
+                                                                </li>
+                                                                <li class="product-price__sale">
+                                                                    <div class="product-price__sale--txt">할인가</div>
+                                                                    <div class="product-price__sale--txt">129,000원</div>
+                                                                </li>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <div class="promotion-benefit__box">
+                                    <!--공통 상단 타이틀-->
+                                    <div class="common__title">
+                                        <div class="common__txt">
+                                            <p class="common__txt--cont">4월 깜짝 앵콜 특가 모음</p>
+                                        </div>
+                                    </div>
+                                    <!--//공통 상단 타이틀-->
+                                    <div class="promotion-benefit__txt top">
+                                        <p class="benefit__txt col-white">
+                                            이번 주말이 피크!<br><span class="benefit__txt--bold">봄나들이 한정 패키지</span>
+                                        </p>
+                                    </div>
+                                    <div class="new-season encore">
+                                        <p class="spring__txt motion nanum-pen col-white">하늘하늘한 원피스로 Y존 걱정 없이!</p>
+                                        <div class="new-season__wrap">
+                                            <div class="new-season__box">
+                                                <a href="/product/detail.html?product_no=2093" class="spring-slide__link vegan__link">
+                                                    <div class="promotion-spring__box">
+                                                        <div class="promotion-spring__img box__img">
+                                                            <img src="https://cdn.slim9.biz/2024/promotion/vegan-week/encore/1@3x.webp" class="" alt="네모팬티 뉴베이직 2장 + 네모팬티 Y커버 1장">
+                                                        </div>
+                                                        <div class="promotion-spring__info">
+                                                            <ul class="product-price">
+                                                                <li class="product-price__common">
+                                                                    <div class="product-price__common--txt col-gray">기본가</div>
+                                                                    <div class="product-price__common--txt strikethrough col-gray">102,000원</div>
+                                                                </li>
+                                                                <li class="product-price__sale">
+                                                                    <div class="product-price__sale--txt">할인가</div>
+                                                                    <div class="product-price__sale--txt">59,900원</div>
+                                                                </li>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                </a>
+                                                <a href="/product/detail.html?product_no=2093" class="spring-slide__link vegan__link">
+                                                    <div class="promotion-spring__box">
+                                                        <div class="promotion-spring__img box__img">
+                                                            <img src="https://cdn.slim9.biz/2024/promotion/vegan-week/encore/2@3x.webp" class="" alt="네모팬티 뉴베이직 3장+네모팬티 Y커버 2장">
+                                                        </div>
+                                                        <div class="promotion-spring__info">
+                                                            <ul class="product-price">
+                                                                <li class="product-price__common">
+                                                                    <div class="product-price__common--txt col-gray">기본가</div>
+                                                                    <div class="product-price__common--txt strikethrough col-gray">172,000원</div>
+                                                                </li>
+                                                                <li class="product-price__sale">
+                                                                    <div class="product-price__sale--txt">할인가</div>
+                                                                    <div class="product-price__sale--txt">89,900원</div>
+                                                                </li>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!--//240423 앵콜 프호모션 추가-->
+
+                                <div class="promotion-benefit__box" id="tab05" style="padding-bottom: 100px;">
+                                    <div class="promotion-benefit__txt">
+                                        <p class="benefit__txt col-white">
+                                            하루 종일 편안한<br><span class="benefit__txt--bold">액티브 & 이너 SET</span>
+                                        </p>
+                                    </div>
+                                    <div class="new-season encore">
+                                        <div class="new-season__wrap">
+                                            <div class="new-season__box">
+                                                <a href="/product/detail.html?product_no=2118" class="spring-slide__link vegan__link">
+                                                    <p class="spring__txt motion nanum-pen col-white">부담되지 않는 세미 기장과 편안함!</p>
+                                                    <div class="promotion-spring__box">
+                                                        <div class="promotion-spring__img box__img">
+                                                            <img src="https://cdn.slim9.biz/2024/promotion/vegan-week/active-inner/1@3x.webp" class="promotion-spring__source" alt="">
+                                                            <p class="promotion-spring__img--sale">32<span class="percentage">%</span></p>
+                                                        </div>
+                                                        <div class="promotion-spring__info">
+                                                            <p class="product__name">[1&3] 비건 세미 크롭티 숏<br>& 네모팬티 3일팩</p>
+                                                            <ul class="product-price">
+                                                                <li class="product-price__common">
+                                                                    <div class="product-price__common--txt">기본가</div>
+                                                                    <div class="product-price__common--txt strikethrough">151,000원</div>
+                                                                </li>
+                                                                <li class="product-price__sale">
+                                                                    <div class="product-price__sale--txt">할인가</div>
+                                                                    <div class="product-price__sale--txt">81,900원</div>
+                                                                </li>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                </a>
+                                                <a href="/product/detail.html?product_no=2119" class="spring-slide__link vegan__link">
+                                                    <p class="spring__txt motion nanum-pen col-white">가볍고 부드러워서 요가할 때도 강추!</p>
+                                                    <div class="promotion-spring__box">
+                                                        <div class="promotion-spring__img box__img">
+                                                            <img src="https://cdn.slim9.biz/2024/promotion/vegan-week/active-inner/2@3x.webp" class="promotion-spring__source" alt="">
+                                                            <p class="promotion-spring__img--sale">33<span class="percentage">%</span></p>
+                                                        </div>
+                                                        <div class="promotion-spring__info">
+                                                            <p class="product__name">[1&3] 비건 루즈핏 요가팬츠<br>& 편해브라 3일팩</p>
+                                                            <ul class="product-price">
+                                                                <li class="product-price__common">
+                                                                    <div class="product-price__common--txt">기본가</div>
+                                                                    <div class="product-price__common--txt strikethrough">199,000원</div>
+                                                                </li>
+                                                                <li class="product-price__sale">
+                                                                    <div class="product-price__sale--txt">할인가</div>
+                                                                    <div class="product-price__sale--txt">112,900원</div>
+                                                                </li>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                </a>
+                                                <a href="/product/detail.html?product_no=2117" class="spring-slide__link vegan__link">
+                                                    <p class="spring__txt motion nanum-pen col-white">말리지 않아 운동할 때도 걱정 없이!</p>
+                                                    <div class="promotion-spring__box">
+                                                        <div class="promotion-spring__img box__img">
+                                                            <img src="https://cdn.slim9.biz/2024/promotion/vegan-week/active-inner/3@3x.webp" class="promotion-spring__source" alt="">
+                                                            <p class="promotion-spring__img--sale">35<span class="percentage">%</span></p>
+                                                        </div>
+                                                        <div class="promotion-spring__info">
+                                                            <p class="product__name">[1&5] 비건 루즈핏 요가팬츠<br>& 네모팬티 5일팩</p>
+                                                            <ul class="product-price">
+                                                                <li class="product-price__common">
+                                                                    <div class="product-price__common--txt">기본가</div>
+                                                                    <div class="product-price__common--txt strikethrough">239,000원</div>
+                                                                </li>
+                                                                <li class="product-price__sale">
+                                                                    <div class="product-price__sale--txt">할인가</div>
+                                                                    <div class="product-price__sale--txt">124,900원</div>
+                                                                </li>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                        <!-- //블라썸 패키지 -->
+                    </div>
+                </div>
+
+                <div id="tab03" class="tab-content">
+                    <div class="tab-content__wrap">
+                        <!-- S/S 시즌 컬러 -->
+                        <div class="promotion-benefit">
+                            <div class="promotion-benefit__wrap">
+                                <div class="common__title">
+                                    <img src="https://slim9.cafe24.com/web/240418/ss-newcolor%403x.webp" alt="" class="common__title--img">
+                                </div>
+                                <div class="benefit__title">
+                                    <div class="benefit__txt">
+                                        슬림9의 시그니처<br><b class="benefit__txt--bold">봄맞이 뉴컬러 런칭</b>
+                                    </div>
+                                </div>
+                                <div class="new-season encore">
+                                    <div class="new-season__wrap">
+                                        <div class="new-season__box">
+                                            <a href="/product/detail.html?product_no=2047" class="spring-slide__link vegan__link">
+                                                <div class="promotion-spring__box">
+                                                    <div class="promotion-spring__img box__img">
+                                                        <img src="https://slim9.cafe24.com/web/240418/24-new-01%403x.webp" class="promotion-spring__source" alt="">
+                                                    </div>
+                                                    <div class="promotion-spring__info bg-green">
+                                                        <p class="product__name txt-white">네모팬티 뉴베이직(24.ver)</p>
+                                                        <ul class="product-price">
+                                                            <li class="product-price__common">
+                                                                <div class="product-price__common--txt col-gray">기본가</div>
+                                                                <div class="product-price__common--txt strikethrough col-gray">32,000원</div>
+                                                            </li>
+                                                            <li class="product-price__sale">
+                                                                <div class="product-price__sale--txt col-white">할인가</div>
+                                                                <div class="product-price__sale--txt col-white">21,900원</div>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </a>
+                                            <a href="/product/detail.html?product_no=226" class="spring-slide__link vegan__link">
+                                                <div class="promotion-spring__box">
+                                                    <div class="promotion-spring__img box__img">
+                                                        <img src="https://slim9.cafe24.com/web/240418/24-new-02%403x.webp" class="promotion-spring__source" alt="">
+                                                    </div>
+                                                    <div class="promotion-spring__info bg-green">
+                                                        <p class="product__name txt-white">네모팬티 숏</p>
+                                                        <ul class="product-price">
+                                                            <li class="product-price__common">
+                                                                <div class="product-price__common--txt col-gray">기본가</div>
+                                                                <div class="product-price__common--txt strikethrough col-gray">32,000원</div>
+                                                            </li>
+                                                            <li class="product-price__sale">
+                                                                <div class="product-price__sale--txt col-white">할인가</div>
+                                                                <div class="product-price__sale--txt col-white">19,900원</div>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </a>
+                                            <a href="/product/detail.html?product_no=1517" class="spring-slide__link vegan__link">
+                                                <div class="promotion-spring__box">
+                                                    <div class="promotion-spring__img box__img">
+                                                        <img src="https://slim9.cafe24.com/web/240418/24-new-03%403x.webp" class="promotion-spring__source" alt="">
+                                                    </div>
+                                                    <div class="promotion-spring__info bg-green">
+                                                        <p class="product__name txt-white">편해브라 에어</p>
+                                                        <ul class="product-price">
+                                                            <li class="product-price__common">
+                                                                <div class="product-price__common--txt col-gray">기본가</div>
+                                                                <div class="product-price__common--txt strikethrough col-gray">40,000원</div>
+                                                            </li>
+                                                            <li class="product-price__sale">
+                                                                <div class="product-price__sale--txt col-white">할인가</div>
+                                                                <div class="product-price__sale--txt col-white">27,900원</div>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </a>
+                                        </div>
+                                        <div class="new-season__box">
+                                            <a href="/product/detail.html?product_no=1518" class="spring-slide__link vegan__link">
+                                                <div class="promotion-spring__box">
+                                                    <div class="promotion-spring__img box__img">
+                                                        <img src="https://slim9.cafe24.com/web/240418/24-new-04%403x.webp" class="promotion-spring__source" alt="">
+                                                    </div>
+                                                    <div class="promotion-spring__info bg-green">
+                                                        <p class="product__name txt-white">편해브라 에어 컴팩트</p>
+                                                        <ul class="product-price">
+                                                            <li class="product-price__common">
+                                                                <div class="product-price__common--txt col-gray">기본가</div>
+                                                                <div class="product-price__common--txt strikethrough col-gray">40,000원</div>
+                                                            </li>
+                                                            <li class="product-price__sale">
+                                                                <div class="product-price__sale--txt col-white">할인가</div>
+                                                                <div class="product-price__sale--txt col-white">28,900원</div>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </a>
+                                            <a href="/product/detail.html?product_no=2050" class="spring-slide__link vegan__link">
+                                                <div class="promotion-spring__box">
+                                                    <div class="promotion-spring__img box__img">
+                                                        <img src="https://slim9.cafe24.com/web/240418/24-new-05%403x.webp" class="promotion-spring__source" alt="">
+                                                    </div>
+                                                    <div class="promotion-spring__info bg-green">
+                                                        <p class="product__name txt-white">네모팬티 Y커버 샘방지</p>
+                                                        <ul class="product-price">
+                                                            <li class="product-price__common">
+                                                                <div class="product-price__common--txt col-gray">기본가</div>
+                                                                <div class="product-price__common--txt strikethrough col-gray">40,000원</div>
+                                                            </li>
+                                                            <li class="product-price__sale">
+                                                                <div class="product-price__sale--txt col-white">할인가</div>
+                                                                <div class="product-price__sale--txt col-white">33,500원</div>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                        <!-- // S/S 시즌 컬러 -->
+                    </div>
+                </div>
+
+                <div id="tab04" class="tab-content">
+                    <div class="tab-content__wrap">
+                        <!-- 액티브웨어 오픈 -->
+                        <div class="promotion-benefit">
+                            <div class="promotion-benefit__wrap">
+                                <!--공통 상단 타이틀-->
+                                <div class="common__title">
+                                    <img src="https://cdn.slim9.biz/2024/promotion/vegan-week/active-wear@3x.webp" alt="" class="common__title--img">
+                                </div>
+                                <!--//공통 상단 타이틀-->
+                                <div class="benefit__title">
+                                    <div class="benefit__txt">
+                                        일상에서 운동까지<br><b class="benefit__txt--bold">비건 액티브웨어 출시</b>
+                                    </div>
+                                </div>
+                                <div class="new-season">
+                                    <div class="new-season__wrap">
+                                        <div class="new-season__box">
+                                            <a href="/product/detail.html?product_no=2052" class="spring-slide__link vegan__link">
+                                                <div class="promotion-spring__box">
+                                                    <div class="promotion-spring__img box__img">
+                                                        <img src="https://slim9.cafe24.com/web/240418/active-01%403x.webp" class="" alt="비건 루즈핏 조거팬츠">
+                                                    </div>
+                                                    <div class="promotion-spring__info bg-green">
+                                                        <p class="product__name txt-white">비건 루즈핏 조거팬츠</p>
+                                                        <ul class="product-price">
+                                                            <li class="product-price__common">
+                                                                <div class="product-price__common--txt col-gray">기본가</div>
+                                                                <div class="product-price__common--txt strikethrough col-gray">79,000원</div>
+                                                            </li>
+                                                            <li class="product-price__sale">
+                                                                <div class="product-price__sale--txt col-white">할인가</div>
+                                                                <div class="product-price__sale--txt col-white">65,000원</div>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </a>
+                                            <a href="/product/detail.html?product_no=2051" class="spring-slide__link vegan__link">
+                                                <div class="promotion-spring__box">
+                                                    <div class="promotion-spring__img box__img">
+                                                        <img src="https://slim9.cafe24.com/web/240418/active-02%403x.webp" class="" alt="비건 세미 크롭티 숏">
+                                                    </div>
+                                                    <div class="promotion-spring__info bg-green">
+                                                        <p class="product__name txt-white">비건 세미 크롭티 숏</p>
+                                                        <ul class="product-price">
+                                                            <li class="product-price__common">
+                                                                <div class="product-price__common--txt col-gray">기본가</div>
+                                                                <div class="product-price__common--txt strikethrough col-gray">55,000원</div>
+                                                            </li>
+                                                            <li class="product-price__sale">
+                                                                <div class="product-price__sale--txt col-white">할인가</div>
+                                                                <div class="product-price__sale--txt col-white">42,000원</div>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                        <!-- // 액티브웨어 오픈 -->
+                    </div>
+                </div>
+            </div>
+        <!--//혜택 내용 -->
+        <!--프로모션 안내사항-->
+        <div class="prd_noti">
+            <label for="menuBtn" class="top_txt" onclick="">
+                <p>안내사항</p>
+                <input type="checkbox" id="menuBtn">
+                <span class="icon">
+                        <img src="https://cdn.slim9.biz/2024/promotion/vegan-week/icon_arrow_bottom.svg" alt="">
+                    </span>
+            </label>
+            <div class="txt_box">
+                <ul>
+                    <li><span>·</span>해당 이벤트는 24년 04월 23일 PM 12:00부터 24년 04월 29일 PM 12:00까지 진행됩니다.</li>
+                    <li><span>·</span>교환 및 반품 후 재결제 시 쿠폰 재사용은 불가하며, 결제 금액 만큼만 반환됩니다.</li>
+                    <li><span>·</span>프로모션 종료 후 교환 및 반품 후 재결제 시 프로모션 가격으로 재구매가 불가합니다.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+    <script>
+        var spring_slide = new Swiper(".spring-swiper", {
+    slidesPerView: 1.5,
+    spaceBetween: 10,
+    pagination: {
+        clickable: true,
+    },
+    loop: true,
+    initialSlide: 1,
+    centeredSlides: true,
+    breakpoints: {
+        1020: {
+            slidesPerView: 1.9,
+            spaceBetween: 28,
+        },
+    },
+});
+
+var spring_slide2 = new Swiper(".spring-swiper2", {
+    slidesPerView: 1.5,
+    spaceBetween: 10,
+    pagination: {
+        clickable: true,
+    },
+    loop: true,
+    initialSlide: 1,
+    centeredSlides: true,
+    breakpoints: {
+        1020: {
+            slidesPerView: 1.9,
+            spaceBetween: 28,
+        },
+    },
+});
+
+var spring_slide3 = new Swiper(".spring-swiper3", {
+    slidesPerView: 1.5,
+    spaceBetween: 10,
+    pagination: {
+        clickable: true,
+    },
+    loop: true,
+    initialSlide: 1,
+    centeredSlides: true,
+    breakpoints: {
+        1020: {
+            slidesPerView: 1.9,
+            spaceBetween: 28,
+        },
+    },
+});
+
+    </script>
+    </body>
+    </html>

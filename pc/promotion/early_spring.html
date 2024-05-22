@@ -1,0 +1,684 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>momday</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css"/>
+    <link rel="preload" type="text/css" href='https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css'>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css"/>
+
+    <link type="text/css" rel="stylesheet" href="../css/style.css">
+    <link type="text/css" rel="stylesheet" href="../css/promotion.css">
+
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js" async></script>
+    <script type="text/javascript" src="../js/swiper-4.5.0.min.js"></script>
+    <script type="text/javascript" src="../js/promotion.js"></script>
+    <script type="text/javascript" src="../js/swiper.js"></script>
+    <script type="text/javascript" src="../js/swiper-bundle.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@8.0.7/swiper-bundle.min.js"></script>
+
+    <style>
+        @keyframes motion {
+            0%{top: 20px;}
+            50%{top: 10px;}
+            100%{top: 20px;}
+        }
+        @keyframes motion2 {
+            0%{bottom: -100px;}
+            50%{bottom: -90px;}
+            100%{bottom: -100px;}
+        }
+        @keyframes motion-mo {
+            0%{bottom: -50px;}
+            50%{bottom: -40px;}
+            100%{bottom: -50px;}
+        }
+        @keyframes blink-effect {
+            50% {
+                opacity: 0;
+            }
+        }
+    
+        .blink {animation: blink-effect 1s step-end infinite;}
+        #event_wrap {width: 1080px; margin: 0 auto; font-family: 'Pretendard'; }
+        #tab01{padding: 100px 0 150px;background-color: #fdedf2;}
+        #tab02{padding: 100px 0 150px;background-color: #fee0e4;}
+        #tab03{padding: 100px 0 150px;background-color: #fdedf2;}
+        .spring-main{width: 100%;}
+        .spring-main__wrap{display: block;line-height: 0;}
+        .spring-main__img{width: 100%;}
+        .tab-wrap{/*padding: 174px 0;background-color: #fde;*/}
+        .tab-header{top: 146px; /*position: sticky;*/ margin: 0;padding: 0;display: flex;flex-wrap: wrap;z-index: 9999;}
+        .tab-link{height: 150px;display: flex;align-items: center;justify-content: center;flex: 1 1 33%;color: #c53d5d;font-family: "pretendard",Sans-serif;font-size: 46px;font-weight: 500;font-style: normal;line-height: 1.57;background: #ed79a5;text-align: center;cursor: pointer;}
+        .tab-link .tab-link__src{color: #c53d5d;font-weight: bold;}
+        .tab-link.on .tab-link__src{color: #fff;}
+    
+        .promotion-benefit{margin: 0 auto; text-align: center;}
+        .promotion-benefit__txt.top{padding-bottom: 105px;}
+        .promotion-benefit__contents{padding-top:72px;}
+        .promotion-benefit__img{line-height: 0;display: flex;justify-content: center;}
+        .promotion-benefit__img + .promotion-benefit__img{padding-top: 32px;}
+        .promotion-benefit__notice{color:#e96b9a; font-size: 26px; font-weight: 300; line-height: 1.47; letter-spacing: -1.02px;}
+        .promotion-benefit__box + .promotion-benefit__box{padding-top: 154px;}
+        .promotion-benefit__img--box{margin-left: 100px; width: 537px;}
+        .promotion-benefit__img--boll{width: 466px;}
+        .promotion-benefit__img--coupon{width: 638px;padding-bottom: 20px;}
+        .promotion-benefit__coupon{position: absolute;top: 25px;margin: 0 auto;width: 100%;}
+        .promotion-benefit__link{display: inline-block;}
+        .common__icon--img{width: 120px;}
+        .common__icon--img.motion{position: relative;}
+        .common__txt{margin: 22px 0 50px;display: inline-block; padding: 18px 35px; background-color: #e96b9a; border-radius: 35px;}
+        .common__txt--cont{color: #fff;font-size: 38px; font-weight: bold;}
+        .benefit__txt{color: #e96b9a; font-size: 60px; font-weight: 300; letter-spacing: -2.4px;}
+        .benefit__txt--bold{font-size: 72px; font-weight: bold; line-height: normal; letter-spacing: -2.88px;}
+    
+        .promotion-spring__img{line-height: 0;margin-bottom: -1px;}
+        .promotion-spring__img--sale{display: flex; justify-content: center; align-items: center; height: 84px;position: absolute; top: 0;padding: 0 28px;font-size:44px; font-weight: bold; color: #fff;background: #e96b9a; line-height: normal;}
+        .promotion-spring__img--sale .percentage{font-size: 34px;}
+        .spring__txt{position: relative; color: transparent;font-size:38px; font-weight: 600; line-height: 0.74;letter-spacing: -2.31px;animation: motion 1s ease 0s infinite normal;}
+        .swiper-slide-active .spring__txt{color:#e96b9a;}
+        .spring__box{position: relative;}
+        .download__coupon.floating{position: fixed;bottom: -100px;text-align: center;margin: 0 auto;transform: translate(-50%, -50%);left: 50%;z-index: 9999; animation: motion2 1s ease 0s infinite normal}
+        .download__coupon--link > img{width: 537px;}
+        .promotion-benefit__img--gift{width: 724px;}
+    
+        /*슬라이드*/
+        /*.product-slide{padding-top: 105px;}*/
+        .spring-slide__link{padding-top: 30px;}
+        .spring-swiper .promotion-spring__source,
+        .spring-swiper2 .promotion-spring__source,
+        .spring-swiper3 .promotion-spring__source{width: 100%;}
+        .spring-swiper .promotion-spring__box,
+        .spring-swiper2 .promotion-spring__box,
+        .spring-swiper3 .promotion-spring__box{margin: 0 auto;margin-top: 40px;position: relative;}
+        .promotion-spring__info{background-color: #e96b9a;}
+        .product-price{padding: 55px 60px;}
+        .product-price__common, .product-price__sale{display: flex;}
+        .product-price__common--txt{color: #ad285a;font-size: 34px;font-weight: normal;line-height: 1;letter-spacing: -0.69px;}
+        .product-price__sale{padding-top: 28px;}
+        .product-price__sale--txt{color: #fff; font-size: 45px; font-weight: bold; line-height: 1.14; letter-spacing: -0.9px;}
+        .product-price__common--txt.strikethrough{text-decoration: line-through;}
+        .product-price__common--txt:nth-child(2),.product-price__sale--txt:nth-child(2){margin-left: auto;}
+        .spring-slide,.spring-slide2, .spring-slide3{width: 550px;}
+    
+        /*안내사항 관련*/
+        #event_wrap .promotion_top .prd_noti .top_txt{background-color: #fdedf2;}
+        #event_wrap .promotion_top .prd_noti .top_txt p{color: #e96b9a;}
+        #event_wrap .promotion_top .prd_noti .txt_box{background-color: #fdedf2;}
+        #event_wrap .promotion_top .prd_noti .txt_box ul li{color: #e96b9a;}
+        #event_wrap .promotion_top .prd_noti .top_txt .icon{color: #e96b9a; text-align: center;}
+    
+        @media all and (max-width:1020px) {
+            #event_wrap{width: 100%;}
+        }
+    
+        @media all and (max-width:768px) {
+            #tab01{padding: 50px 0 75px;}
+            #tab02{padding: 50px 0 75px;}
+            #tab03{padding: 50px 0 75px;}
+            .tab-link{height: 75px; font-size: 24px;}
+            .common__txt{margin: 10px 0 25px;padding: 10px 18px;}
+            .common__txt--cont{font-size: 20px;}
+            .benefit__txt{font-size: 30px;}
+            .benefit__txt--bold{font-size: 36px;}
+            .promotion-benefit__img--boll{width: 233px;}
+            .promotion-benefit__img--box{width: 320px; margin-left: 60px; overflow: hidden;}
+            .promotion-benefit__coupon > img{width: 45px;}
+            .promotion-benefit__box + .promotion-benefit__box{padding-top: 77px;}
+            .promotion-benefit__txt.top{padding-bottom: 52px;}
+            .common__icon--img{width: 42px;}
+            .promotion-benefit__notice{font-size: 13px;}
+            .promotion-benefit__contents{padding: 36px 20px 0;}
+            .promotion-benefit__img--gift{width: 100%;}
+            .promotion-spring__img--sale{padding: 0 14px;height:42px; font-size: 22px;}
+            .promotion-spring__img--sale .percentage{font-size: 17px;}
+            .promotion-benefit__img + .promotion-benefit__img{padding-top: 16px;}
+            .product-price{padding: 27px 30px;}
+            .product-price__common--txt{font-size: 17px;}
+            .product-price__sale--txt{font-size: 24px;}
+            .download__coupon--link > img{width: 310px;}
+            .promotion-benefit__img--coupon{width: 319px;padding-bottom: 10px;}
+            .product-price__sale{padding-top: 14px;}
+            .spring__txt{font-size: 20px;}
+    
+            .download__coupon.floating{bottom: -20px;animation: motion-mo 1s ease 0s infinite normal}
+        }
+    
+        @media all and (max-width:400px) {
+            .tab-link{font-size: 16px;}
+            .product-price{padding: 27px 15px;}
+            .product-price__sale--txt{font-size: 22px;}
+        }
+    
+    </style>
+    </head>
+
+    <body>
+    
+    <!-- early spring -->
+    <div id="event_wrap" class="early-spring">
+        <div class="promotion_top">
+            <!-- 메인 배너 -->
+            <div class="spring-main">
+                <div class="spring-main__wrap">
+                    <img src="https://cdn.slim9.biz/2024/promotion/early-spring/main_2.webp" alt="" class="spring-main__img">
+                </div>
+            </div>
+            <!--//메인 배너 -->
+            <div class="spring-contents">
+                <ul class="tab-header">
+                    <li class="tab-link on">
+                        <a href="#tab01" class="tab-link__src">100% 당첨</a>
+                    </li>
+                    <li class="tab-link">
+                        <a href="#tab02" class="tab-link__src">봄맞이 혜택</a>
+                    </li>
+                    <li class="tab-link">
+                        <a href="#tab03" class="tab-link__src">프로모션 패키지</a>
+                    </li>
+                </ul>
+                <div class="tab-wrap">
+                    <div id="tab01" class="tab-content current">
+                        <div class="tab-content__wrap">
+                            <!-- 100% 당첨 뽑기 -->
+                            <div class="promotion-benefit">
+                                <div class="promotion-benefit__wrap">
+                                    <!--공통 상단 타이틀-->
+                                    <div class="common__title">
+                                        <div class="common__icon">
+                                            <img src="https://cdn.slim9.biz/2024/promotion/early-spring/cherry@3x.webp" alt="" class="common__icon--img motion">
+                                        </div>
+                                        <div class="common__txt">
+                                            <p class="common__txt--cont">놓칠 수 없는 특별 혜택</p>
+                                        </div>
+                                    </div>
+                                    <!--//공통 상단 타이틀-->
+    
+                                    <div class="promotion-benefit__box">
+                                        <div class="promotion-benefit__txt">
+                                            <p class="benefit__txt">
+                                                꽝 없는 당첨 뽑기<br><span class="benefit__txt--bold">최대 20% 할인 쿠폰</span>
+                                            </p>
+                                        </div>
+                                        <div class="promotion-benefit__contents">
+                                            <div class="spring__box">
+                                                <a href="" class="promotion-benefit__link">
+                                                    <div class="promotion-benefit__img">
+                                                        <div class="promotion-benefit__coupon">
+                                                            <img src="https://cdn.slim9.biz/2024/promotion/early-spring/click.webp" alt="click" class="blink">
+                                                        </div>
+                                                        <img src="https://cdn.slim9.biz/2024/promotion/early-spring/boll_2.webp" alt="" class="promotion-benefit__img--boll">
+                                                    </div>
+                                                </a>
+                                            </div>
+                                            <div class="download__coupon">
+                                                <a href="/exec/front/newcoupon/IssueDownload?coupon_no=6078168182900001145" class="download__coupon--link"><img src="https://cdn.slim9.biz/2024/promotion/early-spring/button@3x.webp" alt=""></a>
+                                            </div>
+                                            <p class="promotion-benefit__notice">
+                                                *마이페이지 > 쿠폰함으로 자동 지급<br>
+                                                *프로모션 제외 제품 사용 가능/동일 ID 중복 다운 불가
+                                            </p>
+                                        </div>
+                                    </div>
+    
+                                    <div class="promotion-benefit__box">
+                                        <div class="promotion-benefit__txt">
+                                            <p class="benefit__txt">
+                                                뽑기 참여 시<br><span class="benefit__txt--bold">럭키드로우 자동 응모</span>
+                                            </p>
+                                        </div>
+                                        <div class="promotion-benefit__contents">
+                                            <div class="promotion-benefit__img">
+                                                <img src="https://cdn.slim9.biz/2024/promotion/early-spring/box@3x.webp" alt="" class="promotion-benefit__img--box">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- //100% 당첨 뽑기 -->
+                        </div>
+                    </div>
+    
+                    <div id="tab02" class="tab-content">
+                        <div class="tab-content__wrap">
+                            <!-- 봄맞이 혜택 -->
+                            <div class="promotion-benefit">
+                                <div class="promotion-benefit__wrap">
+                                    <!--공통 상단 타이틀-->
+                                    <div class="common__title">
+                                        <div class="common__icon">
+                                            <img src="https://cdn.slim9.biz/2024/promotion/early-spring/cherry@3x.webp" alt="" class="common__icon--img motion">
+                                        </div>
+                                        <div class="common__txt">
+                                            <p class="common__txt--cont">봄맞이 역대급 더블 혜택</p>
+                                        </div>
+                                    </div>
+                                    <!--//공통 상단 타이틀-->
+                                    <div class="promotion-benefit__box">
+                                        <div class="promotion-benefit__txt">
+                                            <p class="benefit__txt">
+                                                혜택 01<br><span class="benefit__txt--bold">프로모션 제품 무료배송</span>
+                                            </p>
+                                        </div>
+                                        <div class="promotion-benefit__contents">
+                                            <div class="promotion-benefit__img">
+                                                <img src="https://cdn.slim9.biz/2024/promotion/early-spring/freeship@3x.webp" alt="" class="promotion-benefit__img--coupon">
+                                            </div>
+                                            <div class="download__coupon floating motion">
+                                                <a href="/member/login.html" class="download__coupon--link"><img src="https://cdn.slim9.biz/2024/promotion/early-spring/btn_login.webp" alt=""></a>
+                                            </div>
+                                            <p class="promotion-benefit__notice">* 로그인 시 마이페이지 > 쿠폰함으로 자동 지급</p>
+                                        </div>
+                                    </div>
+                                    <div class="promotion-benefit__box">
+                                        <div class="promotion-benefit__txt">
+                                            <p class="benefit__txt">
+                                                혜택 02<br><span class="benefit__txt--bold">금액별 사은품 증정</span>
+                                            </p>
+                                        </div>
+                                        <div class="promotion-benefit__contents">
+                                            <div class="promotion-benefit__img">
+                                                <img src="https://cdn.slim9.biz/2024/promotion/early-spring/gift-01_v2.webp" alt="" class="promotion-benefit__img--gift">
+                                            </div>
+                                            <div class="promotion-benefit__img">
+                                                <img src="https://cdn.slim9.biz/2024/promotion/early-spring/gift-02_v2.webp" alt="" class="promotion-benefit__img--gift">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- //봄맞이 혜택 -->
+                        </div>
+                    </div>
+    
+                    <div id="tab03" class="tab-content">
+                        <div class="tab-content__wrap">
+                            <!-- 얼리스프링 패키지 -->
+                            <div class="promotion-benefit">
+                                <div class="promotion-benefit__wrap">
+                                    <!--공통 상단 타이틀-->
+                                    <div class="common__title">
+                                        <div class="common__icon">
+                                            <img src="https://cdn.slim9.biz/2024/promotion/early-spring/cherry@3x.webp" alt="" class="common__icon--img motion">
+                                        </div>
+                                        <div class="common__txt">
+                                            <p class="common__txt--cont">이번 봄에도 슬림9과 함께</p>
+                                        </div>
+                                    </div>
+                                    <!--//공통 상단 타이틀-->
+                                    <div class="promotion-benefit__box">
+                                        <div class="promotion-benefit__txt top">
+                                            <p class="benefit__txt">
+                                                지금 만나보는<br><span class="benefit__txt--bold">기간 한정 패키지</span>
+                                            </p>
+                                        </div>
+                                        <div class="product-slide">
+                                            <div class="swiper spring-swiper">
+                                                <div class="swiper-wrapper spring-wrapper">
+                                                    <div class="swiper-slide spring-slide">
+                                                        <p class="spring__txt motion">"네모팬티의 원조! 말림 없이 편해요"</p>
+                                                        <a href="/product/detail.html?product_no=2035" class="spring-slide__link">
+                                                            <div class="promotion-spring__box">
+                                                                <div class="promotion-spring__img">
+                                                                    <img src="https://cdn.slim9.biz/2024/promotion/early-spring/package-product/pack-01@3x.webp" class="promotion-spring__source" alt="">
+                                                                    <p class="promotion-spring__img--sale">45<span class="percentage">%</span></p>
+                                                                </div>
+                                                                <div class="promotion-spring__info">
+                                                                    <ul class="product-price">
+                                                                        <li class="product-price__common">
+                                                                            <div class="product-price__common--txt">기본가</div>
+                                                                            <div class="product-price__common--txt strikethrough">128,000원</div>
+                                                                        </li>
+                                                                        <li class="product-price__sale">
+                                                                            <div class="product-price__sale--txt">프로모션가</div>
+                                                                            <div class="product-price__sale--txt">69,900원</div>
+                                                                        </li>
+                                                                    </ul>
+                                                                </div>
+                                                            </div>
+                                                        </a>
+                                                    </div>
+                                                    <div class="swiper-slide spring-slide">
+                                                        <p class="spring__txt motion">"엉덩이를 전부 편안하게 덮어줘요!"</p>
+                                                        <a href="/product/detail.html?product_no=2036" class="spring-slide__link">
+                                                            <div class="promotion-spring__box">
+                                                                <div class="promotion-spring__img">
+                                                                    <img src="https://cdn.slim9.biz/2024/promotion/early-spring/package-product/pack-02@3x.webp" class="promotion-spring__source" alt="">
+                                                                    <p class="promotion-spring__img--sale">50<span class="percentage">%</span></p>
+                                                                </div>
+                                                                <div class="promotion-spring__info">
+                                                                    <ul class="product-price">
+                                                                        <li class="product-price__common">
+                                                                            <div class="product-price__common--txt">기본가</div>
+                                                                            <div class="product-price__common--txt strikethrough">128,000원</div>
+                                                                        </li>
+                                                                        <li class="product-price__sale">
+                                                                            <div class="product-price__sale--txt">프로모션가</div>
+                                                                            <div class="product-price__sale--txt">62,900원</div>
+                                                                        </li>
+                                                                    </ul>
+                                                                </div>
+                                                            </div>
+                                                        </a>
+                                                    </div>
+                                                    <div class="swiper-slide spring-slide">
+                                                        <p class="spring__txt motion">"압박 없이 가볍고 쫀쫀해요!"</p>
+                                                        <a href="/product/detail.html?product_no=2037" class="spring-slide__link">
+                                                            <div class="promotion-spring__box">
+                                                                <div class="promotion-spring__img">
+                                                                    <img src="https://cdn.slim9.biz/2024/promotion/early-spring/package-product/pack-03@3x.webp" class="promotion-spring__source" alt="">
+                                                                    <p class="promotion-spring__img--sale">43<span class="percentage">%</span></p>
+                                                                </div>
+                                                                <div class="promotion-spring__info">
+                                                                    <ul class="product-price">
+                                                                        <li class="product-price__common">
+                                                                            <div class="product-price__common--txt">기본가</div>
+                                                                            <div class="product-price__common--txt strikethrough">210,000원</div>
+                                                                        </li>
+                                                                        <li class="product-price__sale">
+                                                                            <div class="product-price__sale--txt">프로모션가</div>
+                                                                            <div class="product-price__sale--txt">119,000원</div>
+                                                                        </li>
+                                                                    </ul>
+                                                                </div>
+                                                            </div>
+                                                        </a>
+                                                    </div>
+                                                    <div class="swiper-slide spring-slide">
+                                                        <p class="spring__txt motion">"가슴을 잘 지지해주고 커버해줘요!"</p>
+                                                        <a href="/product/detail.html?product_no=2038" class="spring-slide__link">
+                                                            <div class="promotion-spring__box">
+                                                                <div class="promotion-spring__img">
+                                                                    <img src="https://cdn.slim9.biz/2024/promotion/early-spring/package-product/pack-04@3x.webp" class="promotion-spring__source" alt="">
+                                                                    <p class="promotion-spring__img--sale">46<span class="percentage">%</span></p>
+                                                                </div>
+                                                                <div class="promotion-spring__info">
+                                                                    <ul class="product-price">
+                                                                        <li class="product-price__common">
+                                                                            <div class="product-price__common--txt">기본가</div>
+                                                                            <div class="product-price__common--txt strikethrough">112,000원</div>
+                                                                        </li>
+                                                                        <li class="product-price__sale">
+                                                                            <div class="product-price__sale--txt">프로모션가</div>
+                                                                            <div class="product-price__sale--txt">59,900원</div>
+                                                                        </li>
+                                                                    </ul>
+                                                                </div>
+                                                            </div>
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+    
+                                    <div class="promotion-benefit__box">
+                                        <div class="promotion-benefit__txt">
+                                            <p class="benefit__txt">
+                                                가슴 압박 없는 편안함<br><span class="benefit__txt--bold">컴포트 브라 1&1</span>
+                                            </p>
+                                        </div>
+                                        <div class="product-slide">
+                                            <div class="swiper spring-swiper2">
+                                                <div class="swiper-wrapper spring-wrapper2">
+                                                    <div class="swiper-slide spring-slide2">
+                                                        <a href="/product/detail.html?product_no=1692" class="spring-slide__link">
+                                                            <div class="promotion-spring__box">
+                                                                <div class="promotion-spring__img">
+                                                                    <img src="https://cdn.slim9.biz/2024/promotion/early-spring/comfort-bra/pack-01@3x.webp" class="promotion-spring__source" alt="">
+                                                                    <p class="promotion-spring__img--sale">40<span class="percentage">%</span></p>
+                                                                </div>
+                                                                <div class="promotion-spring__info">
+                                                                    <ul class="product-price">
+                                                                        <li class="product-price__common">
+                                                                            <div class="product-price__common--txt">기본가</div>
+                                                                            <div class="product-price__common--txt strikethrough">80,000원</div>
+                                                                        </li>
+                                                                        <li class="product-price__sale">
+                                                                            <div class="product-price__sale--txt">프로모션가</div>
+                                                                            <div class="product-price__sale--txt">47,900원</div>
+                                                                        </li>
+                                                                    </ul>
+                                                                </div>
+                                                            </div>
+                                                        </a>
+                                                    </div>
+                                                    <div class="swiper-slide spring-slide2">
+                                                        <a href="/product/detail.html?product_no=1555" class="spring-slide__link">
+                                                            <div class="promotion-spring__box">
+                                                                <div class="promotion-spring__img">
+                                                                    <img src="https://cdn.slim9.biz/2024/promotion/early-spring/comfort-bra/pack-02@3x.webp" class="promotion-spring__source" alt="">
+                                                                    <p class="promotion-spring__img--sale">65<span class="percentage">%</span></p>
+                                                                </div>
+                                                                <div class="promotion-spring__info">
+                                                                    <ul class="product-price">
+                                                                        <li class="product-price__common">
+                                                                            <div class="product-price__common--txt">기본가</div>
+                                                                            <div class="product-price__common--txt strikethrough">96,000원</div>
+                                                                        </li>
+                                                                        <li class="product-price__sale">
+                                                                            <div class="product-price__sale--txt">프로모션가</div>
+                                                                            <div class="product-price__sale--txt">32,900원</div>
+                                                                        </li>
+                                                                    </ul>
+                                                                </div>
+                                                            </div>
+                                                        </a>
+                                                    </div>
+                                                    <div class="swiper-slide spring-slide2">
+                                                        <a href="/product/detail.html?product_no=2039" class="spring-slide__link">
+                                                            <div class="promotion-spring__box">
+                                                                <div class="promotion-spring__img">
+                                                                    <img src="https://cdn.slim9.biz/2024/promotion/early-spring/comfort-bra/pack-03@3x.webp" class="promotion-spring__source" alt="">
+                                                                    <p class="promotion-spring__img--sale">42<span class="percentage">%</span></p>
+                                                                </div>
+                                                                <div class="promotion-spring__info">
+                                                                    <ul class="product-price">
+                                                                        <li class="product-price__common">
+                                                                            <div class="product-price__common--txt">기본가</div>
+                                                                            <div class="product-price__common--txt strikethrough">96,000원</div>
+                                                                        </li>
+                                                                        <li class="product-price__sale">
+                                                                            <div class="product-price__sale--txt">프로모션가</div>
+                                                                            <div class="product-price__sale--txt">54,900원</div>
+                                                                        </li>
+                                                                    </ul>
+                                                                </div>
+                                                            </div>
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="promotion-benefit__box">
+                                        <div class="promotion-benefit__txt">
+                                            <p class="benefit__txt">
+                                                봄맞이 할인 혜택<br><span class="benefit__txt--bold">스페셜 특가 SET</span>
+                                            </p>
+                                        </div>
+                                        <div class="product-slide">
+                                            <div class="swiper spring-swiper3">
+                                                <div class="swiper-wrapper spring-wrapper3">
+                                                    <div class="swiper-slide spring-slide3">
+                                                        <a href="/product/detail.html?product_no=766" class="spring-slide__link">
+                                                            <div class="promotion-spring__box">
+                                                                <div class="promotion-spring__img">
+                                                                    <img src="https://cdn.slim9.biz/2024/promotion/early-spring/special-product/pack-02@3x.webp" class="promotion-spring__source" alt="">
+                                                                    <p class="promotion-spring__img--sale">52<span class="percentage">%</span></p>
+                                                                </div>
+                                                                <div class="promotion-spring__info">
+                                                                    <ul class="product-price">
+                                                                        <li class="product-price__common">
+                                                                            <div class="product-price__common--txt">기본가</div>
+                                                                            <div class="product-price__common--txt strikethrough">84,000원</div>
+                                                                        </li>
+                                                                        <li class="product-price__sale">
+                                                                            <div class="product-price__sale--txt">프로모션가</div>
+                                                                            <div class="product-price__sale--txt">39,900원</div>
+                                                                        </li>
+                                                                    </ul>
+                                                                </div>
+                                                            </div>
+                                                        </a>
+                                                    </div>
+                                                    <div class="swiper-slide spring-slide3">
+                                                        <a href="/product/detail.html?product_no=1843" class="spring-slide__link">
+                                                            <div class="promotion-spring__box">
+                                                                <div class="promotion-spring__img">
+                                                                    <img src="https://cdn.slim9.biz/2024/promotion/early-spring/special-product/pack-01@3x.webp" class="promotion-spring__source" alt="">
+                                                                    <p class="promotion-spring__img--sale">55<span class="percentage">%</span></p>
+                                                                </div>
+                                                                <div class="promotion-spring__info">
+                                                                    <ul class="product-price">
+                                                                        <li class="product-price__common">
+                                                                            <div class="product-price__common--txt">기본가</div>
+                                                                            <div class="product-price__common--txt strikethrough">222,000원</div>
+                                                                        </li>
+                                                                        <li class="product-price__sale">
+                                                                            <div class="product-price__sale--txt">프로모션가</div>
+                                                                            <div class="product-price__sale--txt">99,000원</div>
+                                                                        </li>
+                                                                    </ul>
+                                                                </div>
+                                                            </div>
+                                                        </a>
+                                                    </div>
+                                                    <div class="swiper-slide spring-slide3">
+                                                        <a href="/product/detail.html?product_no=2040" class="spring-slide__link">
+                                                            <div class="promotion-spring__box">
+                                                                <div class="promotion-spring__img">
+                                                                    <img src="https://cdn.slim9.biz/2024/promotion/early-spring/special-product/pack-03@3x.webp" class="promotion-spring__source" alt="">
+                                                                    <p class="promotion-spring__img--sale">45<span class="percentage">%</span></p>
+                                                                </div>
+                                                                <div class="promotion-spring__info">
+                                                                    <ul class="product-price">
+                                                                        <li class="product-price__common">
+                                                                            <div class="product-price__common--txt">기본가</div>
+                                                                            <div class="product-price__common--txt strikethrough">108,000원</div>
+                                                                        </li>
+                                                                        <li class="product-price__sale">
+                                                                            <div class="product-price__sale--txt">프로모션가</div>
+                                                                            <div class="product-price__sale--txt">58,900원</div>
+                                                                        </li>
+                                                                    </ul>
+                                                                </div>
+                                                            </div>
+                                                        </a>
+                                                    </div>
+                                                    <div class="swiper-slide spring-slide3">
+                                                        <a href="/product/detail.html?product_no=1660" class="spring-slide__link">
+                                                            <div class="promotion-spring__box">
+                                                                <div class="promotion-spring__img">
+                                                                    <img src="https://cdn.slim9.biz/2024/promotion/early-spring/special-product/pack-04@3x.webp" class="promotion-spring__source" alt="">
+                                                                    <p class="promotion-spring__img--sale">40<span class="percentage">%</span></p>
+                                                                </div>
+                                                                <div class="promotion-spring__info">
+                                                                    <ul class="product-price">
+                                                                        <li class="product-price__common">
+                                                                            <div class="product-price__common--txt">기본가</div>
+                                                                            <div class="product-price__common--txt strikethrough">84,000원</div>
+                                                                        </li>
+                                                                        <li class="product-price__sale">
+                                                                            <div class="product-price__sale--txt">프로모션가</div>
+                                                                            <div class="product-price__sale--txt">49,900원</div>
+                                                                        </li>
+                                                                    </ul>
+                                                                </div>
+                                                            </div>
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- //얼리스프링 패키지 -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--//혜택 내용 -->
+    
+            <!--프로모션 안내사항-->
+            <div class="prd_noti">
+                <label for="menuBtn" class="top_txt" onclick="">
+                    <p>안내사항</p>
+                    <input type="checkbox" id="menuBtn">
+                    <span class="icon">
+                        <img src="https://cdn.slim9.biz/2024/promotion/early-spring/icon_arrow_bottom.svg" alt="">
+                    </span>
+                </label>
+                <div class="txt_box">
+                    <ul>
+                        <li><span>·</span>해당 이벤트는 24년 03월 01일 PM 12:00부터 24년 03월 13일 PM 12:00까지 진행됩니다.</li>
+                        <li><span>·</span>할인 쿠폰은 무료배송 쿠폰과 중복 사용이 가능합니다.</li>
+                        <li><span>·</span>교환 및 반품 후 재결제 시 쿠폰 재사용은 불가하며, 결제 금액 만큼만 반환됩니다.</li>
+                        <li><span>·</span>럭키드로우 당첨자는 24년 03월 15일 PM 17:00에 발표됩니다.</li>
+                        <li><span>·</span>사은품은 다른 주문번호의 주문 내역과 합산되지 않으며 구매 금액별로 중복 증정되지 않습니다.</li>
+                        <li><span>·</span>본품 교환 및 반품 시 해당 사은품도 함께 취소 및 회수됩니다.</li>
+                        <li><span>·</span>적립금, 쿠폰 사용 금액이 적용된 최종 결제 금액으로 사은품이 증정됩니다.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--//early spring -->
+
+    <script>
+        var spring_slide = new Swiper(".spring-swiper", {
+    slidesPerView: 1.5,
+    spaceBetween: 10,
+    pagination: {
+        clickable: true,
+    },
+    loop: true,
+    initialSlide: 1,
+    centeredSlides: true,
+    breakpoints: {
+        1020: {
+            slidesPerView: 1.9,
+            spaceBetween: 28,
+        },
+    },
+});
+
+var spring_slide2 = new Swiper(".spring-swiper2", {
+    slidesPerView: 1.5,
+    spaceBetween: 10,
+    pagination: {
+        clickable: true,
+    },
+    loop: true,
+    initialSlide: 1,
+    centeredSlides: true,
+    breakpoints: {
+        1020: {
+            slidesPerView: 1.9,
+            spaceBetween: 28,
+        },
+    },
+});
+
+var spring_slide3 = new Swiper(".spring-swiper3", {
+    slidesPerView: 1.5,
+    spaceBetween: 10,
+    pagination: {
+        clickable: true,
+    },
+    loop: true,
+    initialSlide: 1,
+    centeredSlides: true,
+    breakpoints: {
+        1020: {
+            slidesPerView: 1.9,
+            spaceBetween: 28,
+        },
+    },
+});
+
+    </script>
+    </body>
+    </html>

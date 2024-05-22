@@ -1,0 +1,721 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>5월 감사제</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css"/>
+    <link rel="preload" type="text/css" href='https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css'>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css"/>
+
+    <link type="text/css" rel="stylesheet" href="../css/style.css">
+    <link type="text/css" rel="stylesheet" href="../css/promotion.css">
+    <link type="text/css" rel="stylesheet" href="../css/list.css">
+
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js" async></script>
+    <script type="text/javascript" src="../js/swiper-4.5.0.min.js"></script>
+    <script type="text/javascript" src="../js/swiper.js"></script>
+    <script type="text/javascript" src="../js/swiper-bundle.js"></script>
+    <script type="text/javascript" src="../js/promotion.js"></script>
+    
+    <style>
+        #event_wrap {width: 1080px; margin: 0 auto; font-family: 'Pretendard'; }
+        #tab01, #tab02, #tab03, #tab04{background-color: #fffadb;}
+        .img__full{width: 100%;margin-top: -54px;}
+        .blossom-main{width: 100%;}
+        .blossom-main__wrap{display: block;line-height: 0;}
+        .blossom-main__img{width: 100%;}
+        .tab-header{top: 146px; margin: 0;padding: 0;display: flex;flex-wrap: wrap;z-index: 9999;}
+        .tab-link{height: 150px;display: flex;align-items: center;justify-content: center;flex: 1 1 25%;color: #bd6119; font-family: "pretendard",Sans-serif;font-size: 34px;font-weight: 500;font-style: normal;line-height: 1.57;background: #ff8032;text-align: center;cursor: pointer;}
+        .tab-link .tab-link__src{color: #bd6119;font-weight: bold;}
+        .tab-link.on .tab-link__src{color: #fff;}
+      
+        .promotion-benefit{margin: 0 auto; text-align: center;}
+        .common__title{padding-top: 105px;margin: 0 auto; line-height: 0;}
+        .common__title--img{max-width: 590px;}
+        .benefit__title{padding-top: 50px;}
+        .benefit__txt{color: #ff7d36; font-size: 40px; font-weight: 300; letter-spacing: -2.4px; line-height: normal;}
+        .benefit__txt--bold{font-size: 60px; font-weight:  bold; letter-spacing: -2.88px;}
+        .delivery__event{padding: 54px 0 0;}
+        .delivery__wrap--notice{padding-top: 40px; color: #ff7d36; font-size: 25px; font-weight: 300; line-height: 1.47; letter-spacing: -1.02px;}
+        .delivery__wrap--img{width: 537px;}
+        .maybe-happy__list{display: inline-block;}
+        .maybe-happy__box{display: flex; justify-content: center; padding-top: 45px;}
+        .maybe-happy__box--img{width: 588px;}
+        .maybe-happy__inner{display: flex; justify-content: center; align-items: center;}
+        .maybe-happy__title--img{width: 394px;}
+        .maybe-happy__item{display: inline-block; width: 100%;}
+        .maybe-happy__item + .maybe-happy__item{margin-top: 24px;}
+        .maybe-happy__title{display: block;padding: 50px 0;}
+        .maybe-happy__txt{margin-left: 20px; width: 500px; height: 92px; display: flex; justify-content: center; align-items: center; background-color: #fff;  border: solid 2px rgba(255, 158, 79, 0.32); color: #585858;  font-size: 34px;}
+        .maybe-happy__num{width: 62px;height: 62px;color: #Fff;  border-radius: 100px;background: #ffa096;display: flex;justify-content: center;align-items: center;font-size: 36px;font-weight: bold; line-height: normal;}
+        .maybe-happy__notice{padding-top: 46px; color: #ff7d36; font-size: 20px;}
+        .product__info--name{color: #fff; font-size: 27px; line-height: 1.24;}
+        .product-price__common, .product-price__sale{display: flex;}
+        .product-price__common.middle{margin-top: 12px;}
+        .product-price__common.middle .product-price__common--txt{color: #ffbe85;}
+        .product-price__common--txt{color: #c2620c;font-size: 27px;font-weight: normal;line-height: 1;letter-spacing: -0.69px;}
+        .product-price{padding-top: 28px;}
+        .product-price__common--txt.strikethrough{text-decoration: line-through;}
+        .product-price__common--txt:nth-child(2),.product-price__sale--txt:nth-child(2){margin-left: auto;}
+        .product-price__sale{padding-top: 10px;}
+        .product-price__sale--txt{color: #fff; font-size: 33px; font-weight: bold; line-height: 1.25; /*letter-spacing: -0.6px;*/}
+      
+        .package{padding-top: 50px; padding-bottom: 76px;}
+        .package-wrap{padding: 0 5%;}
+        .package__box{display: flex; justify-content: center;}
+        .package__box + .package__box{padding-top: 25px;}
+        .package__box--product.one{display: flex;justify-content: center;align-items: center;width: 50%;}
+        .package__box--product + .package__box--product{margin-left: 25px;}
+        .package__box--link{display: block;}
+        .product__img{position: relative;}
+        .product__img--inner{position: relative;}
+        .product__img--src{width: 100%;}
+        .product__img--inner{line-height: 0;}
+        .product__sale{position: absolute; top: 0; color: #fff; background-color: #ff8d28; padding: 16px 26px; font-size: 35px; font-weight: bold;}
+        .product__sale--per{font-size: 28px;}
+        .product__info{padding: 26px 40px; background-color: #ff8d28;}
+      
+        /*안내사항 관련*/
+        #event_wrap .promotion_top .prd_noti .top_txt{background-color: #fffadb;}
+        #event_wrap .promotion_top .prd_noti .top_txt p{color: #ff7d36;}
+        #event_wrap .promotion_top .prd_noti .txt_box{background-color: #fffadb;}
+        #event_wrap .promotion_top .prd_noti .txt_box ul li{color: #ff7d36;}
+        #event_wrap .promotion_top .prd_noti .top_txt .icon{color: #ff7d36; text-align: center;}
+      
+        @media all and (max-width:1020px) {
+          #event_wrap{width: 100%;}
+        }
+      
+        @media all and (max-width:768px) {
+          .tab-link{height: 75px; font-size: 24px; flex: 1 1 50%;}
+          .common__title{padding-top : 60px;}
+          .benefit__title{padding-top: 25px;}
+          .benefit__txt{padding-top: 0; font-size: 30px;}
+          .benefit__txt--bold{font-size: 36px;}
+          .delivery__wrap--notice{padding-top: 20px; font-size: 14px;}
+          .delivery__event{padding: 0;}
+          .delivery__wrap--img{width: 268px;}
+          .common__title--img{width: 295px;}
+          .maybe-happy__box{padding-top: 20px;}
+          .maybe-happy__box--img{width: 90%;}
+          .maybe-happy__title{padding: 25px 0;}
+          .maybe-happy__title--img{width: 200px;}
+          .maybe-happy__num{width: 30px;height: 30px;font-size: 18px;}
+          .maybe-happy__txt{width: 250px;height: 45px;font-size: 18px;margin-left: 10px;}
+          .maybe-happy__item + .maybe-happy__item{margin-top: 12px;}
+          .maybe-happy__notice{padding-top:23px;font-size: 12px;}
+          .img__full{margin-top: 0;}
+          .product__info{padding: 12px;}
+          .product__info--name{font-size: 12px;}
+          .product__info--name.info__height{height: 30px;}
+          /*.product__info--name.info__height2{height: 48px;}*/
+          .product-price__common--txt{font-size: 14px;}
+          .product__sale{padding: 8px 13px;font-size: 18px;}
+          .product__sale--per{font-size: 14px;}
+          .product-price{padding-top: 14px;}
+          .product-price__sale--txt{font-size: 14px;}
+          .package{padding-top: 25px; padding-bottom: 35px;}
+          .package__box--product + .package__box--product{margin-left: 12px;}
+          .product-price__common.middle{margin-top: 6px;}
+        }
+      </style>
+</head>
+<body>
+
+<!-- may be happy -->
+<div id="event_wrap" class="early-spring">
+    <div class="promotion_top">
+      <!-- 메인 배너 -->
+      <div class="blossom-main">
+        <div class="blossom-main__wrap">
+          <img src="https://slim9.cafe24.com/web/renewal/bak/main_2.webp" alt="" class="blossom-main__img">
+        </div>
+      </div>
+      <!--//메인 배너 -->
+      <div class="spring-contents">
+        <ul class="tab-header">
+          <li class="tab-link on">
+            <a href="#tab01" class="tab-link__src">감사제 퀴즈</a>
+          </li>
+          <li class="tab-link">
+            <a href="#tab02" class="tab-link__src">네모팬티 증정</a>
+          </li>
+          <li class="tab-link">
+            <a href="#tab03" class="tab-link__src">더블혜택</a>
+          </li>
+          <li class="tab-link">
+            <a href="#tab04" class="tab-link__src">감사 패키지</a>
+          </li>
+        </ul>
+        <div class="tab-wrap">
+          <!--감사제 퀴즈-->
+          <div id="tab01" class="tab-content current">
+            <div class="tab-content__wrap">
+              <div class="promotion-benefit">
+                <div class="promotion-benefit__wrap">
+                  <div class="maybe-happy">
+                    <div class="maybe-happy__wrap">
+                      <!--공통 상단 타이틀-->
+                      <div class="common__title">
+                        <img src="https://slim9.cafe24.com/web/renewal/bak/title-01@3x.webp" alt="감사제 퀴즈! 맞히면 20% 할인 쿠폰 증정" class="common__title--img">
+                      </div>
+                      <div class="maybe-happy__box">
+                        <img src="https://slim9.cafe24.com/web/renewal/bak/memo@3x.webp" alt="" class="maybe-happy__box--img">
+                      </div>
+                      <div class="maybe-happy__quiz">
+                        <div class="maybe-happy__title">
+                          <img src="https://slim9.cafe24.com/web/renewal/bak/copy@3x.webp" alt="정답을 클릭해 주세요!" class="maybe-happy__title--img">
+                        </div>
+                        <ul class="maybe-happy__list">
+                          <li class="maybe-happy__item">
+                            <a href="" class="maybe-happy__link js-wrong">
+                              <div class="maybe-happy__inner">
+                                <span class="maybe-happy__num">1</span>
+                                <p class="maybe-happy__txt">네모팬티 뉴페이스</p>
+                              </div>
+                            </a>
+                          </li>
+                          <li class="maybe-happy__item">
+                            <a href="" class="maybe-happy__link js-wrong">
+                              <div class="maybe-happy__inner">
+                                <span class="maybe-happy__num">2</span>
+                                <p class="maybe-happy__txt">네모팬티 뉴진면</p>
+                              </div>
+                            </a>
+                          </li>
+                          <li class="maybe-happy__item">
+                            <a href="/exec/front/newcoupon/IssueDownload?coupon_no=6078710707900001244" class="maybe-happy__link">
+                              <div class="maybe-happy__inner">
+                                <span class="maybe-happy__num">3</span>
+                                <p class="maybe-happy__txt">네모팬티 뉴베이직</p>
+                              </div>
+                            </a>
+                          </li>
+                          <li class="maybe-happy__item">
+                            <a href="" class="maybe-happy__link js-wrong">
+                              <div class="maybe-happy__inner">
+                                <span class="maybe-happy__num">4</span>
+                                <p class="maybe-happy__txt">네모팬티 뉴스</p>
+                              </div>
+                            </a>
+                          </li>
+                        </ul>
+                        <p class="maybe-happy__notice">*지급되는 쿠폰은 프로모션 상품과 액티브웨어, 네모팬티 24버전을 제외한 제품에 적용 가능</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!--//감사제 퀴즈-->
+  
+          <!--랜덤 선물-->
+          <div id="tab02" class="tab-content">
+            <div class="tab-content__wrap">
+              <div class="promotion-benefit">
+                <div class="promotion-benefit__wrap">
+                  <div class="maybe-happy">
+                    <div class="maybe-happy__wrap">
+                      <div class="common__title">
+                        <img src="https://slim9.cafe24.com/web/renewal/bak/title-02@3x.webp" alt="" class="common__title--img">
+                      </div>
+                      <div class="benefit__title">
+                        <div class="benefit__txt">
+                          프로모션 제품을 구매하면<br><b class="benefit__txt--bold">네모팬티 증정!</b>
+                        </div>
+                      </div>
+                      <div class="delivery__event">
+                        <div class="delivery__wrap">
+                          <div class="delivery__wrap--box">
+                            <img src="https://slim9.cafe24.com/web/renewal/bak/gift_asset.webp" alt="gift box" class="img__full">
+                          </div>
+                          <p class="delivery__wrap--notice">* 프로모션 5SET 셋업 제품 구매 시 증정(1인 1개 한정)</p>
+                          <div class="delivery__wrap--btn">
+                            <a href="/product/detail.html?product_no=2098" class="delivery__wrap--link"><img src="https://slim9.cafe24.com/web/renewal/bak/button@3x.webp" alt="지금 구매하러 가기" class="delivery__wrap--img"></a>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!--//랜덤 선물-->
+  
+          <!--더블혜택-->
+          <div id="tab03" class="tab-content">
+            <div class="tab-content__wrap">
+              <div class="promotion-benefit">
+                <div class="promotion-benefit__wrap">
+                  <div class="maybe-happy">
+                    <div class="maybe-happy__wrap">
+                      <div class="common__title">
+                        <img src="https://slim9.cafe24.com/web/renewal/bak/title-03@3x.webp" alt="" class="common__title--img">
+                      </div>
+                      <div class="benefit__title">
+                        <div class="benefit__txt">
+                          감사제를 위해 준비한<br><b class="benefit__txt--bold">봄맞이 추가 혜택 쿠폰팩</b>
+                        </div>
+                      </div>
+                      <div class="delivery__event">
+                        <div class="delivery__wrap">
+                          <a href="/member/login.html" class="delivery__wrap--link">
+                            <div class="delivery__wrap--box">
+                              <img src="https://slim9.cafe24.com/web/renewal/bak/coupon_pack.webp" alt="쿠폰팩" class="img__full">
+                            </div>
+                          </a>
+                          <p class="delivery__wrap--notice">*로그인 시 마이페이지 > 쿠폰함으로 자동 지급<br>*프로모션 제품에만 적용 가능</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!--//더블혜택-->
+  
+          <!--감사 패키지-->
+          <div id="tab04" class="tab-content">
+            <div class="tab-content__wrap">
+              <div class="promotion-benefit">
+                <div class="promotion-benefit__wrap">
+                  <div class="common__title">
+                    <img src="https://slim9.cafe24.com/web/renewal/bak/title-04.webp" alt="" class="common__title--img">
+                  </div>
+                  <div class="benefit__title">
+                    <div class="benefit__txt">
+                      '매일 이 속옷만 입어요.'<br><b class="benefit__txt--bold">258만명이 선택한 편안함</b>
+                    </div>
+                  </div>
+                  <!--product-->
+                  <div class="package">
+                    <div class="package-wrap">
+                      <div class="package__box">
+                        <div class="package__box--product">
+                          <a href="/product/detail.html?product_no=2098" class="package__box--link">
+                            <div class="product__img">
+                              <div class="product__img--inner">
+                                <img src="https://slim9.cafe24.com/web/renewal/bak/01@3x.webp" alt="[5SET] 뉴베이직 셋업" class="product__img--src">
+                              </div>
+                              <p class="product__sale">45<span class="product__sale--per">%</span></p>
+                            </div>
+                            <div class="product__info">
+                              <p class="product__info--name">[5SET] 뉴베이직 셋업</p>
+                              <ul class="product-price">
+                                <li class="product-price__common">
+                                  <div class="product-price__common--txt">기본가</div>
+                                  <div class="product-price__common--txt strikethrough">360,000원</div>
+                                </li>
+                                <li class="product-price__sale">
+                                  <div class="product-price__sale--txt">할인가</div>
+                                  <div class="product-price__sale--txt">195,000원</div>
+                                </li>
+                              </ul>
+                            </div>
+                          </a>
+                        </div>
+                        <div class="package__box--product">
+                          <a href="/product/detail.html?product_no=2106" class="package__box--link">
+                            <div class="product__img">
+                              <div class="product__img--inner">
+                                <img src="https://slim9.cafe24.com/web/renewal/bak/02_0430@3x.webp" alt="[5SET] 컴팩트 셋업" class="product__img--src">
+                              </div>
+                              <p class="product__sale">45<span class="product__sale--per">%</span></p>
+                            </div>
+                            <div class="product__info">
+                              <p class="product__info--name">[5SET] 컴팩트 셋업</p>
+                              <ul class="product-price">
+                                <li class="product-price__common">
+                                  <div class="product-price__common--txt">기본가</div>
+                                  <div class="product-price__common--txt strikethrough">360,000원</div>
+                                </li>
+                                <li class="product-price__sale">
+                                  <div class="product-price__sale--txt">할인가</div>
+                                  <div class="product-price__sale--txt">195,000원</div>
+                                </li>
+                              </ul>
+                            </div>
+                          </a>
+                        </div>
+                      </div>
+                      <div class="package__box">
+                        <div class="package__box--product">
+                          <a href="/product/detail.html?product_no=2109" class="package__box--link">
+                            <div class="product__img">
+                              <div class="product__img--inner">
+                                <img src="https://slim9.cafe24.com/web/renewal/bak/03_2.webp" alt="[3SET] 편해브라 뉴베이직 컴팩트x 네모팬티 뉴베이직" class="product__img--src">
+                              </div>
+                              <p class="product__sale">44<span class="product__sale--per">%</span></p>
+                            </div>
+                            <div class="product__info">
+                              <p class="product__info--name info__height2">[3SET] 편해브라 뉴베이직 컴팩트<br>x 네모팬티 뉴베이직</p>
+                              <ul class="product-price">
+                                <li class="product-price__common">
+                                  <div class="product-price__common--txt">기본가</div>
+                                  <div class="product-price__common--txt strikethrough">216,000원</div>
+                                </li>
+                                <li class="product-price__sale">
+                                  <div class="product-price__sale--txt">할인가</div>
+                                  <div class="product-price__sale--txt">119,000원</div>
+                                </li>
+                              </ul>
+                            </div>
+                          </a>
+                        </div>
+                        <div class="package__box--product">
+                          <a href="/product/detail.html?product_no=2107" class="package__box--link">
+                            <div class="product__img">
+                              <div class="product__img--inner">
+                                <img src="https://slim9.cafe24.com/web/renewal/bak/04_2.webp" alt="[3SET] 컴팩트 셋업" class="product__img--src">
+                              </div>
+                              <p class="product__sale">44<span class="product__sale--per">%</span></p>
+                            </div>
+                            <div class="product__info">
+                              <p class="product__info--name info__height2">[3SET] 편해브라 뉴베이직<br>x네모팬티 숏</p>
+                              <ul class="product-price">
+                                <li class="product-price__common">
+                                  <div class="product-price__common--txt">기본가</div>
+                                  <div class="product-price__common--txt strikethrough">216,000원</div>
+                                </li>
+                                <li class="product-price__sale">
+                                  <div class="product-price__sale--txt">할인가</div>
+                                  <div class="product-price__sale--txt">119,000원</div>
+                                </li>
+                              </ul>
+                            </div>
+                          </a>
+                        </div>
+                      </div>
+                      <div class="package__box">
+                        <div class="package__box--product">
+                          <a href="/product/detail.html?product_no=2120" class="package__box--link">
+                            <div class="product__img">
+                              <div class="product__img--inner">
+                                <img src="https://cdn.slim9.biz/2024/promotion/may-be-happy/ver_2/add-5@3x.webp" alt="[3SET] 뉴베이직 셋업" class="product__img--src">
+                              </div>
+                              <p class="product__sale">44<span class="product__sale--per">%</span></p>
+                            </div>
+                            <div class="product__info">
+                              <p class="product__info--name info__height2">[3SET] 뉴베이직 셋업</p>
+                              <ul class="product-price">
+                                <li class="product-price__common">
+                                  <div class="product-price__common--txt">기본가</div>
+                                  <div class="product-price__common--txt strikethrough">216,000원</div>
+                                </li>
+                                <li class="product-price__sale">
+                                  <div class="product-price__sale--txt">할인가</div>
+                                  <div class="product-price__sale--txt">119,000원</div>
+                                </li>
+                              </ul>
+                            </div>
+                          </a>
+                        </div>
+                        <div class="package__box--product">
+                          <a href="/product/detail.html?product_no=2105" class="package__box--link">
+                            <div class="product__img">
+                              <div class="product__img--inner">
+                                <img src="https://cdn.slim9.biz/2024/promotion/may-be-happy/ver_2/add-6@3x.webp" alt="[3SET] 컴팩트 셋업" class="product__img--src">
+                              </div>
+                              <p class="product__sale">44<span class="product__sale--per">%</span></p>
+                            </div>
+                            <div class="product__info">
+                              <p class="product__info--name info__height2">[3SET] 컴팩트 셋업</p>
+                              <ul class="product-price">
+                                <li class="product-price__common">
+                                  <div class="product-price__common--txt">기본가</div>
+                                  <div class="product-price__common--txt strikethrough">216,000원</div>
+                                </li>
+                                <li class="product-price__sale">
+                                  <div class="product-price__sale--txt">할인가</div>
+                                  <div class="product-price__sale--txt">119,000원</div>
+                                </li>
+                              </ul>
+                            </div>
+                          </a>
+                        </div>
+                      </div>
+                      <div class="package__box">
+                        <div class="package__box--product one">
+                          <a href="/product/detail.html?product_no=1693" class="package__box--link">
+                            <div class="product__img">
+                              <div class="product__img--inner">
+                                <img src="https://cdn.slim9.biz/2024/promotion/may-be-happy/ver_2/add-7@3x.webp" alt="[1&1] 편해브라 뉴베이직 컴팩트" class="product__img--src">
+                              </div>
+                              <p class="product__sale">38<span class="product__sale--per">%</span></p>
+                            </div>
+                            <div class="product__info">
+                              <p class="product__info--name info__height">[1&1] 편해브라 뉴베이직 컴팩트</p>
+                              <ul class="product-price">
+                                <li class="product-price__common">
+                                  <div class="product-price__common--txt">기본가</div>
+                                  <div class="product-price__common--txt strikethrough">80,000원</div>
+                                </li>
+                                <li class="product-price__sale">
+                                  <div class="product-price__sale--txt">할인가</div>
+                                  <div class="product-price__sale--txt">48,900원</div>
+                                </li>
+                              </ul>
+                            </div>
+                          </a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <!--//product-->
+  
+                  <div class="benefit__title">
+                    <div class="benefit__txt">
+                      온종일 시원하고 쾌적한<br><b class="benefit__txt--bold">여름 언더웨어 특가</b>
+                    </div>
+                  </div>
+                  <!--product-->
+                  <div class="package">
+                    <div class="package-wrap">
+                      <div class="package__box">
+                        <div class="package__box--product one">
+                          <a href="/product/detail.html?product_no=2129" class="package__box--link">
+                            <div class="product__img">
+                              <div class="product__img--inner">
+                                <img src="https://cdn.slim9.biz/2024/promotion/may-be-happy/ver_2/add-9@3x.webp" alt="[1&1] 스웻쿨나시 인견" class="product__img--src">
+                              </div>
+                              <p class="product__sale">26<span class="product__sale--per">%</span></p>
+                            </div>
+                            <div class="product__info">
+                              <p class="product__info--name">[1&1] 스웻쿨나시 인견</p>
+                              <ul class="product-price">
+                                <li class="product-price__common">
+                                  <div class="product-price__common--txt">기본가</div>
+                                  <div class="product-price__common--txt strikethrough">68,000원</div>
+                                </li>
+                                <li class="product-price__sale">
+                                  <div class="product-price__sale--txt">할인가</div>
+                                  <div class="product-price__sale--txt">49,900원</div>
+                                </li>
+                              </ul>
+                            </div>
+                          </a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <!--//product-->
+  
+                  <div class="benefit__title">
+                    <div class="benefit__txt">
+                      더워지는 날씨<br><b class="benefit__txt--bold">한 장으로 이너 해결</b>
+                    </div>
+                  </div>
+                  <!--product-->
+                  <div class="package">
+                    <div class="package-wrap">
+                      <div class="package__box">
+                        <div class="package__box--product">
+                          <a href="/product/detail.html?product_no=2128" class="package__box--link">
+                            <div class="product__img">
+                              <div class="product__img--inner">
+                                <img src="https://cdn.slim9.biz/2024/promotion/may-be-happy/ver_2/add-10@3x.webp" alt="[1&1] 네모팬티 Y커버&네모팬티 Y커버 샘방지" class="product__img--src">
+                              </div>
+                              <p class="product__sale">36<span class="product__sale--per">%</span></p>
+                            </div>
+                            <div class="product__info">
+                              <p class="product__info--name info__height2">[1&1] 네모팬티 Y커버 <br>& 네모팬티 Y커버 샘방지</p>
+                              <ul class="product-price">
+                                <li class="product-price__common">
+                                  <div class="product-price__common--txt">기본가</div>
+                                  <div class="product-price__common--txt strikethrough">78,000원</div>
+                                </li>
+                                <li class="product-price__sale">
+                                  <div class="product-price__sale--txt">할인가</div>
+                                  <div class="product-price__sale--txt">49,900원</div>
+                                </li>
+                              </ul>
+                            </div>
+                          </a>
+                        </div>
+                        <div class="package__box--product">
+                          <a href="/product/detail.html?product_no=1432" class="package__box--link">
+                            <div class="product__img">
+                              <div class="product__img--inner">
+                                <img src="https://cdn.slim9.biz/2024/promotion/may-be-happy/ver_2/add-11@3x.webp" alt="[SET] 편해브라 듀얼 컴팩트x네모팬티 듀얼 컴팩트" class="product__img--src">
+                              </div>
+                              <p class="product__sale">52<span class="product__sale--per">%</span></p>
+                            </div>
+                            <div class="product__info">
+                              <p class="product__info--name info__height">[SET] 편해브라 듀얼 컴팩트<br>x 네모팬티 듀얼 컴팩트</p>
+                              <ul class="product-price">
+                                <li class="product-price__common">
+                                  <div class="product-price__common--txt">기본가</div>
+                                  <div class="product-price__common--txt strikethrough">84,000원</div>
+                                </li>
+                                <li class="product-price__sale">
+                                  <div class="product-price__sale--txt">할인가</div>
+                                  <div class="product-price__sale--txt">39,900원</div>
+                                </li>
+                              </ul>
+                            </div>
+                          </a>
+                        </div>
+                      </div>
+                      <div class="package__box">
+                        <div class="package__box--product one">
+                          <a href="/product/detail.html?product_no=2127" class="package__box--link">
+                            <div class="product__img">
+                              <div class="product__img--inner">
+                                <img src="https://cdn.slim9.biz/2024/promotion/may-be-happy/ver_2/add-12@3x.webp" alt="[1&1]볼륨라인 네모팬티" class="product__img--src">
+                              </div>
+                              <p class="product__sale">28<span class="product__sale--per">%</span></p>
+                            </div>
+                            <div class="product__info">
+                              <p class="product__info--name info__height">[1&1] 볼륨라인 네모팬티</p>
+                              <ul class="product-price">
+                                <li class="product-price__common">
+                                  <div class="product-price__common--txt">기본가</div>
+                                  <div class="product-price__common--txt strikethrough">84,000원</div>
+                                </li>
+                                <li class="product-price__sale">
+                                  <div class="product-price__sale--txt">할인가</div>
+                                  <div class="product-price__sale--txt">59,900원</div>
+                                </li>
+                              </ul>
+                            </div>
+                          </a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <!--//product-->
+  
+                  <div class="benefit__title">
+                    <div class="benefit__txt">
+                      편한데 예쁜 속옷을 원한다면<br><b class="benefit__txt--bold">아울렛 특가 모음</b>
+                    </div>
+                  </div>
+                  <!--product-->
+                  <div class="package">
+                    <div class="package-wrap">
+                      <div class="package__box">
+                        <div class="package__box--product">
+                          <a href="/product/detail.html?product_no=1118" class="package__box--link">
+                            <div class="product__img">
+                              <div class="product__img--inner">
+                                <img src="https://slim9.cafe24.com/web/renewal/bak/10@3x.webp" alt="[SET] 베이직플리츠" class="product__img--src">
+                              </div>
+                              <p class="product__sale">68<span class="product__sale--per">%</span></p>
+                            </div>
+                            <div class="product__info">
+                              <p class="product__info--name">[SET] 베이직플리츠</p>
+                              <ul class="product-price">
+                                <li class="product-price__common">
+                                  <div class="product-price__common--txt">기본가</div>
+                                  <div class="product-price__common--txt strikethrough">70,000원</div>
+                                </li>
+                                <li class="product-price__common middle">
+                                  <div class="product-price__common--txt">1차할인가</div>
+                                  <div class="product-price__common--txt strikethrough">25,000원</div>
+                                </li>
+                                <li class="product-price__sale">
+                                  <div class="product-price__sale--txt">최종할인가</div>
+                                  <div class="product-price__sale--txt">22,000원</div>
+                                </li>
+                              </ul>
+                            </div>
+                          </a>
+                        </div>
+                        <div class="package__box--product">
+                          <a href="/product/detail.html?product_no=1124" class="package__box--link">
+                            <div class="product__img">
+                              <div class="product__img--inner">
+                                <img src="https://slim9.cafe24.com/web/renewal/bak/11@3x.webp" alt="[SET] 베이직셔링" class="product__img--src">
+                              </div>
+                              <p class="product__sale">68<span class="product__sale--per">%</span></p>
+                            </div>
+                            <div class="product__info">
+                              <p class="product__info--name">[SET] 베이직셔링</p>
+                              <ul class="product-price">
+                                <li class="product-price__common">
+                                  <div class="product-price__common--txt">기본가</div>
+                                  <div class="product-price__common--txt strikethrough">70,000원</div>
+                                </li>
+                                <li class="product-price__common middle">
+                                  <div class="product-price__common--txt">1차할인가</div>
+                                  <div class="product-price__common--txt strikethrough">25,000원</div>
+                                </li>
+                                <li class="product-price__sale">
+                                  <div class="product-price__sale--txt">최종할인가</div>
+                                  <div class="product-price__sale--txt">22,000원</div>
+                                </li>
+                              </ul>
+                            </div>
+                          </a>
+                        </div>
+                      </div>
+                      <div class="package__box">
+                        <div class="package__box--product one">
+                          <a href="/product/detail.html?product_no=592" class="package__box--link">
+                            <div class="product__img">
+                              <div class="product__img--inner">
+                                <img src="https://slim9.cafe24.com/web/renewal/bak/12@3x.webp" alt="[SET] 베이직웨이브" class="product__img--src">
+                              </div>
+                              <p class="product__sale">63<span class="product__sale--per">%</span></p>
+                            </div>
+                            <div class="product__info">
+                              <p class="product__info--name">[SET] 베이직웨이브</p>
+                              <ul class="product-price">
+                                <li class="product-price__common">
+                                  <div class="product-price__common--txt">기본가</div>
+                                  <div class="product-price__common--txt strikethrough">60,000원</div>
+                                </li>
+                                <li class="product-price__common middle">
+                                  <div class="product-price__common--txt">1차할인가</div>
+                                  <div class="product-price__common--txt strikethrough">25,000원</div>
+                                </li>
+                                <li class="product-price__sale">
+                                  <div class="product-price__sale--txt">최종할인가</div>
+                                  <div class="product-price__sale--txt">22,000원</div>
+                                </li>
+                              </ul>
+                            </div>
+                          </a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <!--//product-->
+                </div>
+              </div>
+            </div>
+          </div>
+          <!--//감사 패키지-->
+        </div>
+      </div>
+      <!--//혜택 내용 -->
+  
+      <!--프로모션 안내사항-->
+      <div class="prd_noti">
+        <label for="menuBtn" class="top_txt" onclick="">
+          <p>안내사항</p>
+          <input type="checkbox" id="menuBtn">
+          <span class="icon">
+                      <img src="https://slim9.cafe24.com/web/renewal/bak/icon_arrow.svg" alt="">
+                  </span>
+        </label>
+        <div class="txt_box">
+          <ul>
+            <li><span>·</span>해당 이벤트는 24년 04월 30일 PM 12:00부터 24년 05월 30일 PM 12:00까지 진행됩니다.</li>
+            <li><span>·</span>교환 및 반품 후 재결제 시 쿠폰 재사용은 불가하며, 결제 금액 만큼만 반환됩니다.</li>
+            <li><span>·</span>프로모션 종료 후 교환 및 반품 후 재결제 시 프로모션 가격으로 재구매가 불가합니다.</li>
+          </ul>
+        </div>
+      </div>
+      <!--//프로모션 안내사항-->
+    </div>
+  </div>
+
+  <!--//may be happy-->
+  
+</body>
+</html>

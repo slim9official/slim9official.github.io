@@ -1,0 +1,569 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>season off</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css"/>
+    <link rel="preload" type="text/css" href='https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css'>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css"/>
+
+    <link type="text/css" rel="stylesheet" href="../css/style.css">
+    <link type="text/css" rel="stylesheet" href="../css/promotion.css">
+    <link type="text/css" rel="stylesheet" href="../css/list.css">
+
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js" async></script>
+    <script type="text/javascript" src="../js/swiper-4.5.0.min.js"></script>
+    <script type="text/javascript" src="../js/swiper.js"></script>
+    <script type="text/javascript" src="../js/swiper-bundle.js"></script>
+    <script type="text/javascript" src="../js/promotion.js"></script>
+    
+    <style>
+        /* 2024 season off css */
+        #event_wrap{width: 1080px;}
+        /*#event_wrap .promotion_top .prd_noti{padding-bottom: 100px;}*/
+    
+        .promotion-seasonoff, .promotion-benefit{background-color: #f1f1f1;}
+        .promotion-seasonoff__txt, .promotion-benefit__txt{color: #000;font-size: 52px;text-align: center;}
+        .promotion-seasonoff__title, .promotion-benefit__title{padding-bottom: 60px; line-height: 1.15;}
+        .promotion-benefit__wrap + .promotion-benefit__wrap{padding-top: 150px;}
+        .promotion-benefit__title.first{padding-top: 40px;}
+        .promotion-benefit__name{display: flex; justify-content: center; padding-top: 160px;}
+        .promotion-benefit__coupon{text-align: center;}
+    
+        .season-off{position: relative;}
+        .season-off__benefit{position: absolute; bottom: 0; width: 100%;}
+        .season-off__txt{position: absolute; width: auto; left: 44px; bottom: 240px; color: #fff;}
+        .season-off__date{font-size: 46px;font-weight: 300;}
+        .season-off__title{padding-top: 26px; font-size : 50px; font-weight: bold;}
+    
+        .season-off__list{display: flex; padding: 0 44px 28px;}
+        .season-off__item{width: 314px; padding: 44px 0; background-color: #000;}
+        .season-off__item + .season-off__item{margin-left: 24px;}
+        .season-off__item--txt{color: #fff; font-size: 32px; font-weight: normal; text-align: center; line-height: 1.3;}
+        .season-off__item--txt > b{font-size: 36px;font-weight: bold;}
+    
+        .promotion-seasonoff__bold,.promotion-benefit__bold{display: inline-block;font-size: 64px;font-weight: bold;}
+        .promotion-seasonoff__img{margin: 0 auto;text-align: center;line-height: 0;}
+        .promotion-seasonoff__source{width: 888px;}
+        .promotion-seasonoff__list{margin: 0 auto;padding: 52px 0 62px;width: 888px;background-color: #000;}
+        .promotion-seasonoff__item{display: flex;padding: 0 44px;}
+        .promotion-seasonoff__name{padding-bottom: 40px; padding-top: 160px;display: flex;justify-content: center;}
+        .promotion-seasonoff__top, .promotion-benefit__top{display: inline-block;padding: 20px 40px 20px 40px;background-color: #dd517c;}
+        .promotion-seasonoff__top--txt, .promotion-benefit__top--txt{color: #fff;font-size: 34px;font-weight: 300;}
+        .promotion-seasonoff__item + .promotion-seasonoff__item{padding-top: 14px;}
+    
+        .promotion-benefit__box{line-height: 0;}
+        .promotion-benefit__box--img{width: 465px;}
+        .promotion-benefit__notice{padding: 30px 0 40px; color: #d15a7b; font-size: 20px;font-weight: 300;}
+        .promotion-benefit__btn{margin: 0 auto;width: 393px;background-color: #000;border-radius: 38px;}
+        .promotion-benefit__link--detail{font-size: 36px;font-weight: 500;color: #fff;text-align: center;line-height: 2.1}
+    
+        .price__period{color:#a9a9a9;font-size: 30px;font-weight: normal;font-family: Pretendard,sans-serif;}
+        .price__period.strikethrough{text-decoration: line-through;}
+        .price__period + .price__period{margin-left: auto;}
+        .price__coupon{color: #fff;font-size: 30px;font-weight: normal;font-family: Pretendard,sans-serif;}
+        .price__coupon + .price__coupon{margin-left: auto;}
+        .price__point{color: #d15a7b;font-size: 38px;font-weight: bold;}
+        .price__point + .price__point{margin-left: auto;}
+    
+        /*슬라이드*/
+        .seasonoff-swiper .promotion-seasonoff__source,
+        .seasonoff-swiper2 .promotion-seasonoff__source,
+        .seasonoff-swiper3 .promotion-seasonoff__source{
+            width: 100%;
+        }
+        .seasonoff-swiper .promotion-seasonoff__list,
+        .seasonoff-swiper2 .promotion-seasonoff__list,
+        .seasonoff-swiper3 .promotion-seasonoff__list{
+            width: 100%;
+        }
+        .seasonoff-swiper promotion-seasonoff__box,
+        .seasonoff-swiper2 promotion-seasonoff__box,
+        .seasonoff-swiper3 promotion-seasonoff__box{
+            margin: 0 auto;
+            width: 888px;
+        }
+        .seasonoff-swiper,
+        .seasonoff-swiper2,
+        .seasonoff-swiper3{
+            padding: 0 58px 154px;
+        }
+    
+        @media all and (max-width:1020px) {
+            #event_wrap {width: 100%;margin: 0;}
+            #event_wrap .promotion_top .prd_noti{padding-bottom: 0;}
+            /*.promotion-seasonoff__title{padding: 75px 0 30px;}*/
+            .promotion-seasonoff__txt{font-size: 26px;}
+            .promotion-seasonoff__bold{padding-top: 12px;font-size: 32px;}
+            .promotion-seasonoff__source{width: 100%;}
+            .promotion-seasonoff__list{width: 100%;padding: 26px 0 31px;}
+            .promotion-seasonoff__item{padding: 0 24px;}
+            .promotion-seasonoff__item + .promotion-seasonoff__item{padding-top: 7px;}
+            .price__period{font-size: 16px;}
+            .price__coupon{font-size: 16px;}
+            .price__point{font-size: 20px;}
+            .seasonoff-swiper, .seasonoff-swiper2,.seasonoff-swiper3{padding: 0 24px 70px;}
+    
+            .season-off__date{font-size: 22px;}
+            .season-off__title{padding-top: 13px; font-size: 25px;}
+            .season-off__txt{left: 22px; bottom: 130px;}
+            .season-off__list{padding: 0 22px 22px;}
+            .season-off__item{padding: 22px 0;}
+            .season-off__item + .season-off__item{margin-left: 12px;}
+            .season-off__item--txt{font-size: 16px;}
+            .season-off__item--txt > b{font-size: 18px;}
+        }
+        @media all and (max-width:768px) {
+            .season-off__txt{left: 14px; bottom: 110px;}
+            .season-off__item + .season-off__item{margin-left: 8px;}
+            .season-off__item--txt{font-size: 12px;}
+            .season-off__item--txt > b{font-size: 14px;}
+            .season-off__list{padding: 0 14px 14px;}
+            .promotion-seasonoff__name{padding-top: 80px; padding-bottom: 20px;}
+            .promotion-seasonoff__top, .promotion-benefit__top{padding: 10px;}
+            .promotion-seasonoff__top--txt, .promotion-benefit__top--txt{font-size: 16px;}
+            .promotion-benefit__name{padding-top: 80px;}
+            .promotion-benefit__title.first{padding-top: 20px;}
+            .promotion-seasonoff__title, .promotion-benefit__title{padding-bottom: 30px; line-height: 1;}
+            .promotion-seasonoff__txt, .promotion-benefit__txt{font-size: 26px; line-height: 1.15}
+            .promotion-seasonoff__bold, .promotion-benefit__bold{padding-top: 0;font-size: 32px;}
+            .promotion-benefit__box--img{width: 232px;}
+            .promotion-benefit__notice{padding: 15px 0 20px; font-size: 12px;}
+            .promotion-benefit__link--detail{font-size: 18px;}
+            .promotion-benefit__btn{width: 195px;}
+            .promotion-benefit__wrap + .promotion-benefit__wrap{padding-top: 75px;}
+    
+        }
+    </style>
+    
+    
+</head>
+<body>
+<!--프로모션 배너-->
+<div id="event_wrap">
+    <div class="promotion_top">
+        <div class="season-off">
+            <div class="img_box">
+                <img src="https://cdn.slim9.biz/2024/promotion/season-off/main@3x.webp" alt="">
+            </div>
+            <div class="season-off__benefit">
+                <div class="season-off__txt">
+                    <p class="season-off__date">01.16 - 01.22</p>
+                    <p class="season-off__title">단 7일만 만나는 겨울 시즌오프</p>
+                </div>
+                <div class="season-off__box">
+                    <div class="season-off__list">
+                        <div class="season-off__item">
+                            <p class="season-off__item--txt">
+                                겨울 베스트셀러<br><b>최대 63% 할인</b>
+                            </p>
+                        </div>
+                        <div class="season-off__item">
+                            <p class="season-off__item--txt">
+                                슬림9 회원 혜택<br><b>10% 추가할인</b>
+                            </p>
+                        </div>
+                        <div class="season-off__item">
+                            <p class="season-off__item--txt">
+                                첫 구매시<br><b>네모팬티 1장 증정</b>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 프로모션 혜택영역-->
+        <div class="promotion-benefit">
+            <div class="promotion-benefit__name">
+                <div class="promotion-benefit__top">
+                    <p class="promotion-benefit__top--txt">마지막 겨울을 위한 더블혜택</p>
+                </div>
+            </div>
+            <!-- 혜택1 -->
+            <div class="promotion-benefit__wrap">
+                <div class="promotion-benefit__title first">
+                    <p class="promotion-benefit__txt">
+                        회원이라면 누구나<br><span class="promotion-benefit__bold">10% 추가할인!</span>
+                    </p>
+                </div>
+                <div class="promotion-benefit__coupon">
+                    <div class="promotion-benefit__box">
+                        <img src="https://cdn.slim9.biz/2024/promotion/season-off/coupon-01@3x.webp" alt="" class="promotion-benefit__box--img">
+                    </div>
+                    <p class="promotion-benefit__notice">* 10%쿠폰은 마이페이지 > 쿠폰함으로 자동 지급됩니다.</p>
+                </div>
+                <div class="promotion-benefit__btn">
+                    <a href="/myshop/coupon/coupon.html" class="promotion-benefit__link">
+                        <p class="promotion-benefit__link--detail">로그인하고 쿠폰 받기 ></p>
+                    </a>
+                </div>
+            </div>
+            <!-- //혜택1 -->
+
+            <!-- 혜택2 -->
+            <div class="promotion-benefit__wrap">
+                <div class="promotion-benefit__title">
+                    <p class="promotion-benefit__txt">
+                        슬림9이 처음이라면?<br><span class="promotion-benefit__bold">네모팬티 1장 증정</span>
+                    </p>
+                </div>
+                <div class="promotion-benefit__coupon">
+                    <div class="promotion-benefit__box">
+                        <img src="https://cdn.slim9.biz/2024/promotion/season-off/coupon-02@3x.webp" alt="" class="promotion-benefit__box--img">
+                    </div>
+                    <p class="promotion-benefit__notice">* 회원가입 시 마이페이지 > 쿠폰함으로 자동 지급됩니다.</p>
+                </div>
+                <div class="promotion-benefit__btn">
+                    <a href="/myshop/coupon/coupon.html" class="promotion-benefit__link">
+                        <p class="promotion-benefit__link--detail">가입하고 혜택받기 ></p>
+                    </a>
+                </div>
+            </div>
+            <!-- //혜택2 -->
+        </div>
+        <!-- //프로모션 혜택영역 -->
+
+        <!-- 프로모션 상품영역 -->
+        <div class="promotion-seasonoff">
+            <div class="promotion-seasonoff__name">
+                <div class="promotion-seasonoff__top">
+                    <p class="promotion-seasonoff__top--txt">기간 한정 프로모션 패키지</p>
+                </div>
+            </div>
+            <!-- 슬라이드01 -->
+            <div class="promotion-seasonoff__title">
+                <p class="promotion-seasonoff__txt">
+                    최대 63% 할인<br>
+                    <span class="promotion-seasonoff__bold">겨울 베스트 1+1</span>
+                </p>
+            </div>
+            <div class="swiper seasonoff-swiper">
+                <div class="swiper-wrapper seasonoff-wrapper">
+                    <div class="swiper-slide seasonoff-slide">
+                        <a href="/product/detail.html?product_no=1899" class="seasonoff-slide__link">
+                            <div class="promotion-seasonoff__box">
+                                <div class="promotion-seasonoff__img">
+                                    <img src="https://cdn.slim9.biz/2024/promotion/season-off/1-heat@3x.webp" class="promotion-seasonoff__source" alt="">
+                                </div>
+                                <div class="promotion-seasonoff__price">
+                                    <ul class="promotion-seasonoff__list">
+                                        <li class="promotion-seasonoff__item">
+                                            <p class="price__period">소비자가</p>
+                                            <p class="price__period strikethrough">70,000원</p>
+                                        </li>
+                                        <li class="promotion-seasonoff__item">
+                                            <p class="price__coupon">판매가</p>
+                                            <p class="price__coupon">25,900원</p>
+                                        </li>
+                                        <li class="promotion-seasonoff__item">
+                                            <p class="price__point">최종혜택가</p>
+                                            <p class="price__point">23,310원</p>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="swiper-slide seasonoff-slide">
+                        <a href="/product/detail.html?product_no=1969" class="seasonoff-slide__link">
+                            <div class="promotion-seasonoff__box">
+                                <div class="promotion-seasonoff__img">
+                                    <img src="https://cdn.slim9.biz/2024/promotion/season-off/2-high-warm@3x.webp" class="promotion-seasonoff__source" alt="">
+                                </div>
+                                <div class="promotion-seasonoff__price">
+                                    <ul class="promotion-seasonoff__list">
+                                        <li class="promotion-seasonoff__item">
+                                            <p class="price__period">소비자가</p>
+                                            <p class="price__period strikethrough">80,000원</p>
+                                        </li>
+                                        <li class="promotion-seasonoff__item">
+                                            <p class="price__coupon">판매가</p>
+                                            <p class="price__coupon">38,900원</p>
+                                        </li>
+                                        <li class="promotion-seasonoff__item">
+                                            <p class="price__point">최종혜택가</p>
+                                            <p class="price__point">35,010원</p>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="swiper-slide seasonoff-slide">
+                        <a href="/product/detail.html?product_no=1914" class="seasonoff-slide__link">
+                            <div class="promotion-seasonoff__box">
+                                <div class="promotion-seasonoff__img">
+                                    <img src="https://cdn.slim9.biz/2024/promotion/season-off/3-air-top@3x.webp" class="promotion-seasonoff__source" alt="">
+                                </div>
+                                <div class="promotion-seasonoff__price">
+                                    <ul class="promotion-seasonoff__list">
+                                        <li class="promotion-seasonoff__item">
+                                            <p class="price__period">소비자가</p>
+                                            <p class="price__period strikethrough">96,000원</p>
+                                        </li>
+                                        <li class="promotion-seasonoff__item">
+                                            <p class="price__coupon">판매가</p>
+                                            <p class="price__coupon">58,900원</p>
+                                        </li>
+                                        <li class="promotion-seasonoff__item">
+                                            <p class="price__point">최종혜택가</p>
+                                            <p class="price__point">53,010원</p>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+
+                </div>
+            </div>
+            <!-- //슬라이드01 -->
+
+            <!-- 슬라이드02 -->
+            <div class="promotion-seasonoff__title">
+                <p class="promotion-seasonoff__txt">
+                    입는 순간 포근하게<br><span class="promotion-seasonoff__bold">겨울 이너 SET</span>
+                </p>
+            </div>
+            <div class="swiper seasonoff-swiper2">
+                <div class="swiper-wrapper seasonoff-wrapper2">
+                    <div class="swiper-slide seasonoff-slide2">
+                        <a href="/product/detail.html?product_no=2022" class="seasonoff-slide__link">
+                            <div class="promotion-seasonoff__box">
+                                <div class="promotion-seasonoff__img">
+                                    <img src="https://cdn.slim9.biz/2024/promotion/season-off/4-high-set@3x.webp" class="promotion-seasonoff__source" alt="">
+                                </div>
+                                <div class="promotion-seasonoff__price">
+                                    <ul class="promotion-seasonoff__list">
+                                        <li class="promotion-seasonoff__item">
+                                            <p class="price__period">소비자가</p>
+                                            <p class="price__period strikethrough">88,000원</p>
+                                        </li>
+                                        <li class="promotion-seasonoff__item">
+                                            <p class="price__coupon">판매가</p>
+                                            <p class="price__coupon">36,900원</p>
+                                        </li>
+                                        <li class="promotion-seasonoff__item">
+                                            <p class="price__point">최종혜택가</p>
+                                            <p class="price__point">33,210원</p>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="swiper-slide seasonoff-slide">
+                        <a href="/product/detail.html?product_no=2001" class="seasonoff-slide__link">
+                            <div class="promotion-seasonoff__box">
+                                <div class="promotion-seasonoff__img">
+                                    <img src="https://cdn.slim9.biz/2024/promotion/season-off/5-winter-inner@3x.webp" class="promotion-seasonoff__source" alt="">
+                                </div>
+                                <div class="promotion-seasonoff__price">
+                                    <ul class="promotion-seasonoff__list">
+                                        <li class="promotion-seasonoff__item">
+                                            <p class="price__period">소비자가</p>
+                                            <p class="price__period strikethrough">69,000원</p>
+                                        </li>
+                                        <li class="promotion-seasonoff__item">
+                                            <p class="price__coupon">판매가</p>
+                                            <p class="price__coupon">42,900원</p>
+                                        </li>
+                                        <li class="promotion-seasonoff__item">
+                                            <p class="price__point">최종혜택가</p>
+                                            <p class="price__point">38,610원</p>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="swiper-slide seasonoff-slide">
+                        <a href="/product/detail.html?product_no=1900" class="seasonoff-slide__link">
+                            <div class="promotion-seasonoff__box">
+                                <div class="promotion-seasonoff__img">
+                                    <img src="https://cdn.slim9.biz/2024/promotion/season-off/6-modal-set.webp" class="promotion-seasonoff__source" alt="">
+                                </div>
+                                <div class="promotion-seasonoff__price">
+                                    <ul class="promotion-seasonoff__list">
+                                        <li class="promotion-seasonoff__item">
+                                            <p class="price__period">소비자가</p>
+                                            <p class="price__period strikethrough">110,000원</p>
+                                        </li>
+                                        <li class="promotion-seasonoff__item">
+                                            <p class="price__coupon">판매가</p>
+                                            <p class="price__coupon">58,900원</p>
+                                        </li>
+                                        <li class="promotion-seasonoff__item">
+                                            <p class="price__point">최종혜택가</p>
+                                            <p class="price__point">53,010원</p>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+
+                </div>
+            </div>
+            <!-- //슬라이드02 -->
+
+            <!-- 슬라이드03 -->
+            <div class="promotion-seasonoff__title">
+                <p class="promotion-seasonoff__txt">
+                    브라 1장에 팬티 2장<br><span class="promotion-seasonoff__bold">스페셜 셋업 1+2</span>
+                </p>
+            </div>
+            <div class="swiper seasonoff-swiper3">
+                <div class="swiper-wrapper seasonoff-wrapper3">
+                    <div class="swiper-slide seasonoff-slide3">
+                        <a href="/product/detail.html?product_no=1902" class="seasonoff-slide__link">
+                            <div class="promotion-seasonoff__box">
+                                <div class="promotion-seasonoff__img">
+                                    <img src="https://cdn.slim9.biz/2024/promotion/season-off/7-dual@3x.webp" class="promotion-seasonoff__source" alt="">
+                                </div>
+                                <div class="promotion-seasonoff__price">
+                                    <ul class="promotion-seasonoff__list">
+                                        <li class="promotion-seasonoff__item">
+                                            <p class="price__period">소비자가</p>
+                                            <p class="price__period strikethrough">118,000원</p>
+                                        </li>
+                                        <li class="promotion-seasonoff__item">
+                                            <p class="price__coupon">판매가</p>
+                                            <p class="price__coupon">68,900원</p>
+                                        </li>
+                                        <li class="promotion-seasonoff__item">
+                                            <p class="price__point">최종혜택가</p>
+                                            <p class="price__point">62,010원</p>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="swiper-slide seasonoff-slide">
+                        <a href="/product/detail.html?product_no=1926" class="seasonoff-slide__link">
+                            <div class="promotion-seasonoff__box">
+                                <div class="promotion-seasonoff__img">
+                                    <img src="https://cdn.slim9.biz/2024/promotion/season-off/8-daily-set@3x.webp" class="promotion-seasonoff__source" alt="">
+                                </div>
+                                <div class="promotion-seasonoff__price">
+                                    <ul class="promotion-seasonoff__list">
+                                        <li class="promotion-seasonoff__item">
+                                            <p class="price__period">소비자가</p>
+                                            <p class="price__period strikethrough">112,000원</p>
+                                        </li>
+                                        <li class="promotion-seasonoff__item">
+                                            <p class="price__coupon">판매가</p>
+                                            <p class="price__coupon">68,900원</p>
+                                        </li>
+                                        <li class="promotion-seasonoff__item">
+                                            <p class="price__point">최종혜택가</p>
+                                            <p class="price__point">62,010원</p>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="swiper-slide seasonoff-slide">
+                        <a href="/product/detail.html?product_no=1663" class="seasonoff-slide__link">
+                            <div class="promotion-seasonoff__box">
+                                <div class="promotion-seasonoff__img">
+                                    <img src="https://cdn.slim9.biz/2024/promotion/season-off/9-nature-set@3x.webp" class="promotion-seasonoff__source" alt="">
+                                </div>
+                                <div class="promotion-seasonoff__price">
+                                    <ul class="promotion-seasonoff__list">
+                                        <li class="promotion-seasonoff__item">
+                                            <p class="price__period">소비자가</p>
+                                            <p class="price__period strikethrough">120,000원</p>
+                                        </li>
+                                        <li class="promotion-seasonoff__item">
+                                            <p class="price__coupon">판매가</p>
+                                            <p class="price__coupon">75,900원</p>
+                                        </li>
+                                        <li class="promotion-seasonoff__item">
+                                            <p class="price__point">최종혜택가</p>
+                                            <p class="price__point">68,310원</p>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+
+                </div>
+            </div>
+            <!-- //슬라이드03 -->
+
+        </div>
+        <!-- //프로모션 상품영역 -->
+
+        <!--프로모션 안내사항-->
+        <div class="prd_noti">
+            <label for="menuBtn" class="top_txt" onclick="">
+                <p>유의사항</p>
+                <input type="checkbox" id="menuBtn">
+                <span class="icon">
+                    <img src="https://slim9.cafe24.com/web/upload/promotion/23_early_summer/arrow-1.svg">
+                </span>
+            </label>
+            <div class="txt_box">
+                <ul>
+                    <li><span>·</span>해당 이벤트는 24년 01월 16일부터 24년 01월 22일까지 진행 됩니다.</li>
+                    <li><span>·</span>10% 할인 쿠폰은 프로모션 제품에만 적용 가능합니다.</li>
+                    <li><span>·</span>10% 할인 쿠폰은 다른 쿠폰과 중복 적용 불가합니다.</li>
+                    <li><span>·</span>프로모션 특성상 사전 고지 없이 일부 내용이 변경될 수 있으며 상품 품절 시 타제품으로 대체 또는 환불 조치 해드립니다.</li>
+                    <li><span>·</span>프로모션 종료 후 교환/ 반품 시 프로모션 적용이 불가합니다.</li>
+                </ul>
+            </div>
+        </div>
+
+    </div>
+</div>
+<script>
+    // season-off 프로모션
+    var seasonoff_slide = new Swiper(".seasonoff-swiper", {
+        slidesPerView: 1.2,
+        spaceBetween: 10,
+        pagination: {
+            clickable: true,
+        },
+        breakpoints: {
+            1020: {
+                slidesPerView: 2.1,
+                spaceBetween: 30,
+            },
+        },
+    });
+    var seasonoff_slide = new Swiper(".seasonoff-swiper2", {
+        slidesPerView: 1.2,
+        spaceBetween: 10,
+        pagination: {
+            clickable: true,
+        },
+        breakpoints: {
+            1020: {
+                slidesPerView: 2.1,
+                spaceBetween: 30,
+            },
+        },
+    });
+    var seasonoff_slide = new Swiper(".seasonoff-swiper3", {
+        slidesPerView: 1.2,
+        spaceBetween: 10,
+        pagination: {
+            clickable: true,
+        },
+        breakpoints: {
+            1020: {
+                slidesPerView: 2.1,
+                spaceBetween: 30,
+            },
+        },
+    });
+
+</script>
+</body>
+</html>

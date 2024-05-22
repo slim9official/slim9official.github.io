@@ -1,0 +1,765 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>lucky day</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css"/>
+    <link rel="preload" type="text/css" href='https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css'>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css"/>
+
+    <link type="text/css" rel="stylesheet" href="../css/style.css">
+    <link type="text/css" rel="stylesheet" href="../css/promotion.css">
+    <link type="text/css" rel="stylesheet" href="../css/list.css">
+
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js" async></script>
+    <script type="text/javascript" src="../js/swiper-4.5.0.min.js"></script>
+    <script type="text/javascript" src="../js/swiper.js"></script>
+    <script type="text/javascript" src="../js/swiper-bundle.js"></script>
+    <script type="text/javascript" src="../js/promotion.js"></script>
+    
+    <style>
+        @keyframes motion {
+            0%{top: 20px;}
+            50%{top: 10px;}
+            100%{top: 20px;}
+        }
+        #event_wrap {width: 1080px; margin: 0 auto; font-family: 'Pretendard'; }
+        .lucky-main{width: 100%;}
+        .lucky-main__wrap{display: block;line-height: 0;}
+        .lucky-main__img{width: 100%;}
+        .tab-header{top: 146px; /*position: sticky;*/ margin: 0;padding: 0;display: flex;flex-wrap: wrap;z-index: 9999;}
+        .tab-link{height: 150px;display: flex;align-items: center;justify-content: center;flex: 1 1 50%;color: #656565;font-family: "pretendard",Sans-serif;font-size: 46px;font-weight: 500;font-style: normal;line-height: 1.57;background: #000;text-align: center;cursor: pointer;}
+        .tab-link .tab-link__src{color: #656565;}
+        .tab-link.on .tab-link__src{color: #a4ff6d;font-weight: bold;}
+        /*.tab-content{display: none; background-color: #000;}*/
+        /*.tab-content.current{display: inherit;}*/
+        .tab-wrap{background: url("https://cdn.slim9.biz/2024/promotion/lucky-day/lucky_main_bg2.webp") no-repeat; background-size: cover;}
+        .double-benefit{padding: 140px 0 185px;}
+        .double-benefit__wrap{text-align: center;}
+        .double-benefit__wrap + .double-benefit__wrap{padding-top: 170px;}
+        .common__title{margin: 0 auto; display: inline-block; padding: 20px 35px; border-radius: 36px; color: #000; font-size: 38px; font-weight: bold;line-height: 0.74;letter-spacing: -2.31px;text-align: center;background-color: #32df26;}
+        .common__title.color-second{background-color: #1fad67;}
+        .double-benefit__title{padding: 50px 0 54px;}
+        .double-benefit__txt{color: #fff;font-size: 60px; font-weight: 300; line-height: normal; letter-spacing: -2.4px; text-align: center;}
+        .double-benefit__txt > b{font-size: 72px; font-weight: bold; letter-spacing: -2.88px;}
+        .double-benefit__img{margin: 0 auto; display: block;}
+        .double-benefit__img + .double-benefit__img{padding-top: 80px;}
+        .double-benefit__img--src{width: 638px;}
+        .double-benefit__img--src.img-nemo{width: 282px;}
+        .double-benefit__img--src.img-free-coupon{width: 490px;}
+        .double-benefit__notice{padding-top: 40px; color: #fff; font-size: 26px; font-weight: 300; line-height: normal; letter-spacing: -1.02px;}
+        .login__btn{padding-top: 86px; text-align: center;}
+        .login__btn--link{display: block;}
+        .login__btn--img{width: 537px;position: relative; animation: motion 1s ease 0s infinite normal;}
+    
+        .timedeal-wrap{margin: 0 auto;padding-top: 20px;width:463px;display: flex;justify-content: center;}
+        .time-txt{display: block;color: #fff; font-size: 32px; font-weight: 300; line-height: normal; letter-spacing: -1.26px;}
+        .icon-colon{display: inline-block; color: #fff;;font-size: 95px;font-weight: bold; letter-spacing: -3.78px;}
+        .time-number{width: 120px; display: block; color: #fff;font-size: 95px;font-weight: bold; letter-spacing: -3.78px;text-align: center;}
+    
+        .timer__wrap{margin: 0 auto; padding: 144px 0 116px; width: 463px;}
+        .timer__wrap--title{color: #fff; font-size: 60px; font-weight: 300; line-height: normal; letter-spacing: -2.4px; white-space: nowrap;}
+        .special-package__wrap{padding: 142px 0;text-align: center;}
+        .bubble-wrap{padding: 107px 105px 0; display: grid;}
+        .bubble-wrap__box{display: inline-block;}
+        .bubble-wrap__img{width: 546px;}
+        .pos-left{margin-right: auto;}
+        .pos-right{margin-left: auto;}
+        .product-pack{padding-top: 137px;}
+        .coupon-download{padding-bottom: 100px; text-align: center;}
+        .coupon-download__img{width: 683px;}
+        .coupon-download__btn{margin: 38px auto 0; width: 662px; border: 2px solid #51ff44; box-sizing: border-box;}
+        .coupon-download__link{display: block;}
+        .coupon-download__txt{padding: 34px 0;color: #fff; font-size: 44px; font-weight: 600; letter-spacing: -1.76px; text-align: center;}
+    
+        /*슬라이드*/
+        .lucky-swiper .promotion-lucky__source,
+        .lucky-swiper2 .promotion-lucky__source,
+        .lucky-swiper3 .promotion-lucky__source{
+            width: 100%;
+        }
+        .lucky-swiper .promotion-lucky__box,
+        .lucky-swiper2 .promotion-lucky__box,
+        .lucky-swiper3 .promotion-lucky__box{
+            margin: 0 auto;
+        }
+        .lucky-swiper2 .promotion-lucky__box{
+            width: 430px !important
+        }
+        .lucky-wrapper,
+        .lucky-wrapper2,
+        .lucky-wrapper3{
+            transition-timing-function: linear;
+        }
+        .lucky-slide{width: 550px;}
+        /*.lucky-slide2{width: 430px !important;}*/
+        .lucky-slide2 .product-price__sale--txt{font-size: 37px;}
+        .lucky-slide2 .product-price__common--txt{font-size: 30px;}
+        .lucky-slide:last-child,.lucky-slide2:last-child{margin-right: 0 !important;}
+        .product-price{padding: 50px;}
+        .product-price__common{display: flex;}
+        .product-price__common--txt{color: #a9a9a9; font-size: 34px;font-weight: normal; line-height: 1.49; letter-spacing: -0.69px; text-align: left;}
+        .product-price__common--txt.strikethrough{margin-left: auto; text-decoration: line-through;}
+        .product-price__sale{display: flex; padding-top: 12px;}
+        .product-price__sale--txt{color: #000; font-size: 45px; font-weight: bold; line-height: 1.14; letter-spacing: -0.9px; text-align: left;}
+        .product-price__sale--txt:last-child{margin-left: auto;}
+        .promotion-lucky__img{position: relative; line-height: 0;}
+        .promotion-lucky__img--sale{position: absolute;top: 0; padding: 30px 20px; color: #7dff74; background-color: #000; font-size: 44px; font-weight: bold; z-index: 99;}
+        .promotion-lucky__img--sale .percentage{font-size: 34px; font-weight: normal;}
+        .lucky-slide__txt{position: relative;padding-bottom: 36px; font-size: 32px; font-weight: 600; letter-spacing: -2.31px;text-align: center;white-space: nowrap;animation: motion 1s ease 0s infinite normal;}
+        .lucky-slide.swiper-slide-active .lucky-slide__txt{color:#fff;}
+        .lucky-slide .lucky-slide__txt{color: transparent;}
+        .promotion-lucky__info{background-color: #e6e6e6;}
+        .product-box{padding-top: 160px;}
+        .product-box__wrap{display: flex;padding: 0 100px;}
+        .product-box__wrap .product-price__common--txt{font-size: 30px;}
+        .product-box__wrap .product-price__sale--txt{font-size: 37px;}
+        .product-box__link{flex: 1;}
+        .product-box__link + .product-box__link{margin-left: 22px;}
+        .promotion-lucky__source{width: 100%;}
+        .product-price{padding: 40px;}
+    
+        .pc-only{display: block;}
+        .mo-only{display: none;}
+    
+        @media all and (max-width:1020px) {
+            #event_wrap{width: 100%;}
+        }
+    
+        @media all and (max-width:768px) {
+            .pc-only{display: none;}
+            .mo-only{display: block;}
+            .tab-link{height: 75px; font-size: 23px;}
+            .common__title{padding: 10px 17px; font-size: 20px;letter-spacing: -1.15px;}
+            .double-benefit{padding:70px 0 92px;}
+            .double-benefit__txt{font-size: 30px;}
+            .double-benefit__txt > b{font-size: 36px; letter-spacing: -1.44px;}
+            .double-benefit__title{padding: 25px 0 27px;}
+            .double-benefit__img--src{width: 319px;}
+            .double-benefit__notice{padding-top: 20px;font-size: 13px;}
+            .double-benefit__wrap + .double-benefit__wrap{padding-top: 85px;}
+            .login__btn{padding-top: 43px;}
+            .login__btn--img{width: 267px;}
+            .lucky-swiper2 .promotion-lucky__box{width: auto !important;}
+    
+            .timer__wrap{width: 230px;padding: 0 0 58px;}
+            .timer__wrap--title{font-size: 30px;}
+            .timedeal-wrap{width: 230px;}
+            .time-txt{font-size: 16px;}
+            .icon-colon{font-size: 27px;}
+            .time-number{width: 60px; font-size: 47px;letter-spacing: normal;}
+            .coupon-download{padding-bottom: 50px;}
+            .coupon-download__img{width: 342px;}
+            .coupon-download__txt{padding: 17px 0; font-size: 22px;}
+            .coupon-download__btn{width: 330px;margin: 19px auto 0;}
+            .bubble-wrap{padding: 50px 10px 0;}
+            .bubble-wrap__box + .bubble-wrap__box{padding-top: 10px;}
+            .bubble-wrap__img{width: 273px;}
+            .product-pack{padding-top: 68px;}
+            .lucky-slide2{width: 215px !important;}
+            .lucky-slide__txt{font-size: 16px;letter-spacing: normal;}
+            .promotion-lucky__img--sale{padding: 15px 10px;font-size: 22px;}
+            .promotion-lucky__img--sale .percentage{font-size: 17px;}
+            .product-price{padding: 20px 10px;}
+            .product-price__common--txt{font-size: 13px !important;}
+            .product-price__sale--txt{font-size: 18px !important;}
+            .product-box{padding-top: 80px;}
+            .product-box__wrap{padding: 0 14px;}
+            .product-box__link + .product-box__link{margin-left: 10px;}
+            .double-benefit__img--src.img-nemo{width: 140px;}
+            .double-benefit__img--src.img-free-coupon{width: 245px;}
+            .double-benefit__img + .double-benefit__img{padding-top: 20px;}
+            .special-package__wrap{padding: 0;}
+        }
+    
+    </style>
+    
+    
+</head>
+<body>
+
+<!-- 럭키데이 -->
+<div id="event_wrap" class="welcome-benefit">
+    <div class="promotion_top">
+        <!-- 메인 배너 -->
+        <div class="lucky-main">
+            <div class="lucky-main__wrap">
+                <img src="https://cdn.slim9.biz/2024/promotion/lucky-day/main@3x.webp" alt="" class="lucky-main__img">
+            </div>
+        </div>
+        <!--//메인 배너 -->
+
+        <div class="lucky-contents">
+            <ul class="tab-header">
+                <li class="tab-link on">
+                    <a href="#tab01" class="tab-link__src">전제품 더블 혜택</a>
+                </li>
+                <li class="tab-link">
+                    <a href="#tab02" class="tab-link__src">선착순 5천원 쿠폰</a>
+                </li>
+                <li class="tab-link">
+                    <a href="#tab03" class="tab-link__src">스페셜 패키지</a>
+                </li>
+                <li class="tab-link">
+                    <a href="#tab04" class="tab-link__src">네모팬티 1+1</a>
+                </li>
+            </ul>
+            <div class="tab-wrap">
+                <div id="tab01" class="tab-content current">
+                    <div class="tab-content__wrap">
+                        <!-- 전제품 더블 혜택 -->
+                        <div class="double-benefit">
+                            <div class="double-benefit__wrap">
+                                <p class="common__title">혜택 01</p>
+                                <div class="double-benefit__title">
+                                    <p class="double-benefit__txt">
+                                        금액 제한 없는<br><b>전제품 무료배송</b>
+                                    </p>
+                                </div>
+                                <div class="double-benefit__img">
+                                    <img src="https://cdn.slim9.biz/2024/promotion/lucky-day/freeship_first.webp" class="double-benefit__img--src" alt="하나만 사도 무료배송">
+                                </div>
+                                <p class="double-benefit__notice">*로그인 시 쿠폰함으로 자동 지급</p>
+                            </div>
+                            <div class="double-benefit__wrap">
+                                <p class="common__title color-second">혜택 02</p>
+                                <div class="double-benefit__title">
+                                    <p class="double-benefit__txt">
+                                        역대급 더블 혜택<br><b>30% 추가할인</b>
+                                    </p>
+                                </div>
+                                <div class="double-benefit__img">
+                                    <img src="https://cdn.slim9.biz/2024/promotion/lucky-day/30-coupon@3x.webp" class="double-benefit__img--src" alt="8만원 이상 구매 시 30% 할인">
+                                </div>
+                                <p class="double-benefit__notice">*로그인 시 쿠폰함으로 자동 지급<br>*프로모션 제품 적용 불가</p>
+                            </div>
+                            <div class="login__btn">
+                                <a href="/member/join_check.html" class="login__btn--link">
+                                    <img src="https://cdn.slim9.biz/2024/promotion/lucky-day/login@3x.webp" alt="" class="login__btn--img">
+                                </a>
+                            </div>
+                        </div>
+                        <!-- //전제품 더블 혜택 -->
+                    </div>
+                </div>
+
+                <div id="tab02" class="tab-content">
+                    <div class="tab-content__wrap">
+                        <!-- 선착순 5천원 쿠폰 -->
+                        <div class="coupon-benefit">
+                            <div class="coupon-benefit__wrap">
+                                <div class="timer__wrap">
+                                    <p class="timer__wrap--title">선착순 쿠폰 오픈까지</p>
+                                    <div id="newTimer" class="timedeal-wrap"></div>
+                                </div>
+                                <div class="coupon-download">
+                                    <p class="common__title">매일 낮 12시에 만나요!</p>
+                                    <div class="double-benefit__title">
+                                        <p class="double-benefit__txt">
+                                            선착순 100명<br><b>5천원 적립 쿠폰</b>
+                                        </p>
+                                    </div>
+                                    <!--쿠폰 다운로드-->
+                                    <div class="coupon-download open">
+                                        <div class="coupon-download__box">
+                                            <img src="https://cdn.slim9.biz/2024/promotion/lucky-day/lucky-coupon_2.webp" class="coupon-download__img" alt="전 제품 적용 가능">
+                                        </div>
+                                        <div class="coupon-download__btn">
+                                            <a href="/exec/front/newcoupon/IssueDownload?coupon_no=6078021360600001115" class="coupon-download__link">
+                                                <p class="coupon-download__txt">선착순 쿠폰 다운받기 ></p>
+                                            </a>
+                                        </div>
+                                        <p class="double-benefit__notice">*재구매 시 사용가능합니다.</p>
+                                    </div>
+<!--                                    <div class="coupon-download end">-->
+<!--                                        <p class="coupon-download__notice">전 제품 적용 가능</p>-->
+<!--                                        <div class="coupon-download__box">-->
+<!--                                            <img src="https://cdn.slim9.biz/2024/promotion/lucky-day/lucky-coupon-end@3x.webp" class="coupon-download__img" alt="전 제품 적용 가능">-->
+<!--                                        </div>-->
+<!--                                    </div>-->
+                                    <!--//쿠폰 다운로드-->
+                                </div>
+                            </div>
+
+                        </div>
+                        <!-- //선착순 5천원 쿠폰 -->
+                    </div>
+                </div>
+
+                <div id="tab03" class="tab-content tab-content03">
+                    <div class="tab-content__wrap">
+                        <!-- 스페셜 패키지 -->
+                        <div class="special-package">
+                            <div class="special-package__wrap">
+                                <div class="bubble">
+                                    <p class="common__title">슬림9 실제 리뷰들</p>
+                                    <div class="bubble-wrap">
+                                        <div class="bubble-wrap__box pos-left">
+                                            <img src="https://cdn.slim9.biz/2024/promotion/lucky-day/reivew-01.webp" class="bubble-wrap__img" alt="네모팬티 뉴베이직">
+                                        </div>
+                                        <div class="bubble-wrap__box pos-right">
+                                            <img src="https://cdn.slim9.biz/2024/promotion/lucky-day/reivew-02@3x.webp" class="bubble-wrap__img" alt="편해브라 에어">
+                                        </div>
+                                        <div class="bubble-wrap__box pos-left">
+                                            <img src="https://cdn.slim9.biz/2024/promotion/lucky-day/reivew-03@3x.webp" class="bubble-wrap__img" alt="네모팬티 숏">
+                                        </div>
+                                        <div class="bubble-wrap__box pos-right">
+                                            <img src="https://cdn.slim9.biz/2024/promotion/lucky-day/reivew-04@3x.webp" class="bubble-wrap__img" alt="편해브라 컴팩트">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="product-pack">
+                                    <p class="common__title">베스트 셀러만 모은 럭키한 패키지</p>
+                                    <div class="double-benefit__title">
+                                        <p class="double-benefit__txt">
+                                            최대 64% 할인<br><b>스페셜 패키지</b>
+                                        </p>
+                                    </div>
+                                    <div class="product-slide">
+                                        <div class="swiper lucky-swiper">
+                                            <div class="swiper-wrapper lucky-wrapper">
+                                                <div class="swiper-slide lucky-slide">
+                                                    <p class="lucky-slide__txt motion">"말려 올라가지 않아서 편안해요!"</p>
+                                                    <a href="/product/detail.html?product_no=2000" class="lucky-slide__link">
+                                                        <div class="promotion-lucky__box">
+                                                            <div class="promotion-lucky__img">
+                                                                <img src="https://cdn.slim9.biz/2024/promotion/lucky-day/special/special-02@3x.webp" class="promotion-lucky__source" alt="">
+                                                                <p class="promotion-lucky__img--sale">48<span class="percentage">%</span></p>
+                                                            </div>
+                                                            <div class="promotion-lucky__info">
+                                                                <ul class="product-price">
+                                                                    <li class="product-price__common">
+                                                                        <div class="product-price__common--txt">소비자가</div>
+                                                                        <div class="product-price__common--txt strikethrough">96,000원</div>
+                                                                    </li>
+                                                                    <li class="product-price__sale">
+                                                                        <div class="product-price__sale--txt">프로모션가</div>
+                                                                        <div class="product-price__sale--txt">49,900원</div>
+                                                                    </li>
+                                                                </ul>
+                                                            </div>
+                                                        </div>
+                                                    </a>
+                                                </div>
+                                                <div class="swiper-slide lucky-slide">
+                                                    <p class="lucky-slide__txt motion">"엄청 편한데 가슴을 잘 모아줘요!"</p>
+                                                    <a href="/product/detail.html?product_no=1548" class="lucky-slide__link">
+                                                        <div class="promotion-lucky__box">
+                                                            <div class="promotion-lucky__img">
+                                                                <img src="https://cdn.slim9.biz/2024/promotion/lucky-day/special/special-01@3x.webp" class="promotion-lucky__source" alt="">
+                                                                <p class="promotion-lucky__img--sale">64<span class="percentage">%</span></p>
+                                                            </div>
+                                                            <div class="promotion-lucky__info">
+                                                                <ul class="product-price">
+                                                                    <li class="product-price__common">
+                                                                        <div class="product-price__common--txt">소비자가</div>
+                                                                        <div class="product-price__common--txt strikethrough">84,000원</div>
+                                                                    </li>
+                                                                    <li class="product-price__sale">
+                                                                        <div class="product-price__sale--txt">프로모션가</div>
+                                                                        <div class="product-price__sale--txt">29,900원</div>
+                                                                    </li>
+                                                                </ul>
+                                                            </div>
+                                                        </div>
+                                                    </a>
+                                                </div>
+                                                <div class="swiper-slide lucky-slide">
+                                                    <p class="lucky-slide__txt motion">"압박 없이 부드럽고 쫀쫀해요!"</p>
+                                                    <a href="/product/detail.html?product_no=1842" class="lucky-slide__link">
+                                                        <div class="promotion-lucky__box">
+                                                            <div class="promotion-lucky__img">
+                                                                <img src="https://cdn.slim9.biz/2024/promotion/lucky-day/special/special-03_ver2.webp" class="promotion-lucky__source" alt="">
+                                                                <p class="promotion-lucky__img--sale">54<span class="percentage">%</span></p>
+                                                            </div>
+                                                            <div class="promotion-lucky__info">
+                                                                <ul class="product-price">
+                                                                    <li class="product-price__common">
+                                                                        <div class="product-price__common--txt">소비자가</div>
+                                                                        <div class="product-price__common--txt strikethrough">216,000원</div>
+                                                                    </li>
+                                                                    <li class="product-price__sale">
+                                                                        <div class="product-price__sale--txt">프로모션가</div>
+                                                                        <div class="product-price__sale--txt">99,000원</div>
+                                                                    </li>
+                                                                </ul>
+                                                            </div>
+                                                        </div>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="product-box">
+                                    <div class="double-benefit__title">
+                                        <p class="double-benefit__txt">
+                                            봄을 입은 듯 산뜻하게<br><b>컴포트 브라</b>
+                                        </p>
+                                    </div>
+                                    <div class="product-box__wrap">
+                                        <a href="/product/detail.html?product_no=1693" class="product-box__link">
+                                            <div class="promotion-lucky__box">
+                                                <div class="promotion-lucky__img">
+                                                    <img src="https://cdn.slim9.biz/2024/promotion/lucky-day/240205/comfort-01.png" class="promotion-lucky__source" alt="">
+                                                    <p class="promotion-lucky__img--sale">38<span class="percentage">%</span></p>
+                                                </div>
+                                                <div class="promotion-lucky__info">
+                                                    <ul class="product-price">
+                                                        <li class="product-price__common">
+                                                            <div class="product-price__common--txt">소비자가</div>
+                                                            <div class="product-price__common--txt strikethrough">80,000원</div>
+                                                        </li>
+                                                        <li class="product-price__sale">
+                                                            <div class="product-price__sale--txt">프로모션가</div>
+                                                            <div class="product-price__sale--txt">49,900원</div>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </a>
+                                        <a href="/product/detail.html?product_no=1650" class="product-box__link">
+                                            <div class="promotion-lucky__box">
+                                                <div class="promotion-lucky__img">
+                                                    <img src="https://cdn.slim9.biz/2024/promotion/lucky-day/240205/comfort-02.png" class="promotion-lucky__source" alt="">
+                                                    <p class="promotion-lucky__img--sale">48<span class="percentage">%</span></p>
+                                                </div>
+                                                <div class="promotion-lucky__info">
+                                                    <ul class="product-price">
+                                                        <li class="product-price__common">
+                                                            <div class="product-price__common--txt">소비자가</div>
+                                                            <div class="product-price__common--txt strikethrough">96,000원</div>
+                                                        </li>
+                                                        <li class="product-price__sale">
+                                                            <div class="product-price__sale--txt">프로모션가</div>
+                                                            <div class="product-price__sale--txt">49,900원</div>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="product-box">
+                                    <div class="double-benefit__title">
+                                        <p class="double-benefit__txt">
+                                            미리 준비하는 봄<br><b>베스트셀러 1&1</b>
+                                        </p>
+                                    </div>
+                                    <div class="product-box__wrap">
+                                        <a href="/product/detail.html?product_no=1553" class="product-box__link">
+                                            <div class="promotion-lucky__box">
+                                                <div class="promotion-lucky__img">
+                                                    <img src="https://cdn.slim9.biz/2024/promotion/lucky-day/240205/1-1-01.png" class="promotion-lucky__source" alt="">
+                                                    <p class="promotion-lucky__img--sale">47<span class="percentage">%</span></p>
+                                                </div>
+                                                <div class="promotion-lucky__info">
+                                                    <ul class="product-price">
+                                                        <li class="product-price__common">
+                                                            <div class="product-price__common--txt">소비자가</div>
+                                                            <div class="product-price__common--txt strikethrough">76,000원</div>
+                                                        </li>
+                                                        <li class="product-price__sale">
+                                                            <div class="product-price__sale--txt">프로모션가</div>
+                                                            <div class="product-price__sale--txt">39,900원</div>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </a>
+                                        <a href="/product/detail.html?product_no=1921" class="product-box__link">
+                                            <div class="promotion-lucky__box">
+                                                <div class="promotion-lucky__img">
+                                                    <img src="https://cdn.slim9.biz/2024/promotion/lucky-day/1-1-02@3x.jpg" class="promotion-lucky__source" alt="">
+                                                    <p class="promotion-lucky__img--sale">60<span class="percentage">%</span></p>
+                                                </div>
+                                                <div class="promotion-lucky__info">
+                                                    <ul class="product-price">
+                                                        <li class="product-price__common">
+                                                            <div class="product-price__common--txt">소비자가</div>
+                                                            <div class="product-price__common--txt strikethrough">90,000원</div>
+                                                        </li>
+                                                        <li class="product-price__sale">
+                                                            <div class="product-price__sale--txt">프로모션가</div>
+                                                            <div class="product-price__sale--txt">35,900원</div>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="product-pack">
+                                    <div class="double-benefit__title">
+                                        <p class="double-benefit__txt">
+                                            지금만 만나보는<br><b>특별 할인 SET</b>
+                                        </p>
+                                    </div>
+                                    <div class="product-slide">
+                                        <!-- pc -->
+                                        <div class="swiper lucky-swiper2 pc-only">
+                                            <div class="swiper-wrapper lucky-wrapper2">
+                                                <div class="swiper-slide lucky-slide2">
+                                                    <a href="/product/detail.html?product_no=2034" class="lucky-slide__link">
+                                                        <div class="promotion-lucky__box">
+                                                            <div class="promotion-lucky__img">
+                                                                <img src="https://cdn.slim9.biz/2024/promotion/lucky-day/240205/sp-price-02.png" class="promotion-lucky__source" alt="">
+                                                                <p class="promotion-lucky__img--sale">45<span class="percentage">%</span></p>
+                                                            </div>
+                                                            <div class="promotion-lucky__info">
+                                                                <ul class="product-price">
+                                                                    <li class="product-price__common">
+                                                                        <div class="product-price__common--txt">소비자가</div>
+                                                                        <div class="product-price__common--txt strikethrough">72,000원</div>
+                                                                    </li>
+                                                                    <li class="product-price__sale">
+                                                                        <div class="product-price__sale--txt">프로모션가</div>
+                                                                        <div class="product-price__sale--txt">39,900원</div>
+                                                                    </li>
+                                                                </ul>
+                                                            </div>
+                                                        </div>
+                                                    </a>
+                                                </div>
+                                                <div class="swiper-slide lucky-slide2">
+                                                    <a href="/product/detail.html?product_no=2033" class="lucky-slide__link">
+                                                        <div class="promotion-lucky__box">
+                                                            <div class="promotion-lucky__img">
+                                                                <img src="https://cdn.slim9.biz/2024/promotion/lucky-day/240205/sp-price-01.png" class="promotion-lucky__source" alt="">
+                                                                <p class="promotion-lucky__img--sale">45<span class="percentage">%</span></p>
+                                                            </div>
+                                                            <div class="promotion-lucky__info">
+                                                                <ul class="product-price">
+                                                                    <li class="product-price__common">
+                                                                        <div class="product-price__common--txt">소비자가</div>
+                                                                        <div class="product-price__common--txt strikethrough">72,000원</div>
+                                                                    </li>
+                                                                    <li class="product-price__sale">
+                                                                        <div class="product-price__sale--txt">프로모션가</div>
+                                                                        <div class="product-price__sale--txt">39,900원</div>
+                                                                    </li>
+                                                                </ul>
+                                                            </div>
+                                                        </div>
+                                                    </a>
+                                                </div>
+                                                <div class="swiper-slide lucky-slide2">
+                                                    <a href="/product/detail.html?product_no=1432" class="lucky-slide__link">
+                                                        <div class="promotion-lucky__box">
+                                                            <div class="promotion-lucky__img">
+                                                                <img src="https://cdn.slim9.biz/2024/promotion/lucky-day/240205/sp-price-03.png" class="promotion-lucky__source" alt="">
+                                                                <p class="promotion-lucky__img--sale">45<span class="percentage">%</span></p>
+                                                            </div>
+                                                            <div class="promotion-lucky__info">
+                                                                <ul class="product-price">
+                                                                    <li class="product-price__common">
+                                                                        <div class="product-price__common--txt">소비자가</div>
+                                                                        <div class="product-price__common--txt strikethrough">84,000원</div>
+                                                                    </li>
+                                                                    <li class="product-price__sale">
+                                                                        <div class="product-price__sale--txt">프로모션가</div>
+                                                                        <div class="product-price__sale--txt">45,900원</div>
+                                                                    </li>
+                                                                </ul>
+                                                            </div>
+                                                        </div>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!--//pc -->
+                                        <!-- mobile -->
+                                        <div class="swiper lucky-swiper3 mo-only">
+                                            <div class="swiper-wrapper lucky-wrapper3">
+                                                <div class="swiper-slide lucky-slide3">
+                                                    <a href="/product/detail.html?product_no=2034" class="lucky-slide__link">
+                                                        <div class="promotion-lucky__box">
+                                                            <div class="promotion-lucky__img">
+                                                                <img src="https://cdn.slim9.biz/2024/promotion/lucky-day/240205/sp-price-02.png" class="promotion-lucky__source" alt="">
+                                                                <p class="promotion-lucky__img--sale">45<span class="percentage">%</span></p>
+                                                            </div>
+                                                            <div class="promotion-lucky__info">
+                                                                <ul class="product-price">
+                                                                    <li class="product-price__common">
+                                                                        <div class="product-price__common--txt">소비자가</div>
+                                                                        <div class="product-price__common--txt strikethrough">72,000원</div>
+                                                                    </li>
+                                                                    <li class="product-price__sale">
+                                                                        <div class="product-price__sale--txt">프로모션가</div>
+                                                                        <div class="product-price__sale--txt">39,900원</div>
+                                                                    </li>
+                                                                </ul>
+                                                            </div>
+                                                        </div>
+                                                    </a>
+                                                </div>
+                                                <div class="swiper-slide lucky-slide3">
+                                                    <a href="/product/detail.html?product_no=2033" class="lucky-slide__link">
+                                                        <div class="promotion-lucky__box">
+                                                            <div class="promotion-lucky__img">
+                                                                <img src="https://cdn.slim9.biz/2024/promotion/lucky-day/240205/sp-price-01.png" class="promotion-lucky__source" alt="">
+                                                                <p class="promotion-lucky__img--sale">45<span class="percentage">%</span></p>
+                                                            </div>
+                                                            <div class="promotion-lucky__info">
+                                                                <ul class="product-price">
+                                                                    <li class="product-price__common">
+                                                                        <div class="product-price__common--txt">소비자가</div>
+                                                                        <div class="product-price__common--txt strikethrough">72,000원</div>
+                                                                    </li>
+                                                                    <li class="product-price__sale">
+                                                                        <div class="product-price__sale--txt">프로모션가</div>
+                                                                        <div class="product-price__sale--txt">39,900원</div>
+                                                                    </li>
+                                                                </ul>
+                                                            </div>
+                                                        </div>
+                                                    </a>
+                                                </div>
+                                                <div class="swiper-slide lucky-slide3">
+                                                    <a href="/product/detail.html?product_no=1432" class="lucky-slide__link">
+                                                        <div class="promotion-lucky__box">
+                                                            <div class="promotion-lucky__img">
+                                                                <img src="https://cdn.slim9.biz/2024/promotion/lucky-day/240205/sp-price-03.png" class="promotion-lucky__source" alt="">
+                                                                <p class="promotion-lucky__img--sale">45<span class="percentage">%</span></p>
+                                                            </div>
+                                                            <div class="promotion-lucky__info">
+                                                                <ul class="product-price">
+                                                                    <li class="product-price__common">
+                                                                        <div class="product-price__common--txt">소비자가</div>
+                                                                        <div class="product-price__common--txt strikethrough">84,000원</div>
+                                                                    </li>
+                                                                    <li class="product-price__sale">
+                                                                        <div class="product-price__sale--txt">프로모션가</div>
+                                                                        <div class="product-price__sale--txt">45,900원</div>
+                                                                    </li>
+                                                                </ul>
+                                                            </div>
+                                                        </div>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!--//mobile -->
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- //스페셜 패키지 -->
+                    </div>
+                </div>
+
+                <div id="tab04" class="tab-content">
+                    <div class="tab-content__wrap">
+                        <!--네모팬티 1+1-->
+                        <!-- 전제품 더블 혜택 -->
+                        <div class="double-benefit">
+                            <div class="double-benefit__wrap">
+                                <p class="common__title">첫 구매자를 위한 특별 혜택</p>
+                                <div class="double-benefit__title">
+                                    <p class="double-benefit__txt">
+                                        슬림9이 처음이라면?<br><b>네모팬티 1장 0원</b>
+                                    </p>
+                                </div>
+                                <div class="double-benefit__img">
+                                    <img src="https://cdn.slim9.biz/2024/promotion/lucky-day/nemo@3x.webp" class="double-benefit__img--src img-nemo" alt="네모팬티 free">
+                                </div>
+                                <div class="double-benefit__img">
+                                    <img src="https://cdn.slim9.biz/2024/promotion/lucky-day/freeship_2@3x.webp" class="double-benefit__img--src img-free-coupon" alt="네모팬티 무료쿠폰">
+                                </div>
+                                <p class="double-benefit__notice">*로그인 시 쿠폰함으로 자동 지급<br>*네모팬티 뉴베이직 2장 이상 구매 시 적용 가능</p>
+                            </div>
+                            <div class="login__btn">
+                                <a href="/member/join_check.html" class="login__btn--link">
+                                    <img src="https://cdn.slim9.biz/2024/promotion/lucky-day/login@3x.webp" alt="" class="login__btn--img">
+                                </a>
+                            </div>
+                        </div>
+                        <!-- //전제품 더블 혜택 -->
+                        <!-- //네모팬티 1+1-->
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--//혜택 내용 -->
+
+        <!--프로모션 안내사항-->
+        <div class="prd_noti">
+            <label for="menuBtn" class="top_txt" onclick="">
+                <p>유의사항</p>
+                <input type="checkbox" id="menuBtn">
+                <span class="icon">
+                        <img src="https://slim9.cafe24.com/web/upload/promotion/23_early_summer/arrow-1.svg">
+                    </span>
+            </label>
+            <div class="txt_box">
+                <ul>
+                    <li><span>·</span>해당 이벤트는 24년 02월 06일 PM 12:00부터 24년 02월 21일까지 PM 12:00까지 진행됩니다.</li>
+                    <li><span>·</span>무료배송 쿠폰 사용 후 교환 및 반품 시 결제 금액만큼만 반환됩니다.</li>
+                    <li><span>·</span>교환 및 반품 후 재결제 시 쿠폰 재사용은 불가합니다.</li>
+                    <li><span>·</span>네모팬티 1+1쿠폰은 신규가입 후 사용 가능합니다.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+<!--//럭키데이 -->
+<script>
+
+
+    var lucky_slide = new Swiper(".lucky-swiper", {
+    slidesPerView: 1.5,
+    spaceBetween: 10,
+    pagination: {
+        clickable: true,
+    },
+    loop: true,
+    initialSlide: 1,
+    centeredSlides: true,
+    breakpoints: {
+        1020: {
+            slidesPerView: 1.9,
+            spaceBetween: 28,
+        },
+    },
+});
+
+var lucky_slide = new Swiper(".lucky-swiper2", {
+    slidesPerView: 1.5,
+    spaceBetween: 10,
+    pagination: {
+        clickable: true,
+    },
+    loop: true,
+    initialSlide: 1,
+    centeredSlides: true,
+    breakpoints: {
+        1020: {
+            slidesPerView: 2.5,
+            spaceBetween: 32,
+        },
+    },
+});
+
+
+var lucky_slide = new Swiper(".lucky-swiper3", {
+    slidesPerView: 1.5,
+    spaceBetween: 10,
+    pagination: {
+        clickable: true,
+    },
+    loop: true,
+    initialSlide: 1,
+    centeredSlides: true,
+    breakpoints: {
+        1020: {
+            slidesPerView: 1.9,
+            spaceBetween: 28,
+        },
+    },
+});
+
+</script>
+
+</body>
+</html>

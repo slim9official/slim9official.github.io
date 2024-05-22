@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>blackfriday second week</title>
+    <title>blackfriday third week</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css"/>
     <link rel="preload" type="text/css" href='https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css'>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css"/>
@@ -19,126 +19,129 @@
     <script src="https://cdn.jsdelivr.net/npm/swiper@8.0.7/swiper-bundle.min.js"></script>
 
     <style>
-        /* 11월 블랙프라이데이 2차 기획전 css */
-    #event_wrap{width: 1080px;}
-    #event_wrap .promotion_top .prd_noti .top_txt,#event_wrap .promotion_top .prd_noti .txt_box{background-color: #3c3c3c;}
-    .section{background-color: #000;}
-    .contents-wrap{position: relative;}
-    .contents-wrap__tab{top: 0;position: sticky; display: flex; z-index: 99;}
-    .contents-wrap__tab.lime{background-color: #c0ff4d;}
-    .tab-item{flex: 1;}
-    .tab-item:after{content: '';width: 1px;top: 40px;height: 75px;position: absolute;background-color: #000;}
-    .tab-item:first-child:after{content: unset;}
-    .tab-item__link{display: block; padding: 40px 0;color: #000; font-size: 30px;font-weight: 600; line-height: 1.29; letter-spacing: normal;text-align: center;}
-    /*section01*/
-    .coupon-wrap{margin: 0 auto; padding: 24px 0 140px;width: 715px; text-align: center;}
-    .coupon-wrap__notice{padding-bottom: 138px; color: #fff;font-size: 20px; line-height: 0.7; letter-spacing: normal;}
-    .coupon-wrap__title{padding-bottom: 70px;color: #fff; font-size: 58px;  line-height: 1.37;letter-spacing: -1.15px;}
-    .coupon-wrap__title--bold{font-size: 75px; font-weight: 700;}
-    .coupon-wrap__box{margin: 0 auto;}
-    .coupon-wrap__img{text-align: center; line-height: 0;}
-    .coupon-wrap__img > img, .coupon-wrap__download > img{width: 100%;}
-    .coupon-wrap__btn{padding-top: 24px;line-height: 0;}
-    /*section02*/
-    .special-wrap{margin: 0 auto; padding: 160px 0 90px;}
-    .special-wrap__title{padding-bottom: 70px;color: #fff; font-size: 58px;  line-height: 1.37;letter-spacing: -1.15px;text-align: center;}
-    .special-wrap__box{margin: 0 auto; text-align: center;}
-    .special-wrap__img > img, .special-wrap__download > img{width: 598px;}
-    .special-wrap__txt{padding: 150px 0 88px; color: #fff;font-size: 56px;line-height: 1.41;letter-spacing: -1.11px; text-align: center;}
-    .special-wrap__btn{padding-top: 24px;line-height: 0;text-align: center;}
-    /*section03*/
-    .monday-wrap{margin: 0 auto; padding: 160px 0 125px;}
-    .monday-wrap__title{padding-bottom: 70px;color: #fff; font-size: 58px;  line-height: 1.37;letter-spacing: -1.15px;text-align: center;}
-    .monday-wrap__title.open-info{padding-top: 160px;}
-    .monday-wrap__title--pink{color: #c0ff4d;}
-    .monday-wrap__title--bold{font-size: 75px; font-weight: 700;}
-    .monday-wrap__box{margin: 0 auto; text-align: center;width: 150px; padding: 15px 30px;background-color: #c0ff4d; border-radius: 20px;}
-    .monday-wrap__box--txt{ font-size: 40px;font-weight: bold;font-style: normal;line-height: 1.41;letter-spacing: -0.81px;}
-    .monday-wrap__slide{padding-top: 35px;}
-    .monday-wrap__btn{padding-top: 30px;line-height: 0;text-align: center;}
-    .monday-wrap__img > img, .monday-wrap__more > img{width: 626px;}
-    .promotion-blackfriday__img{line-height: 0;}
-    .promotion-blackfriday__info{padding: 35px 0;background-color: #3c3c3c;}
-    .product-name{color: #fff;font-size: 38px;font-weight: bold;text-align: center;}
-    .product-price{padding: 50px 100px 0;}
-    .product-price__common{display: flex; justify-content: center; color: #9c9c9c;}
-    .product-price__common--txt{flex: 1;font-size: 30px;font-weight: normal;}
-    .product-price__common--txt.strikethrough{text-decoration: line-through;}
-    .product-price__common--txt + .product-price__common--txt{display: flex;justify-content: end;}
-    .product-price__sale{display: flex; justify-content: center;padding-top: 25px;}
-    .product-price__sale--txt{flex: 1;font-size: 38px;font-weight: bold;}
-    .product-price__sale--txt + .product-price__sale--txt{display: flex; justify-content: end;}
-    /*section04*/
-    .limit-wrap{margin: 0 auto; padding: 160px 0 0;}
-    .limit-wrap__title{padding-bottom: 70px;color: #fff; font-size: 58px;  line-height: 1.37;letter-spacing: -1.15px;text-align: center;}
-    .limit-wrap__title--bold{font-size: 75px; font-weight: 700;}
-    .limit-wrap__banner{padding: 45px 0;color: #000; background-color: #c0ff4d;}
-    .limit-wrap__cont{font-size: 46px;font-weight: 300;letter-spacing: -0.93px;line-height: 1.21;text-align: center;}
-    .limit-wrap__cont--bold{display: inline-block;font-weight: 600;line-height: 1.21;letter-spacing: -1.05px;}
-    .limit-wrap__box{margin: 90px auto 30px; text-align: center;width: 150px; padding: 15px 30px;background-color: #c0ff4d; border-radius: 20px;}
-    .limit-wrap__box--txt{ font-size: 40.5px;font-weight: bold;font-style: normal;line-height: 1.41;letter-spacing: -0.81px;white-space: nowrap;}
-    .limit-wrap__btn{padding: 30px 0 217px; line-height: 0;text-align: center;}
-    .limit-wrap__img > img, .monday-wrap__more > img, .limit-wrap__more > img{width: 626px;}
-    .col-pink{color: #c0ff4d;}
-
-    /*슬라이드*/
-    .blackfriday-swiper .promotion-blackfriday__source,
-    .blackfriday-swiper2 .promotion-blackfriday__source,
-    .schedule-swiper .promotion-blackfriday__source,
-    .limit-swiper .promotion-blackfriday__source,
-    .limit-swiper2 .promotion-blackfriday__source,
-    .limit-swiper3 .promotion-blackfriday__source{
-        width: 100%;
-    }
-    .blackfriday-swiper .promotion-blackfriday__box,
-    .blackfriday-swiper2 .promotion-blackfriday__box,
-    .schedule-swiper .promotion-blackfriday__box,
-    .limit-swiper .promotion-blackfriday__box,
-    .limit-swiper2 .promotion-blackfriday__box,
-    .limit-swiper3 .promotion-blackfriday__box{margin: 0 auto;}
-    .blackfriday-wrapper{transition-timing-function: linear;}
-    .blackfriday-wrapper, .blackfriday-wrapper2, .schedule-wrapper, .limit-wrapper{margin-left: 34px;}
-    .blackfriday-slide, limit-slide{width: 626px;}
-    .blackfriday-slide:last-child, .limit-slide:last-child{margin-right: 0 !important;}
-
-
-    @media all and (max-width:1020px) {
-        #event_wrap {width: 100%;margin: 0;}
-        .contents-wrap__tab{top: 0;}
-        .tab-item:after{content: '';width: 1px;top: 20px;height: 38px;position: absolute;}
-        .tab-item__link{padding: 20px 0;font-size: 15px;}
-        /*.tab-item__icon{padding-bottom: 13px;}*/
-        /*.tab-item__icon:before{width: 10px; height: 9px;}*/
-        .coupon-wrap{width: 100%;padding: 12px 0 70px;}
-        .coupon-wrap__notice{padding-bottom: 68px;font-size: 10px;}
-        .coupon-wrap__title{padding-bottom: 35px;font-size: 28px;}
-        .coupon-wrap__title--bold{font-size: 38px; }
-        .coupon-wrap__box,.special-wrap__box{padding: 0 40px;}
-        .special-wrap{padding: 80px 0 45px;}
-        .special-wrap__title{padding-bottom: 35px;font-size: 29px;}
-        .special-wrap__txt{padding: 75px 0 44px;font-size: 25px;}
-        .special-wrap__img > img, .special-wrap__download > img{width: 100%;}
-        .monday-wrap{padding: 80px 0 62px;}
-        .monday-wrap__title,.limit-wrap__title{padding-bottom: 35px; font-size: 29px;}
-        .monday-wrap__title--bold,.limit-wrap__title--bold{font-size: 37px;}
-        .monday-wrap__box, .limit-wrap__box{width: 75px;padding: 7.5px 15px;border-radius: 10px;}
-        .monday-wrap__box--txt, .limit-wrap__box--txt{font-size: 20px;}
-        .product-name{font-size: 19px;}
-        .product-price{padding: 25px 50px 0;}
-        .product-price__common--txt{font-size: 15px;}
-        .product-price__sale{padding-top: 12px;}
-        .product-price__sale--txt{font-size: 19px;}
-        .limit-wrap{padding: 80px 0 0;}
-        .limit-wrap__banner{padding: 22px 0;}
-        .limit-wrap__img > img, .monday-wrap__more > img, .limit-wrap__more > img{width: 100%;}
-        .limit-wrap__cont{font-size: 23px;}
-        .limit-wrap__box{margin: 45px auto 15px;}
-        .limit-wrap__btn{margin: 0 60px;padding: 15px 0 109px;}
-        .monday-wrap__btn,limit-wrap__btn{margin: 0 60px;}
-        .monday-wrap__title.open-info{padding-top: 80px;}
-        .blackfriday-wrapper, .blackfriday-wrapper2, .schedule-wrapper, .limit-wrapper{margin-left: 17px;}
-    }
+        /* 11월 블랙프라이데이 3차 기획전 css */
+        #event_wrap{width: 1080px;}
+        #event_wrap .promotion_top .prd_noti .top_txt,#event_wrap .promotion_top .prd_noti .txt_box{background-color: #3c3c3c;}
+        .section{background-color: #000;}
+        .contents-wrap{position: relative;}
+        .contents-wrap__tab{top: 0;position: sticky; display: flex; z-index: 99;}
+        .contents-wrap__tab.red{background-color: #ff5660;}
+        .tab-item{flex: 1;}
+        .tab-item:after{content: '';width: 1px;top: 40px;height: 75px;position: absolute;background-color: #fff;}
+        .tab-item:first-child:after{content: unset;}
+        .tab-item__link{display: block; padding: 40px 0;color: #fff; font-size: 30px;font-weight: 600; line-height: 1.29; letter-spacing: normal;text-align: center;}
+        /*section01*/
+        .coupon-wrap{margin: 0 auto; padding: 24px 0 140px;width: 715px; text-align: center;}
+        .coupon-wrap__notice{padding-bottom: 138px; color: #fff;font-size: 20px; line-height: 0.7; letter-spacing: normal;}
+        .coupon-wrap__title{padding-bottom: 70px;color: #fff; font-size: 58px;  line-height: 1.37;letter-spacing: -1.15px;}
+        .coupon-wrap__title--bold{font-size: 75px; font-weight: 700;}
+        .coupon-wrap__box{margin: 0 auto;}
+        .coupon-wrap__img{text-align: center; line-height: 0;}
+        .coupon-wrap__img > img, .coupon-wrap__download > img{width: 100%;}
+        .coupon-wrap__btn{padding-top: 24px;line-height: 0;}
+        /*section02*/
+        .special-wrap{margin: 0 auto; padding: 160px 0 90px;}
+        .special-wrap__title{padding-bottom: 70px;color: #fff; font-size: 58px;  line-height: 1.37;letter-spacing: -1.15px;text-align: center;}
+        .special-wrap__box{margin: 0 auto; text-align: center;}
+        .special-wrap__img > img, .special-wrap__download > img{width: 598px;}
+        .special-wrap__txt{padding: 150px 0 88px; color: #fff;font-size: 56px;line-height: 1.41;letter-spacing: -1.11px; text-align: center;}
+        .special-wrap__btn{padding-top: 24px;line-height: 0;text-align: center;}
+        /*section03*/
+        .monday-wrap{margin: 0 auto; padding: 160px 0 125px;}
+        .monday-wrap__title{padding-bottom: 70px;color: #fff; font-size: 58px;  line-height: 1.37;letter-spacing: -1.15px;text-align: center;}
+        .monday-wrap__title.open-info{padding-top: 160px;}
+        .monday-wrap__title--pink{color: #ff5660;}
+        .monday-wrap__title--bold{font-size: 75px; font-weight: 700;}
+        .monday-wrap__box{margin: 0 auto; text-align: center;width: 150px; padding: 15px 30px;background-color: #ff5660; border-radius: 20px;}
+        .monday-wrap__box--txt{ font-size: 40px;font-weight: bold;font-style: normal;line-height: 1.41;letter-spacing: -0.81px;}
+        .monday-wrap__slide{padding-top: 35px;}
+        .monday-wrap__btn{padding-top: 30px;line-height: 0;text-align: center;}
+        .monday-wrap__img > img, .monday-wrap__more > img{width: 626px;}
+        .promotion-blackfriday__img{line-height: 0;}
+        .promotion-blackfriday__info{padding: 35px 0;background-color: #3c3c3c;}
+        .product-name{color: #fff;font-size: 38px;font-weight: bold;text-align: center;}
+        .product-price{padding: 50px 100px 0;}
+        .product-price__common{display: flex; justify-content: center; color: #9c9c9c;}
+        .product-price__common--txt{flex: 1;font-size: 30px;font-weight: normal;}
+        .product-price__common--txt.strikethrough{text-decoration: line-through;}
+        .product-price__common--txt + .product-price__common--txt{display: flex;justify-content: end;}
+        .product-price__sale{display: flex; justify-content: center;padding-top: 25px;}
+        .product-price__sale--txt{flex: 1;font-size: 38px;font-weight: bold;}
+        .product-price__sale--txt + .product-price__sale--txt{display: flex; justify-content: end;}
+        /*section04*/
+        .limit-wrap{margin: 0 auto; padding: 160px 0 0;}
+        .limit-wrap__title{padding-bottom: 70px;color: #fff; font-size: 58px;  line-height: 1.37;letter-spacing: -1.15px;text-align: center;}
+        .limit-wrap__title--bold{font-size: 75px; font-weight: 700;}
+        .limit-wrap__banner{padding: 45px 0;color: #000; background-color: #ff5660;}
+        .limit-wrap__cont{color: #fff;font-size: 46px;font-weight: 300;letter-spacing: -0.93px;line-height: 1.21;text-align: center;}
+        .limit-wrap__cont--bold{display: inline-block;font-weight: 600;line-height: 1.21;letter-spacing: -1.05px;}
+        .limit-wrap__box{margin: 90px auto 30px; text-align: center;width: 150px; padding: 15px 30px;background-color: #ff5660; border-radius: 20px;}
+        .limit-wrap__box--txt{ font-size: 40.5px;font-weight: bold;font-style: normal;line-height: 1.41;letter-spacing: -0.81px;white-space: nowrap;}
+        .limit-wrap__btn{padding: 30px 0 217px; line-height: 0;text-align: center;}
+        .limit-wrap__img > img, .monday-wrap__more > img, .limit-wrap__more > img{width: 626px;}
+        .col-red{color: #ff5660;}
+    
+        /*슬라이드*/
+        .blackfriday-swiper .promotion-blackfriday__source,
+        .blackfriday-swiper2 .promotion-blackfriday__source,
+        .schedule-swiper .promotion-blackfriday__source,
+        .limit-swiper .promotion-blackfriday__source,
+        .limit-swiper2 .promotion-blackfriday__source,
+        .limit-swiper3 .promotion-blackfriday__source{
+            width: 100%;
+        }
+        .schedule-wrapper{margin-left: 0 !important; display: flex; justify-content: center;}
+        .schedule-slide{margin:0 auto; display: flex; justify-content: center; margin-left: 0 !important; margin-right: 0 !important; text-align: center;}
+        .blackfriday-swiper .promotion-blackfriday__box,
+        .blackfriday-swiper2 .promotion-blackfriday__box,
+        .schedule-swiper .promotion-blackfriday__box,
+        .limit-swiper .promotion-blackfriday__box,
+        .limit-swiper2 .promotion-blackfriday__box,
+        .limit-swiper3 .promotion-blackfriday__box{margin: 0 auto;}
+        .blackfriday-wrapper{transition-timing-function: linear;}
+        .blackfriday-wrapper, .blackfriday-wrapper2, .schedule-wrapper, .limit-wrapper{margin-left: 34px;}
+        .blackfriday-slide, limit-slide{width: 626px;}
+        .blackfriday-slide:last-child, .limit-slide:last-child{margin-right: 0 !important;}
+    
+    
+        @media all and (max-width:1020px) {
+            #event_wrap {width: 100%;margin: 0;}
+            .contents-wrap__tab{top: 0;}
+            .tab-item:after{content: '';width: 1px;top: 20px;height: 38px;position: absolute;}
+            .tab-item__link{padding: 20px 0;font-size: 15px;}
+            /*.tab-item__icon{padding-bottom: 13px;}*/
+            /*.tab-item__icon:before{width: 10px; height: 9px;}*/
+            .coupon-wrap{width: 100%;padding: 12px 0 70px;}
+            .coupon-wrap__notice{padding-bottom: 68px;font-size: 10px;}
+            .coupon-wrap__title{padding-bottom: 35px;font-size: 28px;}
+            .coupon-wrap__title--bold{font-size: 38px; }
+            .coupon-wrap__box,.special-wrap__box{padding: 0 40px;}
+            .special-wrap{padding: 80px 0 45px;}
+            .special-wrap__title{padding-bottom: 35px;font-size: 29px;}
+            .special-wrap__txt{padding: 75px 0 44px;font-size: 25px;}
+            .special-wrap__img > img, .special-wrap__download > img{width: 100%;}
+            .monday-wrap{padding: 80px 0 62px;}
+            .monday-wrap__title,.limit-wrap__title{padding-bottom: 35px; font-size: 29px;}
+            .monday-wrap__title--bold,.limit-wrap__title--bold{font-size: 37px;}
+            .monday-wrap__box, .limit-wrap__box{width: 75px;padding: 7.5px 15px;border-radius: 10px;}
+            .monday-wrap__box--txt, .limit-wrap__box--txt{font-size: 20px;}
+            .product-name{height: 40px;font-size: 20px;}
+            .product-price{padding: 25px 50px 0;}
+            .product-price__common--txt{font-size: 15px;}
+            .product-price__sale{padding-top: 12px;}
+            .product-price__sale--txt{font-size: 19px;}
+            .limit-wrap{padding: 80px 0 0;}
+            .limit-wrap__banner{padding: 22px 0;}
+            .limit-wrap__img > img, .monday-wrap__more > img, .limit-wrap__more > img{width: 100%;}
+            .limit-wrap__cont{font-size: 23px;}
+            .limit-wrap__box{margin: 45px auto 15px;}
+            .limit-wrap__btn{margin: 0 60px;padding: 15px 0 109px;}
+            .monday-wrap__btn,limit-wrap__btn{margin: 0 60px;}
+            .monday-wrap__title.open-info{padding-top: 80px;}
+            .blackfriday-wrapper, .blackfriday-wrapper2, .schedule-wrapper, .limit-wrapper{margin-left: 17px;}
+        }
     </style>
+    
 </head>
 
 <body>
@@ -146,13 +149,13 @@
         <div class="promotion_top">
             <!-- top banner -->
             <div class="img_box">
-                <img src="https://cdn.slim9.biz/2023_renew/promotion/blackfriday/second-week/main@3x.webp" alt="">
+                <img src="https://cdn.slim9.biz/2023_renew/promotion/blackfriday/third-week/main@3x.webp" alt="">
             </div>
             <!-- // top banner -->
     
             <!-- contents -->
             <div class="contents-wrap promotionTab">
-                <ul class="contents-wrap__tab lime">
+                <ul class="contents-wrap__tab red">
                     <li class="tab-item">
                         <a href="#section01" class="tab-item__link">선착순<br>50% 쿠폰</a>
                     </li>
@@ -176,13 +179,13 @@
                         </h3>
                         <div class="coupon-wrap__box">
                             <div class="coupon-wrap__img">
-                                <img src="https://cdn.slim9.biz/2023_renew/promotion/blackfriday/second-week/50-coupon@3x.webp" alt="">
-                                <!--                            <img src="https://cdn.slim9.biz/2023_renew/promotion/blackfriday/second-week/coupon-end@3x.webp" alt="">-->
+                                <img src="https://cdn.slim9.biz/2023_renew/promotion/blackfriday/third-week/50-coupon@3x.webp" alt="">
+    <!--                            <img src="https://cdn.slim9.biz/2023_renew/promotion/blackfriday/third-week/coupon-end@3x.webp" alt="">-->
                             </div>
                             <div class="coupon-wrap__btn">
-                                <a href="/exec/front/newcoupon/IssueDownload?coupon_no=6077242778000000940" class="coupon-wrap__download">
-                                    <img src="https://cdn.slim9.biz/2023_renew/promotion/blackfriday/second-week/download@3x.webp" alt="">
-                                    <!--                                <img src="https://cdn.slim9.biz/2023_renew/promotion/blackfriday/second-week/seeu-again@3x.webp" alt="">-->
+                                <a href="/exec/front/newcoupon/IssueDownload?coupon_no=6077243339100000948" class="coupon-wrap__download">
+                                    <img src="https://cdn.slim9.biz/2023_renew/promotion/blackfriday/third-week/download@3x.webp" alt="">
+    <!--                                <img src="https://cdn.slim9.biz/2023_renew/promotion/blackfriday/third-week/seeu-again@3x.webp" alt="">-->
                                 </a>
                             </div>
                         </div>
@@ -193,7 +196,7 @@
                             <p>안내사항</p>
                             <input type="checkbox" id="menuBtn">
                             <span class="icon">
-                            <img src="/web/upload/promotion/23_early_summer/arrow-1.svg">
+                            <img src="https://slim9.cafe24.com/web/upload/promotion/23_early_summer/arrow-1.svg">
                         </span>
                         </label>
                         <div class="txt_box">
@@ -212,7 +215,6 @@
                 </div>
                 <!-- //선착순 50% 쿠폰 -->
     
-    
                 <!-- 전 제품 스페셜 할인 -->
                 <div class="section" id="section02">
                     <div class="special-wrap">
@@ -227,7 +229,7 @@
                                         <a href="#" class="blackfriday-slide__link">
                                             <div class="promotion-blackfriday__box">
                                                 <div class="promotion-blackfriday__img">
-                                                    <img src="https://cdn.slim9.biz/2023_renew/promotion/blackfriday/second-week/slide-01@3x.webp" class="promotion-blackfriday__source" alt="">
+                                                    <img src="https://cdn.slim9.biz/2023_renew/promotion/blackfriday/third-week/slide-01@3x.webp" class="promotion-blackfriday__source" alt="">
                                                 </div>
                                             </div>
                                         </a>
@@ -236,7 +238,7 @@
                                         <a href="#" class="blackfriday-slide__link">
                                             <div class="promotion-blackfriday__box">
                                                 <div class="promotion-blackfriday__img">
-                                                    <img src="https://cdn.slim9.biz/2023_renew/promotion/blackfriday/second-week/slide-02@3x.webp" class="promotion-blackfriday__source" alt="">
+                                                    <img src="https://cdn.slim9.biz/2023_renew/promotion/blackfriday/third-week/slide-02@3x.webp" class="promotion-blackfriday__source" alt="">
                                                 </div>
                                             </div>
                                         </a>
@@ -245,7 +247,7 @@
                                         <a href="#" class="blackfriday-slide__link">
                                             <div class="promotion-blackfriday__box">
                                                 <div class="promotion-blackfriday__img">
-                                                    <img src="https://cdn.slim9.biz/2023_renew/promotion/blackfriday/second-week/slide-03@3x.webp" class="promotion-blackfriday__source" alt="">
+                                                    <img src="https://cdn.slim9.biz/2023_renew/promotion/blackfriday/third-week/slide-03@3x.webp" class="promotion-blackfriday__source" alt="">
                                                 </div>
                                             </div>
                                         </a>
@@ -254,7 +256,7 @@
                                         <a href="#" class="blackfriday-slide__link">
                                             <div class="promotion-blackfriday__box">
                                                 <div class="promotion-blackfriday__img">
-                                                    <img src="https://cdn.slim9.biz/2023_renew/promotion/blackfriday/second-week/slide-04@3x.webp" class="promotion-blackfriday__source" alt="">
+                                                    <img src="https://cdn.slim9.biz/2023_renew/promotion/blackfriday/third-week/slide-04@3x.webp" class="promotion-blackfriday__source" alt="">
                                                 </div>
                                             </div>
                                         </a>
@@ -267,11 +269,11 @@
                             <p class="special-wrap__txt">230만의 선택 시그니처부터<br>겨울까지 따뜻한 신상까지 만나보세요!</p>
                             <div class="special-wrap__box">
                                 <div class="special-wrap__img">
-                                    <img src="https://cdn.slim9.biz/2023_renew/promotion/blackfriday/second-week/70000-coupon@3x.webp" alt="">
+                                    <img src="https://cdn.slim9.biz/2023_renew/promotion/blackfriday/third-week/70000-coupon@3x.webp" alt="">
                                 </div>
                                 <div class="special-wrap__btn">
                                     <a href="/myshop/coupon/coupon.html" class="special-wrap__download">
-                                        <img src="https://cdn.slim9.biz/2023_renew/promotion/blackfriday/second-week/download@3x.webp" alt="">
+                                        <img src="https://cdn.slim9.biz/2023_renew/promotion/blackfriday/third-week/download@3x.webp" alt="">
                                     </a>
                                 </div>
                             </div>
@@ -311,28 +313,28 @@
                             <span class="monday-wrap__title--pink">매주 월요일마다</span> 달라지는<br><span class="monday-wrap__title--bold">블프 한정 패키지</span>
                         </h3>
                         <div class="monday-wrap__box">
-                            <p class="monday-wrap__box--txt">2주차</p>
+                            <p class="monday-wrap__box--txt">3주차</p>
                         </div>
                         <div class="monday-wrap__slide">
                             <!-- 슬라이드02 -->
                             <div class="swiper blackfriday-swiper2">
                                 <div class="swiper-wrapper blackfriday-wrapper2">
                                     <div class="swiper-slide blackfriday-slide">
-                                        <a href="/product/detail.html?product_no=1943" class="blackfriday-slide__link">
+                                        <a href="/product/detail.html?product_no=1956" class="blackfriday-slide__link">
                                             <div class="promotion-blackfriday__box">
                                                 <div class="promotion-blackfriday__img">
-                                                    <img src="https://cdn.slim9.biz/2023_renew/promotion/blackfriday/second-week/1-compact@3x.webp" class="promotion-blackfriday__source" alt="">
+                                                    <img src="https://cdn.slim9.biz/2023_renew/promotion/blackfriday/third-week/1-heat-new.png" class="promotion-blackfriday__source" alt="">
                                                 </div>
                                                 <div class="promotion-blackfriday__info">
-                                                    <p class="product-name">[2&1] 편해브라 컴팩트 & 뉴베이직</p>
+                                                    <p class="product-name">[2&3] 네모팬티 HEAT & 뉴베이직</p>
                                                     <ul class="product-price">
                                                         <li class="product-price__common">
                                                             <div class="product-price__common--txt">소비자가</div>
-                                                            <div class="product-price__common--txt strikethrough">124,000원</div>
+                                                            <div class="product-price__common--txt strikethrough">166,000원</div>
                                                         </li>
                                                         <li class="product-price__sale">
-                                                            <div class="product-price__sale--txt col-pink">프로모션가</div>
-                                                            <div class="product-price__sale--txt col-pink">41,900원</div>
+                                                            <div class="product-price__sale--txt col-red">프로모션가</div>
+                                                            <div class="product-price__sale--txt col-red">79,000원</div>
                                                         </li>
                                                     </ul>
                                                 </div>
@@ -340,21 +342,21 @@
                                         </a>
                                     </div>
                                     <div class="swiper-slide blackfriday-slide">
-                                        <a href="/product/detail.html?product_no=1954" class="blackfriday-slide__link">
+                                        <a href="/product/detail.html?product_no=1960" class="blackfriday-slide__link">
                                             <div class="promotion-blackfriday__box">
                                                 <div class="promotion-blackfriday__img">
-                                                    <img src="https://cdn.slim9.biz/2023_renew/promotion/blackfriday/second-week/2-short@3x.webp" class="promotion-blackfriday__source" alt="">
+                                                    <img src="https://cdn.slim9.biz/2023_renew/promotion/blackfriday/third-week/2-high-warm@3x.webp" class="promotion-blackfriday__source" alt="">
                                                 </div>
                                                 <div class="promotion-blackfriday__info">
-                                                    <p class="product-name">[2&1] 네모팬티 숏</p>
+                                                    <p class="product-name">[SET] 하이웜 핏 롱 셋업</p>
                                                     <ul class="product-price">
                                                         <li class="product-price__common">
                                                             <div class="product-price__common--txt">소비자가</div>
-                                                            <div class="product-price__common--txt strikethrough">96,000원</div>
+                                                            <div class="product-price__common--txt strikethrough">88,000원</div>
                                                         </li>
                                                         <li class="product-price__sale">
-                                                            <div class="product-price__sale--txt col-pink">프로모션가</div>
-                                                            <div class="product-price__sale--txt col-pink">49,000원</div>
+                                                            <div class="product-price__sale--txt col-red">프로모션가</div>
+                                                            <div class="product-price__sale--txt col-red">29,900원</div>
                                                         </li>
                                                     </ul>
                                                 </div>
@@ -362,21 +364,21 @@
                                         </a>
                                     </div>
                                     <div class="swiper-slide blackfriday-slide">
-                                        <a href="/product/detail.html?product_no=1948" class="blackfriday-slide__link">
+                                        <a href="/product/detail.html?product_no=1957" class="blackfriday-slide__link">
                                             <div class="promotion-blackfriday__box">
                                                 <div class="promotion-blackfriday__img">
-                                                    <img src="https://cdn.slim9.biz/2023_renew/promotion/blackfriday/second-week/3-support-hook@3x.webp" class="promotion-blackfriday__source" alt="">
+                                                    <img src="https://cdn.slim9.biz/2023_renew/promotion/blackfriday/third-week/3-s@3x.webp" class="promotion-blackfriday__source" alt="">
                                                 </div>
                                                 <div class="promotion-blackfriday__info">
-                                                    <p class="product-name">[3&1] 뉴베이직 & 서포트 후크</p>
+                                                    <p class="product-name">[2&1] S라벨 네모팬티 듀얼</p>
                                                     <ul class="product-price">
                                                         <li class="product-price__common">
                                                             <div class="product-price__common--txt">소비자가</div>
-                                                            <div class="product-price__common--txt strikethrough">144,000원</div>
+                                                            <div class="product-price__common--txt strikethrough">108,000원</div>
                                                         </li>
                                                         <li class="product-price__sale">
-                                                            <div class="product-price__sale--txt col-pink">프로모션가</div>
-                                                            <div class="product-price__sale--txt col-pink">79,000원</div>
+                                                            <div class="product-price__sale--txt col-red">프로모션가</div>
+                                                            <div class="product-price__sale--txt col-red">39,900원</div>
                                                         </li>
                                                     </ul>
                                                 </div>
@@ -384,21 +386,21 @@
                                         </a>
                                     </div>
                                     <div class="swiper-slide blackfriday-slide">
-                                        <a href="/product/detail.html?product_no=1951" class="blackfriday-slide__link">
+                                        <a href="/product/detail.html?product_no=1902" class="blackfriday-slide__link">
                                             <div class="promotion-blackfriday__box">
                                                 <div class="promotion-blackfriday__img">
-                                                    <img src="https://cdn.slim9.biz/2023_renew/promotion/blackfriday/second-week/4-aircompact@3x.webp" class="promotion-blackfriday__source" alt="">
+                                                    <img src="https://cdn.slim9.biz/2023_renew/promotion/blackfriday/third-week/4-s-set@3x.webp" class="promotion-blackfriday__source" alt="">
                                                 </div>
                                                 <div class="promotion-blackfriday__info">
-                                                    <p class="product-name">[3SET] 에어 컴팩트 셋업</p>
+                                                    <p class="product-name">[3SET] S라벨 듀얼 컴팩트 셋업</p>
                                                     <ul class="product-price">
                                                         <li class="product-price__common">
                                                             <div class="product-price__common--txt">소비자가</div>
-                                                            <div class="product-price__common--txt strikethrough">204,000원</div>
+                                                            <div class="product-price__common--txt strikethrough">246,000원</div>
                                                         </li>
                                                         <li class="product-price__sale">
-                                                            <div class="product-price__sale--txt col-pink">프로모션가</div>
-                                                            <div class="product-price__sale--txt col-pink">119,000원</div>
+                                                            <div class="product-price__sale--txt col-red">프로모션가</div>
+                                                            <div class="product-price__sale--txt col-red">99,000원</div>
                                                         </li>
                                                     </ul>
                                                 </div>
@@ -411,7 +413,7 @@
                         </div>
                         <div class="monday-wrap__btn">
                             <a href="/product/list.html?cate_no=405" class="monday-wrap__more">
-                                <img src="https://cdn.slim9.biz/2023_renew/promotion/blackfriday/second-week/more-sameprice@3x.webp" alt="">
+                                <img src="https://cdn.slim9.biz/2023_renew/promotion/blackfriday/third-week/more-sameprice@3x.webp" alt="">
                             </a>
                         </div>
     
@@ -425,20 +427,12 @@
                                 <div class="swiper-slide schedule-slide">
                                     <div class="promotion-blackfriday__box">
                                         <div class="promotion-blackfriday__img">
-                                            <img src="https://cdn.slim9.biz/2023_renew/promotion/blackfriday/second-week/blur-01@3x.webp" class="promotion-blackfriday__source" alt="">
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="swiper-slide schedule-slide">
-                                    <div class="promotion-blackfriday__box">
-                                        <div class="promotion-blackfriday__img">
                                             <img src="https://cdn.slim9.biz/2023_renew/promotion/blackfriday/second-week/blur-02@3x.webp" class="promotion-blackfriday__source" alt="">
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-    
                         <!-- //슬라이드03 -->
                     </div>
                     <!-- notice -->
@@ -499,8 +493,8 @@
                                                             <div class="product-price__common--txt strikethrough">40,000원</div>
                                                         </li>
                                                         <li class="product-price__sale">
-                                                            <div class="product-price__sale--txt col-pink">프로모션가</div>
-                                                            <div class="product-price__sale--txt col-pink">5,900원</div>
+                                                            <div class="product-price__sale--txt col-red">프로모션가</div>
+                                                            <div class="product-price__sale--txt col-red">5,900원</div>
                                                         </li>
                                                     </ul>
                                                 </div>
@@ -521,8 +515,8 @@
                                                             <div class="product-price__common--txt strikethrough">45,000원</div>
                                                         </li>
                                                         <li class="product-price__sale">
-                                                            <div class="product-price__sale--txt col-pink">프로모션가</div>
-                                                            <div class="product-price__sale--txt col-pink">5,900원</div>
+                                                            <div class="product-price__sale--txt col-red">프로모션가</div>
+                                                            <div class="product-price__sale--txt col-red">5,900원</div>
                                                         </li>
                                                     </ul>
                                                 </div>
@@ -543,8 +537,8 @@
                                                             <div class="product-price__common--txt strikethrough">19,000원</div>
                                                         </li>
                                                         <li class="product-price__sale">
-                                                            <div class="product-price__sale--txt col-pink">프로모션가</div>
-                                                            <div class="product-price__sale--txt col-pink">5,900원</div>
+                                                            <div class="product-price__sale--txt col-red">프로모션가</div>
+                                                            <div class="product-price__sale--txt col-red">5,900원</div>
                                                         </li>
                                                     </ul>
                                                 </div>
@@ -565,8 +559,8 @@
                                                             <div class="product-price__common--txt strikethrough">19,000원</div>
                                                         </li>
                                                         <li class="product-price__sale">
-                                                            <div class="product-price__sale--txt col-pink">프로모션가</div>
-                                                            <div class="product-price__sale--txt col-pink">5,900원</div>
+                                                            <div class="product-price__sale--txt col-red">프로모션가</div>
+                                                            <div class="product-price__sale--txt col-red">5,900원</div>
                                                         </li>
                                                     </ul>
                                                 </div>
@@ -598,8 +592,8 @@
                                                             <div class="product-price__common--txt strikethrough">60,000원</div>
                                                         </li>
                                                         <li class="product-price__sale">
-                                                            <div class="product-price__sale--txt col-pink">프로모션가</div>
-                                                            <div class="product-price__sale--txt col-pink">9,900원</div>
+                                                            <div class="product-price__sale--txt col-red">프로모션가</div>
+                                                            <div class="product-price__sale--txt col-red">9,900원</div>
                                                         </li>
                                                     </ul>
                                                 </div>
@@ -620,8 +614,8 @@
                                                             <div class="product-price__common--txt strikethrough">19,000원</div>
                                                         </li>
                                                         <li class="product-price__sale">
-                                                            <div class="product-price__sale--txt col-pink">프로모션가</div>
-                                                            <div class="product-price__sale--txt col-pink">9,900원</div>
+                                                            <div class="product-price__sale--txt col-red">프로모션가</div>
+                                                            <div class="product-price__sale--txt col-red">9,900원</div>
                                                         </li>
                                                     </ul>
                                                 </div>
@@ -642,8 +636,8 @@
                                                             <div class="product-price__common--txt strikethrough">48,000원</div>
                                                         </li>
                                                         <li class="product-price__sale">
-                                                            <div class="product-price__sale--txt col-pink">프로모션가</div>
-                                                            <div class="product-price__sale--txt col-pink">9,900원</div>
+                                                            <div class="product-price__sale--txt col-red">프로모션가</div>
+                                                            <div class="product-price__sale--txt col-red">9,900원</div>
                                                         </li>
                                                     </ul>
                                                 </div>
@@ -664,8 +658,8 @@
                                                             <div class="product-price__common--txt strikethrough">43,000원</div>
                                                         </li>
                                                         <li class="product-price__sale">
-                                                            <div class="product-price__sale--txt col-pink">프로모션가</div>
-                                                            <div class="product-price__sale--txt col-pink">9,900원</div>
+                                                            <div class="product-price__sale--txt col-red">프로모션가</div>
+                                                            <div class="product-price__sale--txt col-red">9,900원</div>
                                                         </li>
                                                     </ul>
                                                 </div>
@@ -697,8 +691,8 @@
                                                             <div class="product-price__common--txt strikethrough">105,000원</div>
                                                         </li>
                                                         <li class="product-price__sale">
-                                                            <div class="product-price__sale--txt col-pink">프로모션가</div>
-                                                            <div class="product-price__sale--txt col-pink">13,900원</div>
+                                                            <div class="product-price__sale--txt col-red">프로모션가</div>
+                                                            <div class="product-price__sale--txt col-red">13,900원</div>
                                                         </li>
                                                     </ul>
                                                 </div>
@@ -719,8 +713,8 @@
                                                             <div class="product-price__common--txt strikethrough">50,000원</div>
                                                         </li>
                                                         <li class="product-price__sale">
-                                                            <div class="product-price__sale--txt col-pink">프로모션가</div>
-                                                            <div class="product-price__sale--txt col-pink">13,900원</div>
+                                                            <div class="product-price__sale--txt col-red">프로모션가</div>
+                                                            <div class="product-price__sale--txt col-red">13,900원</div>
                                                         </li>
                                                     </ul>
                                                 </div>
@@ -741,8 +735,8 @@
                                                             <div class="product-price__common--txt strikethrough">70,000원</div>
                                                         </li>
                                                         <li class="product-price__sale">
-                                                            <div class="product-price__sale--txt col-pink">프로모션가</div>
-                                                            <div class="product-price__sale--txt col-pink">13,900원</div>
+                                                            <div class="product-price__sale--txt col-red">프로모션가</div>
+                                                            <div class="product-price__sale--txt col-red">13,900원</div>
                                                         </li>
                                                     </ul>
                                                 </div>
@@ -763,8 +757,8 @@
                                                             <div class="product-price__common--txt strikethrough">85,000원</div>
                                                         </li>
                                                         <li class="product-price__sale">
-                                                            <div class="product-price__sale--txt col-pink">프로모션가</div>
-                                                            <div class="product-price__sale--txt col-pink">13,900원</div>
+                                                            <div class="product-price__sale--txt col-red">프로모션가</div>
+                                                            <div class="product-price__sale--txt col-red">13,900원</div>
                                                         </li>
                                                     </ul>
                                                 </div>
@@ -779,7 +773,7 @@
     
                     <div class="limit-wrap__btn">
                         <a href="/product/list.html?cate_no=404" class="limit-wrap__more">
-                            <img src="https://cdn.slim9.biz/2023_renew/promotion/blackfriday/second-week/more-sameprice@3x.webp" alt="">
+                            <img src="https://cdn.slim9.biz/2023_renew/promotion/blackfriday/third-week/more-sameprice@3x.webp" alt="">
                         </a>
                     </div>
                 </div>
@@ -791,8 +785,8 @@
                         <p>안내사항</p>
                         <input type="checkbox" id="menuBtn4">
                         <span class="icon">
-                            <img src="https://slim9.cafe24.com/web/upload/promotion/23_early_summer/arrow-1.svg">
-                        </span>
+                                    <img src="https://slim9.cafe24.com/web/upload/promotion/23_early_summer/arrow-1.svg">
+                                </span>
                     </label>
                     <div class="txt_box">
                         <ul>
@@ -805,6 +799,9 @@
                 <!--// notice -->
             </div>
             <!-- // contents -->
+    
+    
+    
         </div>
     </div>
 

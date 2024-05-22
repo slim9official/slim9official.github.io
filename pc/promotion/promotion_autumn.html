@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>2023.10 어텀위크</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css"/>
-    <link rel="stylesheet" type="text/css" href='https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css'>
+    <link rel="preload" type="text/css" href='https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css'>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css"/>
 
     <link type="text/css" rel="stylesheet" href="../css/style.css">
@@ -141,7 +141,6 @@
 </head>
 
 <body>
-    <div class="2023.08 - 2025.08 2년"></div>
     <!--프로모션 배너-->
     <div id="event_wrap">
         <div class="promotion_top">
@@ -573,7 +572,7 @@
             $('.tab-content').removeClass('current');
             $('.tab-content').eq(idx).addClass('current');
         });
-
+        
         // autumn week
         var autumn_slide = new Swiper(".autumn-swiper", {   // 어텀위크
             slidesPerView: 1,
